@@ -1,8 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-/* Tijdelijke voorbeeld-achtergrond (interieur Streetfoodclub, persfoto van
-   Entree Magazine): gaat niet zo live. Vervang door een eigen foto van
-   minimaal 2000px breed; de terrasfoto staat nog in assets/instagram. */
-import heroImg from "@/assets/hero-voorbeeld.jpg";
+/* Eigen avondfoto met de warme borrelsfeer van het voorbeeld. Een nog
+   grotere versie (2000px+) maakt dit scherper op grote schermen. */
+import heroImg from "@/assets/hero-sfeer.jpg";
 import barCookies from "@/assets/instagram/bar-cookies.jpg";
 import drankjeBank from "@/assets/instagram/drankje-bank.jpg";
 import cheesecake from "@/assets/instagram/cheesecake-citroen.jpg";
@@ -34,16 +33,22 @@ export const Route = createFileRoute("/")({
 
 const uspItems = [
   {
-    title: "Vers van dichtbij",
-    body: "Brood van de bakker om de hoek, groente uit het Westland en bonen van branderij Stielman.",
+    title: "Vers en huisgemaakt",
+    body: "De cookies, brownies en taarten komen uit onze eigen oven. Wat er vandaag is, staat op het bord.",
+    tint: "bg-background/70",
+    accent: "bg-[color:var(--terracotta)]",
   },
   {
-    title: "Zelf gebakken",
-    body: "De cookies, de brownies en de taart maken we hier. Wat er vandaag is, staat op het krijtbord.",
+    title: "Van koffie tot wine night",
+    body: "Ontbijt, lunch, goede koffie en om de zoveel weken een avond met wijn en bites.",
+    tint: "bg-[color:var(--blush)]/25",
+    accent: "bg-[color:var(--aperol)]",
   },
   {
-    title: "Zeven dagen open",
-    body: "Van vroeg ontbijt tot late koffie. Reserveren mag, binnenlopen mag net zo goed.",
+    title: "Elke dag open",
+    body: "Reserveren kan via Instagram, binnenlopen mag altijd. Voor jong en oud.",
+    tint: "bg-background/70",
+    accent: "bg-primary",
   },
 ];
 
@@ -77,11 +82,11 @@ function HomePage() {
             Rosí-logo. Ongefilterd, minimaal 2000px breed. */}
         <img
           src={heroImg}
-          alt="Weelderig barinterieur met palmen, gouden wanden en groene barkrukken"
-          width={756}
-          height={424}
+          alt="Twee glazen proosten in warm avondlicht voor de bloemenkast van Rosí"
+          width={1086}
+          height={1448}
           fetchPriority="high"
-          className="kenburns absolute inset-0 h-full w-full object-cover object-[35%_55%]"
+          className="kenburns absolute inset-0 h-full w-full object-cover object-[38%_35%]"
         />
 
         {/* Crème verloop bovenin zodat de navigatie leesbaar blijft */}
@@ -132,18 +137,20 @@ function HomePage() {
       {/* Welkom */}
       <section className="container-prose grid gap-12 py-20 md:grid-cols-[6fr_5fr] md:gap-16 md:py-28">
         <Reveal>
-          <p className={eyebrow}>Welkom bij Rosí</p>
-          <h2 className="mt-4 font-serif text-4xl leading-[1.1] text-foreground sm:text-5xl">
-            Een hoekje waar de tijd wat <span className="italic text-primary">trager</span> gaat.
+          <p className="font-script text-[1.9rem] leading-none text-[color:var(--terracotta)]">
+            welkom bij Rosí
+          </p>
+          <h2 className="mt-3 font-serif text-4xl leading-[1.1] text-foreground sm:text-5xl">
+            Jouw plek voor koffie, lunch en <span className="italic text-primary">meer</span>.
           </h2>
           <div className="mt-7 max-w-md space-y-4 text-base leading-relaxed text-foreground/80">
             <p>
-              Rosí zit aan de Molenstraat, midden in Monster. Olijfgroene muren, een terracotta bar
-              en bloemen op tafel. Je wordt er zo weer even rustig van.
+              Rosí is de lunchroom aan de Molenstraat in Monster. Olijfgroene muren, een warme bar
+              en verse bloemen op tafel: een plek om even te blijven hangen.
             </p>
             <p>
-              Kom voor een snelle koffie, blijf voor de lunch, of neem gewoon je krant mee en doe
-              een middag lang niets. Alle drie zijn ze prima.
+              We werken met verse ingrediënten en bakken zelf. Kom voor een snelle koffie, een lange
+              lunch of een borrel met vriendinnen.
             </p>
           </div>
           <Link to="/over" className={`${btnQuiet} mt-8`}>
@@ -176,11 +183,8 @@ function HomePage() {
         <ul className="container-prose grid gap-6 py-16 md:grid-cols-3 md:py-20">
           {uspItems.map((usp, i) => (
             <Reveal as="li" key={usp.title} delay={i * 80}>
-              <div className="h-full rounded-3xl bg-background/70 p-8">
-                <span
-                  aria-hidden="true"
-                  className="block h-1 w-10 rounded-full bg-[color:var(--terracotta)]"
-                />
+              <div className={`h-full rounded-3xl p-8 ${usp.tint}`}>
+                <span aria-hidden="true" className={`block h-1 w-10 rounded-full ${usp.accent}`} />
                 <h3 className="mt-5 font-serif text-2xl text-foreground">{usp.title}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-foreground/75">{usp.body}</p>
               </div>
@@ -235,44 +239,56 @@ function HomePage() {
 
       <InstagramFeed />
 
-      {/* Kom langs */}
-      <section className="container-prose grid items-center gap-12 py-20 md:grid-cols-[5fr_6fr] md:gap-16 md:py-28">
-        <Reveal>
-          <p className={eyebrow}>Kom langs</p>
-          <h2 className="mt-3 font-serif text-4xl leading-[1.1] text-foreground sm:text-5xl">
-            Molenstraat 35, <span className="italic text-primary">Monster</span>.
-          </h2>
-          <ul className="mt-8 text-sm">
-            {openingHours.map(([days, hours]) => (
-              <li
-                key={days}
-                className="flex items-baseline justify-between gap-4 border-b border-border/60 py-3 last:border-0"
+      {/* Kom langs: donkergroen, als warme afsluiter */}
+      <section className="bg-[color:var(--olive-deep)] text-[color:var(--cream)]">
+        <div className="container-prose grid items-center gap-12 py-20 md:grid-cols-[5fr_6fr] md:gap-16 md:py-28">
+          <Reveal>
+            <p className="font-script text-[1.9rem] leading-none text-[color:var(--blush)]">
+              tot zo
+            </p>
+            <h2 className="mt-3 font-serif text-4xl leading-[1.1] sm:text-5xl">
+              Molenstraat 35, <span className="italic text-[color:var(--blush)]">Monster</span>.
+            </h2>
+            <ul className="mt-8 text-sm">
+              {openingHours.map(([days, hours]) => (
+                <li
+                  key={days}
+                  className="flex items-baseline justify-between gap-4 border-b border-[color:var(--cream)]/15 py-3 last:border-0"
+                >
+                  <span className="text-[color:var(--cream)]/80">{days}</span>
+                  <span className="font-serif tabular-nums">{hours}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-3">
+              <a
+                href="https://ig.me/m/lunchroomrosi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-full bg-aperol px-7 py-3.5 text-sm font-semibold text-[color:var(--cream)] transition-colors hover:bg-[color:var(--terracotta)]"
               >
-                <span className="text-foreground/80">{days}</span>
-                <span className="font-serif tabular-nums text-foreground">{hours}</span>
-              </li>
-            ))}
-          </ul>
-          <div className="mt-6 flex flex-wrap items-center gap-3 sm:mt-9">
-            <Link to="/reserveren" className={btnPrimary}>
-              Reserveer een tafel
-            </Link>
-            <Link to="/contact" className={btnQuiet}>
-              Route en contact
-            </Link>
-          </div>
-        </Reveal>
+                Reserveer via Instagram
+              </a>
+              <Link
+                to="/contact"
+                className="text-sm font-semibold text-[color:var(--cream)] underline decoration-[color:var(--blush)] decoration-2 underline-offset-[5px] transition-colors hover:text-[color:var(--blush)]"
+              >
+                Route en contact
+              </Link>
+            </div>
+          </Reveal>
 
-        <Reveal delay={120}>
-          <img
-            src={cheesecake}
-            alt="Punt citroencheesecake op een schulpbordje in de zon"
-            loading="lazy"
-            width={935}
-            height={1247}
-            className="photo-soft aspect-[4/3] w-full object-cover"
-          />
-        </Reveal>
+          <Reveal delay={120}>
+            <img
+              src={cheesecake}
+              alt="Punt citroencheesecake op een schulpbordje in de zon"
+              loading="lazy"
+              width={935}
+              height={1247}
+              className="photo-soft aspect-[4/3] w-full object-cover"
+            />
+          </Reveal>
+        </div>
       </section>
     </>
   );

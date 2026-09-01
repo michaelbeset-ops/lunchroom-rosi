@@ -8,7 +8,11 @@ export const Route = createFileRoute("/reserveren")({
   head: () => ({
     meta: [
       { title: "Reserveren | Rosí Monster" },
-      { name: "description", content: "Reserveer eenvoudig een tafel bij Rosí in Monster. Voor lunch, koffie of een gezellige middag met taart." },
+      {
+        name: "description",
+        content:
+          "Reserveer een tafel bij Rosí in Monster, via Instagram of het formulier. Voor lunch, koffie of een wine night.",
+      },
       { property: "og:title", content: "Reserveren | Rosí" },
       { property: "og:description", content: "Reserveer een tafel bij Rosí in Monster." },
       { property: "og:url", content: "/reserveren" },
@@ -36,7 +40,8 @@ function ReserverenPage() {
     const guests = String(f.get("guests") || "");
 
     if (!name || name.length > 100) errs.name = "Vul je naam in (max. 100 tekens).";
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 255) errs.email = "Geldig e-mailadres graag.";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || email.length > 255)
+      errs.email = "Geldig e-mailadres graag.";
     if (!phone || phone.length > 30) errs.phone = "Vul een telefoonnummer in.";
     if (!date) errs.date = "Kies een datum.";
     if (!time) errs.time = "Kies een tijd.";
@@ -48,7 +53,7 @@ function ReserverenPage() {
     // Mailto fallback — geen third-party widget
     const note = String(f.get("note") || "").slice(0, 500);
     const body = encodeURIComponent(
-      `Naam: ${name}\nE-mail: ${email}\nTelefoon: ${phone}\nDatum: ${date}\nTijd: ${time}\nPersonen: ${guests}\nOpmerking: ${note}`
+      `Naam: ${name}\nE-mail: ${email}\nTelefoon: ${phone}\nDatum: ${date}\nTijd: ${time}\nPersonen: ${guests}\nOpmerking: ${note}`,
     );
     const subject = encodeURIComponent(`Reservering ${name} ${date} ${time}`);
     window.location.href = `mailto:hallo@lunchroomrosi.nl?subject=${subject}&body=${body}`;
@@ -63,8 +68,8 @@ function ReserverenPage() {
           Een tafeltje <span className="italic text-primary">voor jou</span>.
         </h1>
         <p className="mx-auto mt-5 max-w-xl text-muted-foreground">
-          Vul het formulier in en wij sturen je per mail of telefoon een
-          bevestiging, meestal binnen een paar uur.
+          Vul het formulier in en wij sturen je per mail of telefoon een bevestiging, meestal binnen
+          een paar uur.
         </p>
         <WaveDivider className="mt-8 mx-auto max-w-[160px]" />
       </section>
@@ -79,37 +84,77 @@ function ReserverenPage() {
                 </span>
                 <h2 className="mt-5 font-serif text-3xl text-foreground">Bedankt!</h2>
                 <p className="mt-3 text-muted-foreground">
-                  Je e-mailprogramma opent met de reservering. Verstuur de mail
-                  even, dan zien we elkaar snel.
+                  Je e-mailprogramma opent met de reservering. Verstuur de mail even, dan zien we
+                  elkaar snel.
                 </p>
               </div>
             ) : (
               <form onSubmit={onSubmit} noValidate className="grid gap-5">
                 <Field label="Naam" id="name" error={errors.name}>
-                  <input id="name" name="name" type="text" maxLength={100} required className={inputCls} />
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    maxLength={100}
+                    required
+                    className={inputCls}
+                  />
                 </Field>
 
                 <div className="grid gap-5 sm:grid-cols-2">
                   <Field label="E-mail" id="email" error={errors.email}>
-                    <input id="email" name="email" type="email" maxLength={255} required className={inputCls} />
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      maxLength={255}
+                      required
+                      className={inputCls}
+                    />
                   </Field>
                   <Field label="Telefoon" id="phone" error={errors.phone}>
-                    <input id="phone" name="phone" type="tel" maxLength={30} required className={inputCls} />
+                    <input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      maxLength={30}
+                      required
+                      className={inputCls}
+                    />
                   </Field>
                 </div>
 
                 <div className="grid gap-5 sm:grid-cols-3">
                   <Field label="Datum" id="date" error={errors.date}>
-                    <input id="date" name="date" type="date" min={today} required className={inputCls} />
+                    <input
+                      id="date"
+                      name="date"
+                      type="date"
+                      min={today}
+                      required
+                      className={inputCls}
+                    />
                   </Field>
                   <Field label="Tijd" id="time" error={errors.time}>
-                    <input id="time" name="time" type="time" min="08:30" max="16:30" required className={inputCls} />
+                    <input
+                      id="time"
+                      name="time"
+                      type="time"
+                      min="08:30"
+                      max="16:30"
+                      required
+                      className={inputCls}
+                    />
                   </Field>
                   <Field label="Personen" id="guests" error={errors.guests}>
                     <select id="guests" name="guests" required className={inputCls} defaultValue="">
-                      <option value="" disabled>Kies…</option>
+                      <option value="" disabled>
+                        Kies…
+                      </option>
                       {Array.from({ length: 10 }).map((_, i) => (
-                        <option key={i} value={i + 1}>{i + 1}</option>
+                        <option key={i} value={i + 1}>
+                          {i + 1}
+                        </option>
                       ))}
                       <option value="10+">10+</option>
                     </select>
@@ -117,14 +162,28 @@ function ReserverenPage() {
                 </div>
 
                 <Field label="Opmerking (optioneel)" id="note">
-                  <textarea id="note" name="note" rows={4} maxLength={500} className={`${inputCls} resize-none`} placeholder="Allergie, kinderstoel, gelegenheid…" />
+                  <textarea
+                    id="note"
+                    name="note"
+                    rows={4}
+                    maxLength={500}
+                    className={`${inputCls} resize-none`}
+                    placeholder="Allergie, kinderstoel, gelegenheid…"
+                  />
                 </Field>
 
                 <div className="flex flex-wrap items-center justify-between gap-3 pt-2">
                   <p className="text-xs text-muted-foreground">
-                    Geen bevestiging? Bel ons gerust op <a className="text-primary hover:underline" href="tel:+31174123456">0174 – 12 34 56</a>.
+                    Geen bevestiging? Bel ons gerust op{" "}
+                    <a className="text-primary hover:underline" href="tel:+31174123456">
+                      0174 – 12 34 56
+                    </a>
+                    .
                   </p>
-                  <button type="submit" className="rounded-full bg-primary px-6 py-3 text-sm text-primary-foreground hover:bg-[color:var(--terracotta)] transition-colors">
+                  <button
+                    type="submit"
+                    className="rounded-full bg-primary px-6 py-3 text-sm text-primary-foreground hover:bg-[color:var(--terracotta)] transition-colors"
+                  >
                     Verstuur reservering
                   </button>
                 </div>

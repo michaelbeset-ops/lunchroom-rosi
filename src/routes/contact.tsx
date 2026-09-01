@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { MapPin, Phone, Mail, Instagram } from "lucide-react";
+import { MapPin, Mail, Instagram } from "lucide-react";
 import { Reveal } from "@/components/site/Reveal";
 import { WaveDivider } from "@/components/site/WaveDivider";
 
@@ -8,9 +8,16 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact | Rosí Monster" },
-      { name: "description", content: "Adres, openingstijden, telefoonnummer en route naar Rosí aan de Molenstraat in Monster." },
+      {
+        name: "description",
+        content:
+          "Adres, openingstijden, telefoonnummer en route naar Rosí aan de Molenstraat in Monster.",
+      },
       { property: "og:title", content: "Contact | Rosí" },
-      { property: "og:description", content: "Vind Rosí in Monster: adres, openingstijden en route." },
+      {
+        property: "og:description",
+        content: "Vind Rosí in Monster: adres, openingstijden en route.",
+      },
       { property: "og:url", content: "/contact" },
     ],
     links: [{ rel: "canonical", href: "/contact" }],
@@ -24,9 +31,15 @@ function ContactPage() {
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const f = new FormData(e.currentTarget);
-    const name = String(f.get("name") || "").trim().slice(0, 100);
-    const email = String(f.get("email") || "").trim().slice(0, 255);
-    const message = String(f.get("message") || "").trim().slice(0, 1000);
+    const name = String(f.get("name") || "")
+      .trim()
+      .slice(0, 100);
+    const email = String(f.get("email") || "")
+      .trim()
+      .slice(0, 255);
+    const message = String(f.get("message") || "")
+      .trim()
+      .slice(0, 1000);
     if (!name || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) || !message) return;
     const body = encodeURIComponent(`Van: ${name} <${email}>\n\n${message}`);
     window.location.href = `mailto:hallo@lunchroomrosi.nl?subject=${encodeURIComponent("Bericht via website")}&body=${body}`;
@@ -36,7 +49,9 @@ function ContactPage() {
   return (
     <>
       <section className="container-prose pt-12 pb-10 md:pt-20 text-center">
-        <p className="text-xs uppercase tracking-[0.28em] text-primary/80">Contact</p>
+        <p className="font-script text-[1.9rem] leading-none text-[color:var(--terracotta)]">
+          contact
+        </p>
         <h1 className="mt-3 font-serif text-5xl text-foreground sm:text-6xl">
           Loop <span className="italic text-primary">binnen</span>, bel of mail.
         </h1>
@@ -51,21 +66,27 @@ function ContactPage() {
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-5 w-5 text-primary" />
                 <div>
-                  Molenstraat 35<br />
+                  Molenstraat 35
+                  <br />
                   Monster
                 </div>
               </li>
               <li className="flex items-start gap-3">
-                <Phone className="mt-0.5 h-5 w-5 text-primary" />
-                <a href="tel:+31174123456" className="hover:text-primary">0174 – 12 34 56</a>
-              </li>
-              <li className="flex items-start gap-3">
                 <Mail className="mt-0.5 h-5 w-5 text-primary" />
-                <a href="mailto:hallo@lunchroomrosi.nl" className="hover:text-primary">hallo@lunchroomrosi.nl</a>
+                <a href="mailto:hallo@lunchroomrosi.nl" className="hover:text-primary">
+                  hallo@lunchroomrosi.nl
+                </a>
               </li>
               <li className="flex items-start gap-3">
                 <Instagram className="mt-0.5 h-5 w-5 text-primary" />
-                <a href="https://instagram.com/lunchroomrosi" target="_blank" rel="noopener noreferrer" className="hover:text-primary">@lunchroomrosi</a>
+                <a
+                  href="https://instagram.com/lunchroomrosi"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-primary"
+                >
+                  @lunchroomrosi &middot; reserveren via DM
+                </a>
               </li>
             </ul>
 
@@ -106,10 +127,33 @@ function ContactPage() {
                 </p>
               ) : (
                 <>
-                  <input name="name" required maxLength={100} placeholder="Je naam" className={inputCls} />
-                  <input name="email" type="email" required maxLength={255} placeholder="Je e-mail" className={inputCls} />
-                  <textarea name="message" required maxLength={1000} rows={4} placeholder="Je bericht" className={`${inputCls} resize-none`} />
-                  <button type="submit" className="justify-self-start rounded-full bg-primary px-6 py-3 text-sm text-primary-foreground hover:bg-[color:var(--terracotta)] transition-colors">
+                  <input
+                    name="name"
+                    required
+                    maxLength={100}
+                    placeholder="Je naam"
+                    className={inputCls}
+                  />
+                  <input
+                    name="email"
+                    type="email"
+                    required
+                    maxLength={255}
+                    placeholder="Je e-mail"
+                    className={inputCls}
+                  />
+                  <textarea
+                    name="message"
+                    required
+                    maxLength={1000}
+                    rows={4}
+                    placeholder="Je bericht"
+                    className={`${inputCls} resize-none`}
+                  />
+                  <button
+                    type="submit"
+                    className="justify-self-start rounded-full bg-primary px-6 py-3 text-sm text-primary-foreground hover:bg-[color:var(--terracotta)] transition-colors"
+                  >
                     Verstuur
                   </button>
                 </>

@@ -1,6 +1,7 @@
-/* Het Rosí-logo, als vector nagetekend van het origineel: een gevulde
-   oranje roos in een crème capsule-kader, met ROSÍ eronder, op
-   saliegroen. Vector, zodat het op elk formaat scherp blijft. */
+/* Het Rosí-beeldmerk. Het roosje is als vector nagetekend (header,
+   favicon); het medaillon toont het originele logobestand in een
+   donkergroene ring met draaiende tekst. */
+import logoRosi from "@/assets/logo-rosi.jpg";
 
 export function RosiRoos({ className = "" }: { className?: string }) {
   return (
@@ -36,16 +37,32 @@ function RoosTekening() {
 export function RosiMedaillon({ className = "" }: { className?: string }) {
   return (
     <svg viewBox="0 0 160 160" className={className} aria-hidden="true">
-      <circle cx="80" cy="80" r="78" fill="var(--olive)" />
+      {/* Donkere ring als lijst, met het originele logo in het midden */}
+      <circle cx="80" cy="80" r="79" fill="var(--olive-deep)" />
+      <defs>
+        <clipPath id="rosi-logo-clip">
+          <circle cx="80" cy="80" r="61" />
+        </clipPath>
+      </defs>
+      <image
+        href={logoRosi}
+        x="19"
+        y="19"
+        width="122"
+        height="122"
+        clipPath="url(#rosi-logo-clip)"
+        preserveAspectRatio="xMidYMid slice"
+      />
+      <circle cx="80" cy="80" r="61" fill="none" stroke="var(--cream)" strokeOpacity="0.35" />
 
       {/* Draaiende tekstring; staat stil bij prefers-reduced-motion */}
       <g className="medaillon-draai">
         <defs>
-          <path id="rosi-ring" d="M80 12.5a67.5 67.5 0 1 1 -.01 0" fill="none" />
+          <path id="rosi-ring" d="M80 10.5a69.5 69.5 0 1 1 -.01 0" fill="none" />
         </defs>
         <text
           fill="var(--cream)"
-          fillOpacity="0.85"
+          fillOpacity="0.9"
           fontSize="9.5"
           letterSpacing="3"
           style={{ fontFamily: "var(--font-sans)" }}
@@ -55,33 +72,6 @@ export function RosiMedaillon({ className = "" }: { className?: string }) {
           </textPath>
         </text>
       </g>
-
-      {/* Capsule-kader met de roos, zoals in het logo */}
-      <rect
-        x="58"
-        y="26"
-        width="44"
-        height="80"
-        rx="22"
-        fill="none"
-        stroke="#e6cfa4"
-        strokeWidth="1.8"
-      />
-      <g transform="translate(61.5 33.5) scale(0.93)">
-        <RoosTekening />
-      </g>
-
-      <text
-        x="80"
-        y="130"
-        textAnchor="middle"
-        fill="#e6cfa4"
-        fontSize="14.5"
-        letterSpacing="4.5"
-        style={{ fontFamily: "var(--font-serif)" }}
-      >
-        ROSÍ
-      </text>
     </svg>
   );
 }

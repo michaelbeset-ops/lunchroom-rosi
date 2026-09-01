@@ -12,8 +12,8 @@ export function Footer() {
         <div>
           <p className="font-serif text-3xl tracking-[0.14em]">ROSÍ</p>
           <p className="mt-3 text-sm leading-relaxed text-[color:var(--cream)]/70">
-            Een knus hoekje in het hart van Monster. Verse koffie, huisgemaakte lekkernijen en een
-            warm welkom.
+            Koffie, bites en wine nights aan de Molenstraat in Monster. Vers, huisgemaakt en elke
+            dag open.
           </p>
         </div>
 
