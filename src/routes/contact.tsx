@@ -8,7 +8,7 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact | Rosí Monster" },
-      { name: "description", content: "Adres, openingstijden, telefoonnummer en route naar Rosí aan de Choorstraat in Monster." },
+      { name: "description", content: "Adres, openingstijden, telefoonnummer en route naar Rosí aan de Molenstraat in Monster." },
       { property: "og:title", content: "Contact | Rosí" },
       { property: "og:description", content: "Vind Rosí in Monster: adres, openingstijden en route." },
       { property: "og:url", content: "/contact" },
@@ -51,8 +51,8 @@ function ContactPage() {
               <li className="flex items-start gap-3">
                 <MapPin className="mt-0.5 h-5 w-5 text-primary" />
                 <div>
-                  Choorstraat 12<br />
-                  2681 AR Monster
+                  Molenstraat 35<br />
+                  Monster
                 </div>
               </li>
               <li className="flex items-start gap-3">
@@ -93,7 +93,7 @@ function ContactPage() {
           <div className="overflow-hidden rounded-[28px] bg-card h-full">
             <iframe
               title="Locatie Rosí op Google Maps"
-              src="https://www.google.com/maps?q=Choorstraat+Monster&output=embed"
+              src="https://www.google.com/maps?q=Molenstraat+35+Monster&output=embed"
               className="h-72 w-full md:h-[360px]"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

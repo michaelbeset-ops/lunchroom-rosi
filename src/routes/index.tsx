@@ -65,65 +65,74 @@ const eyebrow = "text-xs uppercase tracking-[0.28em] text-primary/80";
 function HomePage() {
   return (
     <>
-      {/* Hero */}
-      <section className="-mt-16 flex min-h-svh flex-col overflow-hidden bg-soft">
-        <div className="container-prose flex flex-1 flex-col pt-20 pb-8 sm:pt-24 sm:pb-10 md:pt-32 md:pb-20">
-          <div className="flex flex-1 flex-col justify-center gap-6 sm:gap-8 md:grid md:grid-cols-[6fr_5fr] md:items-center md:gap-14">
-            <div>
-              <p className={eyebrow}>Lunchroom in Monster</p>
-              <h1 className="mt-4 font-serif text-[clamp(2.6rem,7.5vw,6rem)] leading-[1.02] text-foreground sm:mt-5">
-                De lunch staat <span className="italic text-primary">klaar</span>.
-              </h1>
-              <WaveDivider className="mt-5 max-w-[190px] sm:mt-7" />
-              <p className="mt-4 max-w-md leading-relaxed text-foreground/80 sm:mt-6 sm:text-lg">
-                Verse koffie, huisgemaakte cookies en broodjes van de bakker om de hoek. Binnenlopen
-                mag altijd.
-              </p>
-              <div className="mt-6 flex flex-wrap items-center gap-3 sm:mt-9">
-                <Link to="/menu" className={btnPrimary}>
-                  Bekijk de kaart
-                </Link>
-                <Link to="/reserveren" className={btnQuiet}>
-                  Reserveer een tafel
-                </Link>
-              </div>
-            </div>
+      {/* Hero: header (4rem) + hero = precies één scherm */}
+      <section className="flex min-h-[calc(100svh-4rem)] flex-col md:grid md:grid-cols-[11fr_9fr]">
+        {/* Foto, tot de rand. Ideale vervanger: gouden avondlicht, de twee
+            eigenaressen proosten met een spritz voor het raam met het
+            Rosí-logo. Ongefilterd, minimaal 1600px breed. */}
+        <div className="relative min-h-[34svh] flex-1 overflow-hidden md:order-2 md:min-h-0 md:flex-none">
+          <div className="volant absolute inset-x-0 top-0 z-10" aria-hidden="true" />
+          <img
+            src={heroImg}
+            alt="Zomermarkt voor de deur van Rosí: een van de eigenaressen met schalen verse cookies, onder de roze parasols"
+            width={1200}
+            height={1600}
+            fetchPriority="high"
+            className="absolute inset-0 h-full w-full object-cover object-[44%_28%]"
+          />
+        </div>
 
-            {/* Foto in een boog, net als het roosje in het logo. Op mobiel rekt
-                hij mee met wat er overblijft, zodat de hero precies een scherm is. */}
-            <div className="relative min-h-[22svh] flex-1 md:min-h-0 md:flex-none">
-              <div
-                aria-hidden="true"
-                className="photo-arch absolute -inset-3 border border-primary/25 md:-inset-4"
-              />
-              <img
-                src={heroImg}
-                alt="Schalen met verse cookies op het terras van Rosí, onder de roze parasols"
-                width={1200}
-                height={1600}
-                fetchPriority="high"
-                className="photo-arch absolute inset-0 h-full w-full object-cover object-[42%_center] md:relative md:h-[62svh]"
-              />
-            </div>
+        <div className="flex flex-col justify-center px-5 pt-7 pb-6 md:order-1 md:px-[clamp(2.5rem,6vw,6.5rem)] md:py-16">
+          <p className="font-script text-[2.1rem] leading-none text-[color:var(--terracotta)] md:text-[2.6rem]">
+            lunchroom
+          </p>
+          <h1 className="mt-2 font-serif text-[clamp(2.35rem,9.2vw,4.6rem)] leading-[1.04] text-foreground md:mt-3">
+            Eerst koffie,
+            <br />
+            straks een <em className="italic text-primary">spritz</em>.
+          </h1>
+          <p className="mt-4 max-w-md leading-relaxed text-foreground/80 md:mt-5 md:text-lg">
+            Cookies uit de oven, lunch in het zonnetje en om de zoveel weken een wine night. Schuif
+            gewoon aan, een plan is niet nodig.
+          </p>
+          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 md:mt-8">
+            <a
+              href="https://ig.me/m/lunchroomrosi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center rounded-full bg-aperol px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-[color:var(--terracotta)]"
+            >
+              Reserveer via Instagram
+            </a>
+            <Link
+              to="/menu"
+              className="text-sm font-semibold text-foreground underline decoration-primary decoration-2 underline-offset-[5px] transition-colors hover:text-primary"
+            >
+              Bekijk de kaart
+            </Link>
           </div>
+          <p className="mt-6 flex items-center gap-2.5 border-t border-border/60 pt-4 text-sm tracking-wide text-foreground/70 md:mt-9">
+            <svg
+              viewBox="0 0 20 34"
+              width="14"
+              height="24"
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.7"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="flex-none text-primary"
+            >
+              <path d="M10 11.5a5 5 0 1 1 4.7-6.6A3.4 3.4 0 1 1 8 7.2a1.9 1.9 0 1 1 3.4 1.2" />
+              <path d="M10 12v20" />
+              <path d="M10 21c-3.6-.8-5.6-3.2-5.9-6.4" />
+              <path d="M10 26c3.6-.8 5.6-3.2 5.9-6.4" />
+            </svg>
+            Molenstraat 35, Monster &middot; elke dag open
+          </p>
         </div>
       </section>
-
-      {/* Feitenregel */}
-      <div className="border-y border-border/60 bg-background">
-        <div className="container-prose flex flex-wrap items-baseline justify-between gap-x-8 gap-y-1 py-4 text-sm text-foreground/75">
-          <span className="font-medium text-foreground">Choorstraat 12, Monster</span>
-          <span>Zeven dagen per week open</span>
-          <a
-            href="https://instagram.com/lunchroomrosi"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-colors hover:text-primary"
-          >
-            @lunchroomrosi
-          </a>
-        </div>
-      </div>
 
       {/* Welkom */}
       <section className="container-prose grid gap-12 py-20 md:grid-cols-[6fr_5fr] md:gap-16 md:py-28">
@@ -134,7 +143,7 @@ function HomePage() {
           </h2>
           <div className="mt-7 max-w-md space-y-4 text-base leading-relaxed text-foreground/80">
             <p>
-              Rosí zit aan de Choorstraat, midden in Monster. Olijfgroene muren, een terracotta bar
+              Rosí zit aan de Molenstraat, midden in Monster. Olijfgroene muren, een terracotta bar
               en bloemen op tafel. Je wordt er zo weer even rustig van.
             </p>
             <p>
@@ -236,7 +245,7 @@ function HomePage() {
         <Reveal>
           <p className={eyebrow}>Kom langs</p>
           <h2 className="mt-3 font-serif text-4xl leading-[1.1] text-foreground sm:text-5xl">
-            Choorstraat 12, <span className="italic text-primary">Monster</span>.
+            Molenstraat 35, <span className="italic text-primary">Monster</span>.
           </h2>
           <ul className="mt-8 text-sm">
             {openingHours.map(([days, hours]) => (

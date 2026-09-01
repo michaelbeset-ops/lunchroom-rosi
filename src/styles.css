@@ -34,6 +34,13 @@
   src: url("../fonts/fraunces-italic.woff2") format("woff2");
 }
 @font-face {
+  font-family: "Ephesis";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/ephesis.woff2") format("woff2");
+}
+@font-face {
   font-family: "DM Sans";
   font-style: normal;
   font-weight: 400 600;
@@ -92,6 +99,7 @@
   --color-olive-deep: var(--olive-deep);
   --color-blush: var(--blush);
   --color-cream: var(--cream);
+  --color-aperol: var(--aperol);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
@@ -138,6 +146,7 @@
   --olive-deep: oklch(0.4 0.048 120); /* de donkere lambrisering */
   --blush: oklch(0.82 0.062 22); /* het roze van de parasols */
   --cream: oklch(0.968 0.017 88);
+  --aperol: oklch(0.66 0.155 44); /* spritz-oranje, alleen voor de primaire knop */
 
   --destructive: oklch(0.53 0.15 32);
   --destructive-foreground: oklch(0.968 0.017 88);
@@ -253,6 +262,23 @@
       transform: none;
       transition: none;
     }
+  }
+
+  .font-script {
+    font-family: "Ephesis", cursive;
+  }
+
+  /* De parasol-volant: gestreept met geschulpte rand, zoals hun parasols.
+     Je kijkt vanonder de parasol de straat op. */
+  .volant {
+    height: 42px;
+    background: repeating-linear-gradient(90deg, var(--blush) 0 30px, var(--cream) 30px 60px);
+    -webkit-mask:
+      linear-gradient(#000 0 0) 0 0 / 100% calc(100% - 13px) no-repeat,
+      radial-gradient(circle at 15px 0, #000 13.5px, #0000 14.5px) 0 100% / 30px 13px repeat-x;
+    mask:
+      linear-gradient(#000 0 0) 0 0 / 100% calc(100% - 13px) no-repeat,
+      radial-gradient(circle at 15px 0, #000 13.5px, #0000 14.5px) 0 100% / 30px 13px repeat-x;
   }
 
   /* Warme, onregelmatige fotolijst: net iets minder blokkerig dan een rechthoek */

@@ -93,8 +93,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           image: "/og.jpg",
           address: {
             "@type": "PostalAddress",
-            streetAddress: "Choorstraat 12",
-            postalCode: "2681 AR",
+            streetAddress: "Molenstraat 35",
             addressLocality: "Monster",
             addressCountry: "NL",
           },
