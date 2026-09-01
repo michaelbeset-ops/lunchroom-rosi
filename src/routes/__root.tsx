@@ -67,20 +67,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lunchroom Rosi | Verse koffie & lunch in Monster" },
+      { title: "Rosí | Verse koffie & lunch in Monster" },
       {
         name: "description",
         content:
-          "Lunchroom Rosi in het hart van Monster. Verse koffie, huisgemaakte lunch en taart, en een warm welkom.",
+          "Rosí in het hart van Monster. Verse koffie, huisgemaakte lunch en taart, en een warm welkom.",
       },
-      { name: "theme-color", content: "#6B7A4A" },
-      { property: "og:title", content: "Lunchroom Rosi | Monster" },
+      { name: "theme-color", content: "#7f8a5e" },
+      { property: "og:title", content: "Rosí | Monster" },
       {
         property: "og:description",
         content: "Een knus hoekje in Monster met verse koffie, lunch en huisgemaakt gebak.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "Lunchroom Rosi" },
+      { property: "og:site_name", content: "Rosí" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     scripts: [
@@ -89,7 +89,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "CafeOrCoffeeShop",
-          name: "Lunchroom Rosi",
+          name: "Rosí",
           image: "/og.jpg",
           address: {
             "@type": "PostalAddress",

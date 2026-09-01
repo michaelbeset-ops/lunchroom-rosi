@@ -7,10 +7,10 @@ import { WaveDivider } from "@/components/site/WaveDivider";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact | Lunchroom Rosi Monster" },
-      { name: "description", content: "Adres, openingstijden, telefoonnummer en route naar Lunchroom Rosi aan de Choorstraat in Monster." },
-      { property: "og:title", content: "Contact | Lunchroom Rosi" },
-      { property: "og:description", content: "Vind Rosi in Monster: adres, openingstijden en route." },
+      { title: "Contact | Rosí Monster" },
+      { name: "description", content: "Adres, openingstijden, telefoonnummer en route naar Rosí aan de Choorstraat in Monster." },
+      { property: "og:title", content: "Contact | Rosí" },
+      { property: "og:description", content: "Vind Rosí in Monster: adres, openingstijden en route." },
       { property: "og:url", content: "/contact" },
     ],
     links: [{ rel: "canonical", href: "/contact" }],
@@ -92,7 +92,7 @@ function ContactPage() {
         <Reveal delay={100}>
           <div className="overflow-hidden rounded-[28px] bg-card h-full">
             <iframe
-              title="Locatie Lunchroom Rosi op Google Maps"
+              title="Locatie Rosí op Google Maps"
               src="https://www.google.com/maps?q=Choorstraat+Monster&output=embed"
               className="h-72 w-full md:h-[360px]"
               loading="lazy"

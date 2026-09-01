@@ -24,12 +24,17 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 z-50 w-full transition-colors duration-300 ${
-        scrolled || open ? "bg-background border-b border-border" : "bg-transparent"
+        scrolled || open
+          ? "border-b border-border/60 bg-background/95 backdrop-blur"
+          : "bg-transparent"
       }`}
     >
       <div className="flex items-center justify-between px-5 py-4 md:px-10">
-        <Link to="/" className="text-lg font-extrabold tracking-[-0.03em] text-foreground">
-          Lunchroom Rosi
+        <Link
+          to="/"
+          className="font-serif text-2xl tracking-[0.14em] text-primary transition-colors hover:text-[color:var(--terracotta)]"
+        >
+          ROSÍ
         </Link>
 
         <nav className="hidden items-center gap-7 md:flex">
@@ -37,10 +42,9 @@ export function Header() {
             <Link
               key={l.to}
               to={l.to}
-              className="text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
+              className="text-sm text-foreground/70 transition-colors hover:text-primary"
               activeProps={{
-                className:
-                  "text-foreground underline underline-offset-8 decoration-primary decoration-2",
+                className: "text-primary underline underline-offset-8 decoration-1",
               }}
               activeOptions={{ exact: l.to === "/" }}
             >
@@ -67,7 +71,7 @@ export function Header() {
                 key={l.to}
                 to={l.to}
                 onClick={() => setOpen(false)}
-                className="border-b border-border/60 py-3.5 text-base font-medium text-foreground last:border-0"
+                className="border-b border-border/60 py-3.5 text-base text-foreground last:border-0"
                 activeProps={{ className: "text-primary" }}
                 activeOptions={{ exact: l.to === "/" }}
               >
