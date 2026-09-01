@@ -281,6 +281,68 @@
       radial-gradient(circle at 13px 0, #000 11.5px, #0000 12.5px) 0 100% / 26px 11px repeat-x;
   }
 
+  /* Geschulpte kroon in de kleur van het vlak eronder: chique awning-silhouet */
+  .schulprand {
+    height: 12px;
+    background: var(--olive-deep);
+    -webkit-mask: radial-gradient(circle at 11px 12px, #000 10.5px, #0000 11.5px) 0 0 / 22px 12px
+      repeat-x;
+    mask: radial-gradient(circle at 11px 12px, #000 10.5px, #0000 11.5px) 0 0 / 22px 12px repeat-x;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    /* Trage zoom-uit van de herofoto bij binnenkomst */
+    .kenburns {
+      animation: kenburns 12s ease-out both;
+    }
+    @keyframes kenburns {
+      from {
+        transform: scale(1.07);
+      }
+      to {
+        transform: scale(1);
+      }
+    }
+
+    /* Tekst op het vlak komt rustig, gespreid op */
+    .hero-reveal > * {
+      animation: hero-opkomen 0.7s ease both;
+    }
+    .hero-reveal > *:nth-child(2) {
+      animation-delay: 0.08s;
+    }
+    .hero-reveal > *:nth-child(3) {
+      animation-delay: 0.16s;
+    }
+    .hero-reveal > *:nth-child(4) {
+      animation-delay: 0.24s;
+    }
+    .hero-reveal > *:nth-child(5) {
+      animation-delay: 0.32s;
+    }
+    @keyframes hero-opkomen {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* De tekstring van het medaillon draait langzaam rond */
+    .medaillon-draai {
+      animation: medaillon-rond 28s linear infinite;
+      transform-origin: 80px 80px;
+    }
+    @keyframes medaillon-rond {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
   /* Warme, onregelmatige fotolijst: net iets minder blokkerig dan een rechthoek */
   .photo-soft {
     border-radius: 26px;
