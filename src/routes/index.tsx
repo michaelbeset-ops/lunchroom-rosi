@@ -66,20 +66,20 @@ function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="-mt-16 overflow-hidden bg-soft">
-        <div className="container-prose pt-32 pb-16 md:pt-40 md:pb-24">
-          <div className="grid items-center gap-12 md:grid-cols-[6fr_5fr] md:gap-14">
+      <section className="-mt-16 flex min-h-svh flex-col overflow-hidden bg-soft">
+        <div className="container-prose flex flex-1 flex-col pt-20 pb-8 sm:pt-24 sm:pb-10 md:pt-32 md:pb-20">
+          <div className="flex flex-1 flex-col justify-center gap-6 sm:gap-8 md:grid md:grid-cols-[6fr_5fr] md:items-center md:gap-14">
             <div>
               <p className={eyebrow}>Lunchroom in Monster</p>
-              <h1 className="mt-5 font-serif text-[clamp(3rem,8vw,6rem)] leading-[1] text-foreground">
+              <h1 className="mt-4 font-serif text-[clamp(2.6rem,7.5vw,6rem)] leading-[1.02] text-foreground sm:mt-5">
                 De lunch staat <span className="italic text-primary">klaar</span>.
               </h1>
-              <WaveDivider className="mt-7 max-w-[190px]" />
-              <p className="mt-6 max-w-md text-lg leading-relaxed text-foreground/80">
+              <WaveDivider className="mt-5 max-w-[190px] sm:mt-7" />
+              <p className="mt-4 max-w-md leading-relaxed text-foreground/80 sm:mt-6 sm:text-lg">
                 Verse koffie, huisgemaakte cookies en broodjes van de bakker om de hoek. Binnenlopen
                 mag altijd.
               </p>
-              <div className="mt-9 flex flex-wrap items-center gap-3">
+              <div className="mt-6 flex flex-wrap items-center gap-3 sm:mt-9">
                 <Link to="/menu" className={btnPrimary}>
                   Bekijk de kaart
                 </Link>
@@ -89,8 +89,9 @@ function HomePage() {
               </div>
             </div>
 
-            {/* Foto in een boog, net als het roosje in het logo */}
-            <div className="relative">
+            {/* Foto in een boog, net als het roosje in het logo. Op mobiel rekt
+                hij mee met wat er overblijft, zodat de hero precies een scherm is. */}
+            <div className="relative min-h-[22svh] flex-1 md:min-h-0 md:flex-none">
               <div
                 aria-hidden="true"
                 className="photo-arch absolute -inset-3 border border-primary/25 md:-inset-4"
@@ -101,7 +102,7 @@ function HomePage() {
                 width={1200}
                 height={1600}
                 fetchPriority="high"
-                className="photo-arch relative h-[58svh] w-full object-cover object-[42%_center] md:h-[62svh]"
+                className="photo-arch absolute inset-0 h-full w-full object-cover object-[42%_center] md:relative md:h-[62svh]"
               />
             </div>
           </div>
@@ -248,7 +249,7 @@ function HomePage() {
               </li>
             ))}
           </ul>
-          <div className="mt-9 flex flex-wrap items-center gap-3">
+          <div className="mt-6 flex flex-wrap items-center gap-3 sm:mt-9">
             <Link to="/reserveren" className={btnPrimary}>
               Reserveer een tafel
             </Link>
