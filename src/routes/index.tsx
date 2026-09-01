@@ -4,6 +4,7 @@ import barCookies from "@/assets/instagram/bar-cookies.jpg";
 import drankjeBank from "@/assets/instagram/drankje-bank.jpg";
 import cheesecake from "@/assets/instagram/cheesecake-citroen.jpg";
 import { Reveal } from "@/components/site/Reveal";
+import { RosiMedaillon } from "@/components/site/RosiMark";
 import { WaveDivider } from "@/components/site/WaveDivider";
 import { InstagramFeed } from "@/components/site/InstagramFeed";
 import { menu } from "@/data/menu";
@@ -65,9 +66,8 @@ const eyebrow = "text-xs uppercase tracking-[0.28em] text-primary/80";
 function HomePage() {
   return (
     <>
-      {/* Hero: de foto vult het volledige scherm; de tekst staat op een
-          crème vlak dat onderaan verankerd is, met de parasolrand erboven.
-          Geen overlay over de foto zelf. */}
+      {/* Hero: schermvullende foto; tekst op een diep olijfgroen vlak
+          rechtsonder, met het Rosí-medaillon als lakzegel op de rand. */}
       <section className="relative -mt-16 flex min-h-svh flex-col justify-end overflow-hidden">
         {/* Ideale foto om aan te leveren: gouden avondlicht, de twee
             eigenaressen proosten met een spritz voor het raam met het
@@ -78,7 +78,7 @@ function HomePage() {
           width={1200}
           height={1600}
           fetchPriority="high"
-          className="absolute inset-0 h-full w-full object-cover object-[50%_30%]"
+          className="kenburns absolute inset-0 h-full w-full object-cover object-[50%_30%]"
         />
 
         {/* Crème verloop bovenin zodat de navigatie leesbaar blijft */}
@@ -87,18 +87,19 @@ function HomePage() {
           className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-background via-background/60 to-transparent"
         />
 
-        {/* Tekstvlak, vast aan de onderrand. Op desktop rechtsonder, zodat
-            het gezicht op de foto links altijd vrij blijft. */}
+        {/* Tekstvlak, vast aan de onderrand; op desktop rechtsonder zodat
+            het gezicht op de foto links vrij blijft. */}
         <div className="relative z-10 w-full md:ml-auto md:w-[min(620px,48vw)]">
-          <div className="volant -scale-y-100" aria-hidden="true" />
-          <div className="bg-background px-5 pt-4 pb-6 md:px-10 md:pt-6 md:pb-9">
-            <p className="font-script text-[2rem] leading-none text-[color:var(--terracotta)] md:text-[2.4rem]">
+          <RosiMedaillon className="absolute -top-14 right-5 z-20 w-[104px] md:-top-16 md:right-10 md:w-[124px]" />
+          <div className="schulprand" aria-hidden="true" />
+          <div className="hero-reveal bg-[color:var(--olive-deep)] px-5 pt-5 pb-6 text-[color:var(--cream)] md:px-10 md:pt-7 md:pb-9">
+            <p className="font-script text-[2rem] leading-none text-[color:var(--blush)] md:text-[2.4rem]">
               lunchroom
             </p>
-            <h1 className="mt-2 font-serif text-[clamp(2.2rem,8.5vw,3.6rem)] leading-[1.04] text-foreground">
-              Eerst koffie, straks een <em className="italic text-primary">spritz</em>.
+            <h1 className="mt-2 max-w-[11em] font-serif text-[clamp(2.2rem,8.5vw,3.6rem)] leading-[1.04]">
+              Eerst koffie, straks een <em className="italic text-[color:var(--blush)]">spritz</em>.
             </h1>
-            <p className="mt-3 max-w-md leading-relaxed text-foreground/80 md:mt-4">
+            <p className="mt-3 max-w-md leading-relaxed text-[color:var(--cream)]/85 md:mt-4">
               Cookies uit de oven, lunch in het zonnetje en om de zoveel weken een wine night.
               Schuif gewoon aan, een plan is niet nodig.
             </p>
@@ -107,35 +108,18 @@ function HomePage() {
                 href="https://ig.me/m/lunchroomrosi"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center rounded-full bg-aperol px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-[color:var(--terracotta)]"
+                className="inline-flex items-center rounded-full bg-aperol px-7 py-3.5 text-sm font-semibold text-[color:var(--cream)] transition-colors hover:bg-[color:var(--terracotta)]"
               >
                 Reserveer via Instagram
               </a>
               <Link
                 to="/menu"
-                className="text-sm font-semibold text-foreground underline decoration-primary decoration-2 underline-offset-[5px] transition-colors hover:text-primary"
+                className="text-sm font-semibold text-[color:var(--cream)] underline decoration-[color:var(--blush)] decoration-2 underline-offset-[5px] transition-colors hover:text-[color:var(--blush)]"
               >
                 Bekijk de kaart
               </Link>
             </div>
-            <p className="mt-5 flex items-center gap-2.5 border-t border-border/60 pt-4 text-sm tracking-wide text-foreground/70">
-              <svg
-                viewBox="0 0 20 34"
-                width="14"
-                height="24"
-                aria-hidden="true"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.7"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="flex-none text-primary"
-              >
-                <path d="M10 11.5a5 5 0 1 1 4.7-6.6A3.4 3.4 0 1 1 8 7.2a1.9 1.9 0 1 1 3.4 1.2" />
-                <path d="M10 12v20" />
-                <path d="M10 21c-3.6-.8-5.6-3.2-5.9-6.4" />
-                <path d="M10 26c3.6-.8 5.6-3.2 5.9-6.4" />
-              </svg>
+            <p className="mt-5 border-t border-[color:var(--cream)]/20 pt-4 text-sm tracking-wide text-[color:var(--cream)]/75">
               Molenstraat 35, Monster &middot; elke dag open
             </p>
           </div>
@@ -215,7 +199,7 @@ function HomePage() {
         <div className="mt-14 grid gap-x-14 gap-y-12 md:grid-cols-3">
           {highlights.map((cat, i) => (
             <Reveal key={cat.id} delay={i * 80}>
-              <h3 className="font-serif text-2xl text-primary">{cat.title}</h3>
+              <h3 className="font-serif text-2xl text-[color:var(--terracotta)]">{cat.title}</h3>
               <div className="rule-soft mt-3" />
               <ul className="mt-5 space-y-5">
                 {cat.items.map((item) => (

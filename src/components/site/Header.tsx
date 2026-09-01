@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { RosiRoos } from "@/components/site/RosiMark";
 
 const links = [
   { to: "/", label: "Home" },
@@ -32,8 +33,9 @@ export function Header() {
       <div className="flex items-center justify-between px-5 py-4 md:px-10">
         <Link
           to="/"
-          className="font-serif text-2xl tracking-[0.14em] text-primary transition-colors hover:text-[color:var(--terracotta)]"
+          className="inline-flex items-center gap-2.5 font-serif text-2xl tracking-[0.14em] text-primary transition-colors hover:text-[color:var(--terracotta)]"
         >
+          <RosiRoos className="h-7 w-auto [--roos-bloem:var(--terracotta)]" />
           ROSÍ
         </Link>
 
