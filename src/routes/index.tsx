@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-/* Eigen avondfoto met de warme borrelsfeer van het voorbeeld. Een nog
-   grotere versie (2000px+) maakt dit scherper op grote schermen. */
-import heroImg from "@/assets/hero-sfeer.jpg";
+/* Aangeleverd interieur met saliegroene muren en olijfgroene stoelen,
+   past een-op-een op het palet. Een 2000px-versie maakt dit nog
+   scherper op grote schermen. */
+import heroImg from "@/assets/hero-sfeer-v2.jpg";
 import barCookies from "@/assets/instagram/bar-cookies.jpg";
 import drankjeBank from "@/assets/instagram/drankje-bank.jpg";
 import cheesecake from "@/assets/instagram/cheesecake-citroen.jpg";
@@ -82,11 +83,11 @@ function HomePage() {
             Rosí-logo. Ongefilterd, minimaal 2000px breed. */}
         <img
           src={heroImg}
-          alt="Twee glazen proosten in warm avondlicht voor de bloemenkast van Rosí"
-          width={1086}
-          height={1448}
+          alt="Restaurantinterieur met saliegroene muren, olijfgroene stoelen en veel planten"
+          width={850}
+          height={567}
           fetchPriority="high"
-          className="kenburns absolute inset-0 h-full w-full object-cover object-[38%_35%]"
+          className="kenburns absolute inset-0 h-full w-full object-cover object-[42%_58%]"
         />
 
         {/* Crème verloop bovenin zodat de navigatie leesbaar blijft */}
