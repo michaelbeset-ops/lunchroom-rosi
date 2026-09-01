@@ -84,8 +84,8 @@ function HomePage() {
         <img
           src={heroImg}
           alt="Restaurantinterieur met saliegroene muren, olijfgroene stoelen en veel planten"
-          width={850}
-          height={567}
+          width={1700}
+          height={1134}
           fetchPriority="high"
           className="kenburns absolute inset-0 h-full w-full object-cover object-[42%_58%]"
         />
