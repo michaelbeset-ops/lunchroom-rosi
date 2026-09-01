@@ -1,5 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import heroImg from "@/assets/instagram/terras-cookies.jpg";
+/* Tijdelijke voorbeeld-achtergrond (interieur Streetfoodclub, persfoto van
+   Entree Magazine): gaat niet zo live. Vervang door een eigen foto van
+   minimaal 2000px breed; de terrasfoto staat nog in assets/instagram. */
+import heroImg from "@/assets/hero-voorbeeld.jpg";
 import barCookies from "@/assets/instagram/bar-cookies.jpg";
 import drankjeBank from "@/assets/instagram/drankje-bank.jpg";
 import cheesecake from "@/assets/instagram/cheesecake-citroen.jpg";
@@ -74,11 +77,11 @@ function HomePage() {
             Rosí-logo. Ongefilterd, minimaal 2000px breed. */}
         <img
           src={heroImg}
-          alt="Zomermarkt voor de deur van Rosí: een van de eigenaressen met schalen verse cookies, onder de roze parasols"
-          width={1200}
-          height={1600}
+          alt="Weelderig barinterieur met palmen, gouden wanden en groene barkrukken"
+          width={756}
+          height={424}
           fetchPriority="high"
-          className="kenburns absolute inset-0 h-full w-full object-cover object-[50%_30%]"
+          className="kenburns absolute inset-0 h-full w-full object-cover object-[35%_55%]"
         />
 
         {/* Crème verloop bovenin zodat de navigatie leesbaar blijft */}
