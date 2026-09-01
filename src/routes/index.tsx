@@ -1,23 +1,19 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroImg from "@/assets/hero.jpg";
-import food1 from "@/assets/food-1.jpg";
-import food2 from "@/assets/food-2.jpg";
-import food3 from "@/assets/food-3.jpg";
-import sfeer1 from "@/assets/sfeer-1.jpg";
-import sfeer2 from "@/assets/sfeer-2.jpg";
-import sfeer3 from "@/assets/sfeer-3.jpg";
-import fayImg from "@/assets/fay.jpg";
-import { Reveal } from "@/components/site/Reveal";
-import { WaveDivider } from "@/components/site/WaveDivider";
-import { Coffee, Leaf, Heart, Instagram } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "Lunchroom Rosi | Verse koffie & lunch in Monster" },
-      { name: "description", content: "Een knus hoekje in het hart van Monster. Verse koffie, huisgemaakte lunch en taart, en een warm welkom." },
+      {
+        name: "description",
+        content: "Lunchroom in het hart van Monster. Verse koffie, huisgemaakte lunch en taart.",
+      },
       { property: "og:title", content: "Lunchroom Rosi | Monster" },
-      { property: "og:description", content: "Verse koffie, lunch en huisgemaakt gebak in Monster." },
+      {
+        property: "og:description",
+        content: "Verse koffie, lunch en huisgemaakt gebak in Monster.",
+      },
       { property: "og:url", content: "/" },
     ],
     links: [{ rel: "canonical", href: "/" }],
@@ -27,259 +23,66 @@ export const Route = createFileRoute("/")({
 
 function HomePage() {
   return (
-    <>
-      {/* HERO */}
-      <section className="relative overflow-hidden -mt-16 md:mt-0">
-        {/* Mobile: volledige achtergrond foto */}
-        <div className="absolute inset-0 md:hidden" aria-hidden="true">
-          <img
-            src={sfeer2}
-            alt=""
-            className="h-full w-full object-cover object-center"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/30 to-black/75" />
-        </div>
-
-        <div className="relative z-10 container-prose grid gap-10 min-h-[100svh] content-end pb-14 md:min-h-0 md:content-normal md:pt-16 md:pb-24 md:grid-cols-2 md:items-center">
-          <div className="relative z-10">
-            <p className="text-xs uppercase tracking-[0.28em] text-white/70 md:text-primary/80">
-              Lunchroom · Monster sinds 2026
-            </p>
-            <h1 className="mt-5 font-serif text-5xl leading-[1.05] text-white md:text-foreground sm:text-6xl md:text-7xl">
-              Een warm hoekje{" "}
-              <span className="italic text-white/85 md:text-primary">in het hart</span> van Monster.
-            </h1>
-            <p className="mt-6 max-w-md text-base leading-relaxed text-white/75 md:text-muted-foreground">
-              Verse koffie, broodjes van de bakker om de hoek en taart die we
-              die ochtend nog uit de oven haalden. Loop binnen, schuif aan,
-              blijf even.
-            </p>
-            <div className="mt-8 flex flex-wrap items-center gap-3">
-              <Link
-                to="/menu"
-                className="inline-flex items-center rounded-full bg-white px-6 py-3 text-sm text-foreground hover:bg-white/90 md:bg-primary md:text-primary-foreground md:hover:bg-[color:var(--terracotta)] transition-colors"
-              >
-                Bekijk de kaart
-              </Link>
-              <Link
-                to="/reserveren"
-                className="inline-flex items-center rounded-full border border-white/50 bg-white/10 backdrop-blur-sm px-6 py-3 text-sm text-white hover:bg-white/20 md:border-primary/30 md:bg-card md:text-foreground md:backdrop-blur-none md:hover:border-primary transition-colors"
-              >
-                Reserveer een tafel
-              </Link>
-            </div>
-          </div>
-
-          <div className="relative hidden md:block">
-            <div className="blob bg-secondary/35 -left-6 -top-6 h-40 w-40" />
-            <div className="blob bg-[color:var(--terracotta)]/20 -right-4 -bottom-6 h-32 w-32" />
-            <div className="relative overflow-hidden rounded-[28px] shadow-[0_20px_60px_-30px_rgba(60,55,30,0.45)]">
-              <img
-                src={heroImg}
-                alt="Vers brood en een kop koffie op een houten tafel in Lunchroom Rosi"
-                width={1600}
-                height={1100}
-                className="h-[460px] w-full object-cover sm:h-[560px]"
-              />
-              <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-[color:var(--background)]/45 via-transparent to-transparent" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* USPs */}
-      <section className="border-y border-border/60 bg-card/60">
-        <div className="container-prose grid grid-cols-3 gap-4 py-10 md:gap-8 md:py-12">
-          {[
-            { icon: Leaf, title: "Vers & lokaal", text: "Groente van Westlandse telers, brood van de bakker uit de straat." },
-            { icon: Heart, title: "Met de hand", text: "Soep, taart en limonade, alles huisgemaakt in onze keuken." },
-            { icon: Coffee, title: "Goede koffie", text: "Bonen van branderij Stielman, gezet door iemand die er om geeft." },
-          ].map((u, i) => (
-            <Reveal key={u.title} delay={i * 80}>
-              <div className="flex flex-col items-center gap-2 text-center md:flex-row md:items-start md:gap-4 md:text-left">
-                <span className="grid place-items-center rounded-full bg-primary/10 p-2.5 md:p-3 text-primary shrink-0">
-                  <u.icon className="h-4 w-4 md:h-5 md:w-5" />
-                </span>
-                <div>
-                  <h3 className="font-serif text-sm leading-snug md:text-xl text-foreground">{u.title}</h3>
-                  <p className="mt-0.5 text-xs leading-snug text-muted-foreground md:text-sm">{u.text}</p>
-                </div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      {/* INTRO + FOTO GRID */}
-      <section className="container-prose py-20">
-        <Reveal>
-          <div className="mx-auto max-w-2xl text-center">
-            <p className="text-xs uppercase tracking-[0.28em] text-primary/80">Sfeerimpressie</p>
-            <h2 className="mt-3 font-serif text-4xl text-foreground sm:text-5xl">
-              Even <span className="italic text-primary">stilstaan</span> tussen de boodschappen door.
-            </h2>
-            <WaveDivider className="mt-6 mx-auto max-w-[180px]" />
-          </div>
-        </Reveal>
-
-        <div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-4">
-          {[
-            { src: food1, alt: "Avocado toast met gepocheerd ei", tall: true },
-            { src: sfeer1, alt: "Barista zet een flat white" },
-            { src: food3, alt: "Broodje carpaccio met rucola en parmezaan" },
-            { src: sfeer2, alt: "Bloemen op een tafel in de lunchroom", tall: true },
-            { src: food2, alt: "Huisgemaakte taart met koffie" },
-            { src: sfeer3, alt: "Verse jus d'orange en croissant" },
-          ].map((img, i) => (
-            <Reveal key={img.src} delay={i * 60} className={img.tall ? "row-span-2" : ""}>
-              <div className="overflow-hidden rounded-2xl bg-card">
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  loading="lazy"
-                  width={1000}
-                  height={img.tall ? 1400 : 800}
-                  className={`w-full object-cover transition-transform duration-700 hover:scale-[1.04] ${
-                    img.tall ? "h-full min-h-[220px] md:min-h-[280px]" : "h-36 md:h-44"
-                  }`}
-                />
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      {/* OVER (kort) */}
-      <section className="bg-card/60 border-y border-border/60">
-        <div className="container-prose grid gap-12 py-20 md:grid-cols-[5fr_7fr] md:items-center">
-          <Reveal>
-            <div className="relative">
-              <div className="blob bg-secondary/30 -left-4 -top-4 h-28 w-28" />
-              <img
-                src={fayImg}
-                alt="In de lunchroom van Rosi"
-                loading="lazy"
-                width={1000}
-                height={1200}
-                className="relative w-full rounded-[28px] object-cover h-[440px] md:h-[520px]"
-              />
-            </div>
-          </Reveal>
-          <Reveal delay={120}>
-            <p className="text-xs uppercase tracking-[0.28em] text-primary/80">Even kennismaken</p>
-            <h2 className="mt-3 font-serif text-4xl text-foreground sm:text-5xl">
-              Een buurtzaak met een verhaal.
-            </h2>
-            <p className="mt-6 text-base leading-relaxed text-muted-foreground">
-              Rosi opende op Koningsdag 2026 in het hart van Monster. Geen
-              ingewikkelde concepten, gewoon goede ingrediënten, een fijne
-              plek en de tijd nemen voor iedereen die binnenkomt.
-            </p>
-            <blockquote className="mt-8 border-l-2 border-primary/60 pl-5 font-serif italic text-xl text-foreground">
-              "We wilden de plek zijn waar je tussen de middag écht even uit de
-              ren stapt."
-              <footer className="mt-2 text-sm not-italic font-sans text-muted-foreground">
-                Fay Roos
-              </footer>
-            </blockquote>
+    <section className="-mt-16 flex min-h-svh flex-col">
+      <div className="flex flex-1 flex-col md:grid md:grid-cols-[7fr_5fr]">
+        {/* Tekstkolom, laag uitgelijnd, veel lucht erboven */}
+        <div className="relative z-10 flex flex-col justify-end px-5 pt-28 pb-10 md:px-10 md:pb-14">
+          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+            Lunchroom in Monster
+          </p>
+          <h1 className="mt-4 text-[clamp(3.4rem,10.5vw,9rem)] leading-[0.92] tracking-[-0.04em] text-foreground md:-mr-40">
+            De lunch
+            <br />
+            staat klaar.
+          </h1>
+          <p className="mt-7 max-w-sm text-lg leading-snug text-foreground/80">
+            Verse koffie, huisgemaakte taart en broodjes van de bakker om de hoek. Binnenlopen mag
+            altijd.
+          </p>
+          <div className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
             <Link
-              to="/over"
-              className="mt-8 inline-flex items-center text-sm text-primary hover:text-[color:var(--terracotta)] transition-colors"
+              to="/menu"
+              className="bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-foreground"
             >
-              Lees haar verhaal →
+              Bekijk de kaart
             </Link>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* OPENINGSTIJDEN + CTA */}
-      <section className="container-prose py-20">
-        <div className="grid gap-10 md:grid-cols-2 md:items-center">
-          <Reveal>
-            <p className="text-xs uppercase tracking-[0.28em] text-primary/80">Open deuren</p>
-            <h2 className="mt-3 font-serif text-4xl text-foreground">Wanneer je langs kunt komen</h2>
-            <ul className="mt-6 divide-y divide-border/60 text-base">
-              {[
-                ["Maandag", "08:30 - 17:00"],
-                ["Dinsdag", "08:30 - 17:00"],
-                ["Woensdag", "08:30 - 17:00"],
-                ["Donderdag", "08:30 - 17:00"],
-                ["Vrijdag", "08:30 - 17:00"],
-                ["Zaterdag", "09:00 - 17:00"],
-                ["Zondag", "10:00 - 16:00"],
-              ].map(([d, h]) => (
-                <li key={d} className="flex items-center justify-between py-3">
-                  <span>{d}</span>
-                  <span className="font-serif tabular-nums text-foreground">{h}</span>
-                </li>
-              ))}
-            </ul>
-          </Reveal>
-
-          <Reveal delay={120}>
-            <div className="rounded-[28px] bg-primary p-10 text-primary-foreground">
-              <h3 className="font-serif text-3xl">Kom langs in Monster</h3>
-              <p className="mt-3 text-primary-foreground/85">
-                Choorstraat 12, Monster. Geen reservering nodig, maar wel zo
-                fijn als je met meer dan vier mensen komt.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-3">
-                <Link
-                  to="/reserveren"
-                  className="rounded-full bg-card px-5 py-2.5 text-sm text-foreground hover:bg-background transition-colors"
-                >
-                  Reserveer een tafel
-                </Link>
-                <Link
-                  to="/contact"
-                  className="rounded-full border border-primary-foreground/40 px-5 py-2.5 text-sm hover:bg-primary-foreground/10 transition-colors"
-                >
-                  Route & contact
-                </Link>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* INSTAGRAM */}
-      <section className="container-prose pb-20">
-        <Reveal>
-          <div className="flex items-end justify-between gap-4">
-            <div>
-              <p className="text-xs uppercase tracking-[0.28em] text-primary/80">Volg ons</p>
-              <h2 className="mt-3 font-serif text-3xl text-foreground">@lunchroomrosi</h2>
-            </div>
-            <a
-              href="https://instagram.com/lunchroomrosi"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-primary hover:text-[color:var(--terracotta)]"
+            <Link
+              to="/reserveren"
+              className="text-sm font-semibold text-foreground underline decoration-2 underline-offset-4 transition-colors hover:text-primary"
             >
-              <Instagram className="h-4 w-4" /> Volgen
-            </a>
+              Reserveer een tafel
+            </Link>
           </div>
-        </Reveal>
-        <div className="mt-6 grid grid-cols-3 gap-2 md:grid-cols-6">
-          {[food1, sfeer1, food2, sfeer2, food3, sfeer3].map((src, i) => (
-            <a
-              key={i}
-              href="https://instagram.com/lunchroomrosi"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative block aspect-square overflow-hidden rounded-xl bg-card"
-            >
-              <img
-                src={src}
-                alt="Sfeerfoto Lunchroom Rosi"
-                loading="lazy"
-                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-primary/0 transition-colors group-hover:bg-primary/20" />
-            </a>
-          ))}
         </div>
-      </section>
-    </>
+
+        {/* Foto, hard afgesneden tegen de rechterrand */}
+        <div className="relative min-h-[42svh] flex-1 md:mt-28 md:min-h-0">
+          <img
+            src={heroImg}
+            alt="Vers brood en een kop koffie op een houten tafel in Lunchroom Rosi"
+            width={1920}
+            height={1080}
+            fetchPriority="high"
+            className="absolute inset-0 h-full w-full object-cover object-[62%_center]"
+          />
+        </div>
+      </div>
+
+      {/* Feitenregel onderaan */}
+      <div className="border-t border-border bg-background">
+        <div className="flex flex-wrap items-baseline justify-between gap-x-8 gap-y-1 px-5 py-4 text-sm text-foreground/80 md:px-10">
+          <span className="font-semibold text-foreground">Choorstraat 12, Monster</span>
+          <span>Zeven dagen per week open</span>
+          <a
+            href="https://instagram.com/lunchroomrosi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline decoration-2 underline-offset-4 transition-colors hover:text-primary"
+          >
+            @lunchroomrosi
+          </a>
+        </div>
+      </div>
+    </section>
   );
 }

@@ -23,40 +23,34 @@ export function Header() {
 
   return (
     <header
-      className={`fixed md:sticky top-0 z-50 w-full transition-colors duration-300 ${
-        scrolled ? "bg-background/85 backdrop-blur border-b border-border/60" : "bg-transparent"
+      className={`fixed top-0 z-50 w-full transition-colors duration-300 ${
+        scrolled || open ? "bg-background border-b border-border" : "bg-transparent"
       }`}
     >
-      <div className="container-prose flex items-center justify-between py-4">
-        <Link to="/" className="flex items-baseline gap-2 group">
-          <span className="font-serif text-xl tracking-tight text-primary">Lunchroom Rosi</span>
-          <span className="text-xs uppercase tracking-[0.22em] text-muted-foreground hidden sm:inline">
-            Monster
-          </span>
+      <div className="flex items-center justify-between px-5 py-4 md:px-10">
+        <Link to="/" className="text-lg font-extrabold tracking-[-0.03em] text-foreground">
+          Lunchroom Rosi
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden items-center gap-7 md:flex">
           {links.map((l) => (
             <Link
               key={l.to}
               to={l.to}
-              className="text-sm tracking-wide text-foreground/80 hover:text-primary transition-colors relative"
-              activeProps={{ className: "text-primary font-semibold" }}
+              className="text-sm font-medium text-foreground/70 transition-colors hover:text-foreground"
+              activeProps={{
+                className:
+                  "text-foreground underline underline-offset-8 decoration-primary decoration-2",
+              }}
               activeOptions={{ exact: l.to === "/" }}
             >
               {l.label}
             </Link>
           ))}
-          <Link
-            to="/reserveren"
-            className="ml-2 inline-flex items-center rounded-full bg-primary px-5 py-2.5 text-sm text-primary-foreground hover:bg-[color:var(--terracotta)] transition-colors"
-          >
-            Reserveer een tafel
-          </Link>
         </nav>
 
         <button
-          className="md:hidden inline-flex items-center justify-center rounded-full p-2 text-foreground hover:bg-card"
+          className="inline-flex items-center justify-center p-2 text-foreground md:hidden"
           aria-label={open ? "Sluit menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
@@ -66,15 +60,15 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-border/60 bg-background/95 backdrop-blur">
-          <nav className="container-prose flex flex-col py-4">
+        <div className="border-t border-border bg-background md:hidden">
+          <nav className="flex flex-col px-5 py-2">
             {links.map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
                 onClick={() => setOpen(false)}
-                className="py-3 text-base text-foreground/85 border-b border-border/40 last:border-0"
-                activeProps={{ className: "text-primary font-semibold" }}
+                className="border-b border-border/60 py-3.5 text-base font-medium text-foreground last:border-0"
+                activeProps={{ className: "text-primary" }}
                 activeOptions={{ exact: l.to === "/" }}
               >
                 {l.label}
