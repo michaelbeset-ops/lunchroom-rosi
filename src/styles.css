@@ -271,14 +271,14 @@
   /* De parasol-volant: gestreept met geschulpte rand, zoals hun parasols.
      Je kijkt vanonder de parasol de straat op. */
   .volant {
-    height: 42px;
-    background: repeating-linear-gradient(90deg, var(--blush) 0 30px, var(--cream) 30px 60px);
+    height: 34px;
+    background: repeating-linear-gradient(90deg, var(--blush) 0 26px, var(--cream) 26px 52px);
     -webkit-mask:
-      linear-gradient(#000 0 0) 0 0 / 100% calc(100% - 13px) no-repeat,
-      radial-gradient(circle at 15px 0, #000 13.5px, #0000 14.5px) 0 100% / 30px 13px repeat-x;
+      linear-gradient(#000 0 0) 0 0 / 100% calc(100% - 11px) no-repeat,
+      radial-gradient(circle at 13px 0, #000 11.5px, #0000 12.5px) 0 100% / 26px 11px repeat-x;
     mask:
-      linear-gradient(#000 0 0) 0 0 / 100% calc(100% - 13px) no-repeat,
-      radial-gradient(circle at 15px 0, #000 13.5px, #0000 14.5px) 0 100% / 30px 13px repeat-x;
+      linear-gradient(#000 0 0) 0 0 / 100% calc(100% - 11px) no-repeat,
+      radial-gradient(circle at 13px 0, #000 11.5px, #0000 12.5px) 0 100% / 26px 11px repeat-x;
   }
 
   /* Warme, onregelmatige fotolijst: net iets minder blokkerig dan een rechthoek */
