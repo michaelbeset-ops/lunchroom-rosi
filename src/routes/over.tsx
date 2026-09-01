@@ -51,7 +51,7 @@ function OverPage() {
           </p>
           <p>
             Op Koningsdag 2026 opende ik de deuren van Rosí. Een knus pand aan
-            de Choorstraat dat al jaren leeg stond. Mijn moeder en ik hebben
+            de Molenstraat dat al jaren leeg stond. Mijn moeder en ik hebben
             er weken geschuurd, geverfd en getimmerd. Mijn opa kwam elke dag
             koffie brengen. Het is écht ons hoekje geworden.
           </p>

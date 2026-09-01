@@ -35,9 +35,9 @@ export function Footer() {
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Bezoek</p>
           <address className="not-italic mt-3 text-sm leading-relaxed">
-            Choorstraat 12
+            Molenstraat 35
             <br />
-            2681 AR Monster
+            Monster
             <br />
             <a href="tel:+31174123456" className="hover:text-primary">
               0174 – 12 34 56
