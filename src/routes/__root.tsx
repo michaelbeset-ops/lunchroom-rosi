@@ -37,15 +37,23 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="font-serif text-2xl text-foreground">Oeps, dat ging niet helemaal goed</h1>
-        <p className="mt-2 text-sm text-muted-foreground">Probeer het nog eens of ga terug naar de homepagina.</p>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Probeer het nog eens of ga terug naar de homepagina.
+        </p>
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
-            onClick={() => { router.invalidate(); reset(); }}
+            onClick={() => {
+              router.invalidate();
+              reset();
+            }}
             className="rounded-full bg-primary px-5 py-2.5 text-sm text-primary-foreground hover:bg-[color:var(--terracotta)] transition-colors"
           >
             Probeer opnieuw
           </button>
-          <a href="/" className="rounded-full border border-input bg-card px-5 py-2.5 text-sm text-foreground hover:bg-muted transition-colors">
+          <a
+            href="/"
+            className="rounded-full border border-input bg-card px-5 py-2.5 text-sm text-foreground hover:bg-muted transition-colors"
+          >
             Naar home
           </a>
         </div>
@@ -60,10 +68,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Lunchroom Rosi | Verse koffie & lunch in Monster" },
-      { name: "description", content: "Lunchroom Rosi in het hart van Monster. Verse koffie, huisgemaakte lunch en taart, en een warm welkom." },
+      {
+        name: "description",
+        content:
+          "Lunchroom Rosi in het hart van Monster. Verse koffie, huisgemaakte lunch en taart, en een warm welkom.",
+      },
       { name: "theme-color", content: "#6B7A4A" },
       { property: "og:title", content: "Lunchroom Rosi | Monster" },
-      { property: "og:description", content: "Een knus hoekje in Monster met verse koffie, lunch en huisgemaakt gebak." },
+      {
+        property: "og:description",
+        content: "Een knus hoekje in Monster met verse koffie, lunch en huisgemaakt gebak.",
+      },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "Lunchroom Rosi" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -102,7 +117,7 @@ function RootComponent() {
       <HeadContent />
       <div className="flex min-h-screen flex-col">
         <Header />
-        <main className="flex-1 pt-16 md:pt-0">
+        <main className="flex-1 pt-16">
           <Outlet />
         </main>
         <Footer />
