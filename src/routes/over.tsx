@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import fayImg from "@/assets/fay.jpg";
-import sfeer1 from "@/assets/sfeer-1.jpg";
-import sfeer2 from "@/assets/sfeer-2.jpg";
-import food2 from "@/assets/food-2.jpg";
+import achterDeBar from "@/assets/instagram/achter-de-bar.jpg";
+import cocktailsTafel from "@/assets/instagram/cocktails-tafel.jpg";
+import matchaCookies from "@/assets/instagram/matcha-cookies.jpg";
+import proost from "@/assets/instagram/proost.jpg";
 import { Reveal } from "@/components/site/Reveal";
 import { WaveDivider } from "@/components/site/WaveDivider";
 
@@ -35,11 +35,11 @@ function OverPage() {
       <section className="container-prose grid gap-12 pb-20 md:grid-cols-[5fr_7fr]">
         <Reveal>
           <img
-            src={fayImg}
-            alt="Fay Roos in haar lunchroom"
+            src={achterDeBar}
+            alt="Achter de bar bij Rosí wordt een ijskoffie geroerd"
             loading="lazy"
-            width={1000}
-            height={1200}
+            width={900}
+            height={1600}
             className="w-full rounded-[28px] object-cover h-[480px] md:h-[600px]"
           />
         </Reveal>
@@ -83,9 +83,9 @@ function OverPage() {
 
       <section className="container-prose grid gap-6 py-20 md:grid-cols-3">
         {[
-          { src: sfeer1, alt: "Koffie wordt gezet aan de bar" },
-          { src: food2, alt: "Huisgemaakte taart en koffie" },
-          { src: sfeer2, alt: "Bloemen op tafel" },
+          { src: matchaCookies, alt: "IJskoude matcha latte naast een schaaltje cookies" },
+          { src: cocktailsTafel, alt: "Spritz en een coupe met aardbei tussen de bloesem" },
+          { src: proost, alt: "Twee handen proosten voor een kast vol bloemen" },
         ].map((img, i) => (
           <Reveal key={img.src} delay={i * 80}>
             <img
