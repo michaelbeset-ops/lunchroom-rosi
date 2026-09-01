@@ -70,6 +70,9 @@ export function Footer() {
             <Link to="/contact" className="hover:text-[color:var(--blush)]">
               Contact
             </Link>
+            <Link to="/privacy" className="hover:text-[color:var(--blush)]">
+              Privacy &amp; cookies
+            </Link>
             <a
               href="https://sitefront.nl"
               target="_blank"

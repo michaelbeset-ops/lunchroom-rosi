@@ -6,6 +6,7 @@ import heroImg from "@/assets/hero-sfeer-v2.jpg";
 import barCookies from "@/assets/instagram/bar-cookies.jpg";
 import drankjeBank from "@/assets/instagram/drankje-bank.jpg";
 import cheesecake from "@/assets/instagram/cheesecake-citroen.jpg";
+import matchaCookies from "@/assets/instagram/matcha-cookies.jpg";
 import { Reveal } from "@/components/site/Reveal";
 import { RosiMedaillon } from "@/components/site/RosiMark";
 import { WaveDivider } from "@/components/site/WaveDivider";
@@ -58,6 +59,12 @@ const openingHours = [
   ["Zaterdag", "09:00 – 17:00"],
   ["Zondag", "10:00 – 16:00"],
 ] as const;
+
+const highlightFotos: Record<string, { src: string; alt: string }> = {
+  lunch: { src: matchaCookies, alt: "IJskoude matcha latte naast een schaaltje cookies" },
+  broodjes: { src: barCookies, alt: "Schalen met vers gebak op de bar" },
+  zoet: { src: cheesecake, alt: "Punt citroencheesecake op een schulpbordje" },
+};
 
 const highlightIds = ["lunch", "broodjes", "zoet"] as const;
 
@@ -207,6 +214,14 @@ function HomePage() {
         <div className="mt-14 grid gap-x-14 gap-y-12 md:grid-cols-3">
           {highlights.map((cat, i) => (
             <Reveal key={cat.id} delay={i * 80}>
+              <img
+                src={highlightFotos[cat.id].src}
+                alt={highlightFotos[cat.id].alt}
+                loading="lazy"
+                width={800}
+                height={800}
+                className="photo-soft mb-5 aspect-[4/3] w-full object-cover"
+              />
               <h3 className="font-serif text-2xl text-[color:var(--terracotta)]">{cat.title}</h3>
               <div className="rule-soft mt-3" />
               <ul className="mt-5 space-y-5">
