@@ -1,15 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { menu } from "@/data/menu";
+import barCookies from "@/assets/instagram/bar-cookies.jpg";
 import { Reveal } from "@/components/site/Reveal";
 import { WaveDivider } from "@/components/site/WaveDivider";
 
 export const Route = createFileRoute("/menu")({
   head: () => ({
     meta: [
-      { title: "Menukaart | Lunchroom Rosi Monster" },
-      { name: "description", content: "Vers belegde broodjes, soepen, salades, huisgemaakte taart en goede koffie. Bekijk de hele menukaart van Lunchroom Rosi in Monster." },
-      { property: "og:title", content: "Menukaart | Lunchroom Rosi" },
-      { property: "og:description", content: "De volledige menukaart van Lunchroom Rosi in Monster." },
+      { title: "Menukaart | Rosí Monster" },
+      { name: "description", content: "Vers belegde broodjes, soepen, salades, huisgemaakte taart en goede koffie. Bekijk de hele menukaart van Rosí in Monster." },
+      { property: "og:title", content: "Menukaart | Rosí" },
+      { property: "og:description", content: "De volledige menukaart van Rosí in Monster." },
       { property: "og:url", content: "/menu" },
     ],
     links: [{ rel: "canonical", href: "/menu" }],
@@ -30,6 +31,17 @@ function MenuPage() {
           die staan vaak met krijt op het bord boven de bar.
         </p>
         <WaveDivider className="mt-8 mx-auto max-w-[200px]" />
+      </section>
+
+      <section className="container-prose pb-14">
+        <img
+          src={barCookies}
+          alt="Schalen met brownies, cookies en matcha cookies op de bar bij Rosí"
+          loading="lazy"
+          width={1200}
+          height={1600}
+          className="photo-soft aspect-[16/7] w-full object-cover object-[center_62%]"
+        />
       </section>
 
       {/* Categorie nav */}

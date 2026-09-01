@@ -9,10 +9,10 @@ import { WaveDivider } from "@/components/site/WaveDivider";
 export const Route = createFileRoute("/over")({
   head: () => ({
     meta: [
-      { title: "Over Rosi | Het verhaal van Fay" },
-      { name: "description", content: "Fay Roos opende Lunchroom Rosi op Koningsdag 2026 in haar geboorteplaats Monster. Lees hoe het begon en waar de naam vandaan komt." },
-      { property: "og:title", content: "Over Rosi | Het verhaal van Fay" },
-      { property: "og:description", content: "Het verhaal achter Lunchroom Rosi in Monster." },
+      { title: "Over Rosí | Het verhaal van Fay" },
+      { name: "description", content: "Fay Roos opende Rosí op Koningsdag 2026 in haar geboorteplaats Monster. Lees hoe het begon en waar de naam vandaan komt." },
+      { property: "og:title", content: "Over Rosí | Het verhaal van Fay" },
+      { property: "og:description", content: "Het verhaal achter Rosí in Monster." },
       { property: "og:url", content: "/over" },
     ],
     links: [{ rel: "canonical", href: "/over" }],
@@ -50,13 +50,13 @@ function OverPage() {
             of chef-achtig, gewoon: koken voor mensen die ik leuk vind.
           </p>
           <p>
-            Op Koningsdag 2026 opende ik de deuren van Rosi. Een knus pand aan
+            Op Koningsdag 2026 opende ik de deuren van Rosí. Een knus pand aan
             de Choorstraat dat al jaren leeg stond. Mijn moeder en ik hebben
             er weken geschuurd, geverfd en getimmerd. Mijn opa kwam elke dag
             koffie brengen. Het is écht ons hoekje geworden.
           </p>
           <p>
-            De naam? Rosi was de hond van mijn oma. Een trouwe, gezellige
+            De naam? Rosí was de hond van mijn oma. Een trouwe, gezellige
             schat die altijd in de keuken lag, hopend op een korstje brood.
             Het voelde gewoon goed om de zaak naar haar te noemen.
           </p>

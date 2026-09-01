@@ -7,10 +7,10 @@ import { Check } from "lucide-react";
 export const Route = createFileRoute("/reserveren")({
   head: () => ({
     meta: [
-      { title: "Reserveren | Lunchroom Rosi Monster" },
-      { name: "description", content: "Reserveer eenvoudig een tafel bij Lunchroom Rosi in Monster. Voor lunch, koffie of een gezellige middag met taart." },
-      { property: "og:title", content: "Reserveren | Lunchroom Rosi" },
-      { property: "og:description", content: "Reserveer een tafel bij Rosi in Monster." },
+      { title: "Reserveren | Rosí Monster" },
+      { name: "description", content: "Reserveer eenvoudig een tafel bij Rosí in Monster. Voor lunch, koffie of een gezellige middag met taart." },
+      { property: "og:title", content: "Reserveren | Rosí" },
+      { property: "og:description", content: "Reserveer een tafel bij Rosí in Monster." },
       { property: "og:url", content: "/reserveren" },
     ],
     links: [{ rel: "canonical", href: "/reserveren" }],
