@@ -97,7 +97,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             addressLocality: "Monster",
             addressCountry: "NL",
           },
-          telephone: "+31174123456",
           servesCuisine: ["Lunch", "Coffee", "Pastries"],
           priceRange: "€€",
         }),

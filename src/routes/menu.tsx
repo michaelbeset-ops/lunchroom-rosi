@@ -8,7 +8,11 @@ export const Route = createFileRoute("/menu")({
   head: () => ({
     meta: [
       { title: "Menukaart | Rosí Monster" },
-      { name: "description", content: "Vers belegde broodjes, soepen, salades, huisgemaakte taart en goede koffie. Bekijk de hele menukaart van Rosí in Monster." },
+      {
+        name: "description",
+        content:
+          "Vers belegde broodjes, soepen, salades, huisgemaakte taart en goede koffie. Bekijk de hele menukaart van Rosí in Monster.",
+      },
       { property: "og:title", content: "Menukaart | Rosí" },
       { property: "og:description", content: "De volledige menukaart van Rosí in Monster." },
       { property: "og:url", content: "/menu" },
@@ -22,13 +26,15 @@ function MenuPage() {
   return (
     <>
       <section className="container-prose pt-12 pb-10 md:pt-20 text-center">
-        <p className="text-xs uppercase tracking-[0.28em] text-primary/80">Onze kaart</p>
+        <p className="font-script text-[1.9rem] leading-none text-[color:var(--terracotta)]">
+          onze kaart
+        </p>
         <h1 className="mt-3 font-serif text-5xl text-foreground sm:text-6xl">
-          Vers, eerlijk, en <span className="italic text-primary">met liefde</span> gemaakt.
+          Vers, eerlijk en <span className="italic text-primary">huisgemaakt</span>.
         </h1>
         <p className="mx-auto mt-5 max-w-xl text-muted-foreground">
-          De kaart wisselt mee met de seizoenen. Vraag gerust naar de specials,
-          die staan vaak met krijt op het bord boven de bar.
+          De kaart wisselt mee met de seizoenen. Vraag gerust naar de specials, die staan op het
+          bord boven de bar.
         </p>
         <WaveDivider className="mt-8 mx-auto max-w-[200px]" />
       </section>
@@ -65,7 +71,7 @@ function MenuPage() {
           <Reveal key={cat.id} delay={i * 60}>
             <article id={cat.id} className="scroll-mt-28">
               <header className="mb-6">
-                <h2 className="font-serif text-3xl text-primary">{cat.title}</h2>
+                <h2 className="font-serif text-3xl text-[color:var(--terracotta)]">{cat.title}</h2>
                 {cat.subtitle && (
                   <p className="mt-1 text-xs uppercase tracking-[0.22em] text-muted-foreground">
                     {cat.subtitle}
@@ -79,7 +85,9 @@ function MenuPage() {
                     <div className="flex items-baseline">
                       <h3 className="font-serif text-lg text-foreground">{item.name}</h3>
                       <span className="menu-dots" aria-hidden="true" />
-                      <span className="font-serif tabular-nums text-foreground">€ {item.price}</span>
+                      <span className="font-serif tabular-nums text-foreground">
+                        € {item.price}
+                      </span>
                     </div>
                     {item.description && (
                       <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
@@ -95,11 +103,11 @@ function MenuPage() {
       </section>
 
       <section className="container-prose pb-20">
-        <div className="rounded-[28px] bg-card p-10 text-center">
+        <div className="rounded-[28px] bg-[color:var(--blush)]/25 p-10 text-center">
           <h2 className="font-serif text-3xl text-foreground">Allergie of dieetwens?</h2>
           <p className="mx-auto mt-3 max-w-lg text-muted-foreground">
-            Laat het ons weten, we doen wat we kunnen om iets lekkers voor je
-            te maken. Vegan, glutenvrij of lactosevrij is bijna altijd mogelijk.
+            Laat het ons weten, we doen wat we kunnen om iets lekkers voor je te maken. Vegan,
+            glutenvrij of lactosevrij is bijna altijd mogelijk.
           </p>
           <Link
             to="/contact"

@@ -1,17 +1,21 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import achterDeBar from "@/assets/instagram/achter-de-bar.jpg";
+import barCookies from "@/assets/instagram/bar-cookies.jpg";
 import cocktailsTafel from "@/assets/instagram/cocktails-tafel.jpg";
 import matchaCookies from "@/assets/instagram/matcha-cookies.jpg";
 import proost from "@/assets/instagram/proost.jpg";
 import { Reveal } from "@/components/site/Reveal";
-import { WaveDivider } from "@/components/site/WaveDivider";
 
 export const Route = createFileRoute("/over")({
   head: () => ({
     meta: [
-      { title: "Over Rosí | Het verhaal van Fay" },
-      { name: "description", content: "Fay Roos opende Rosí op Koningsdag 2026 in haar geboorteplaats Monster. Lees hoe het begon en waar de naam vandaan komt." },
-      { property: "og:title", content: "Over Rosí | Het verhaal van Fay" },
+      { title: "Over ons | Rosí Monster" },
+      {
+        name: "description",
+        content:
+          "Rosí is de lunchroom aan de Molenstraat in Monster. Verse koffie, huisgemaakt gebak, lunch en wine nights.",
+      },
+      { property: "og:title", content: "Over ons | Rosí" },
       { property: "og:description", content: "Het verhaal achter Rosí in Monster." },
       { property: "og:url", content: "/over" },
     ],
@@ -25,9 +29,11 @@ function OverPage() {
     <>
       <section className="container-prose pt-12 pb-10 md:pt-20">
         <div className="max-w-2xl">
-          <p className="text-xs uppercase tracking-[0.28em] text-primary/80">Het verhaal</p>
+          <p className="font-script text-[1.9rem] leading-none text-[color:var(--terracotta)]">
+            over ons
+          </p>
           <h1 className="mt-3 font-serif text-5xl text-foreground sm:text-6xl">
-            Begonnen op <span className="italic text-primary">Koningsdag</span>, in het dorp waar ik opgroeide.
+            Een nieuwe plek in <span className="italic text-primary">Monster</span>.
           </h1>
         </div>
       </section>
@@ -36,54 +42,53 @@ function OverPage() {
         <Reveal>
           <img
             src={achterDeBar}
-            alt="Achter de bar bij Rosí wordt een ijskoffie geroerd"
+            alt="Achter de bar bij Rosí wordt een ijskoffie gemaakt"
             loading="lazy"
             width={900}
             height={1600}
-            className="w-full rounded-[28px] object-cover h-[480px] md:h-[600px]"
+            className="photo-soft h-[480px] w-full object-cover md:h-[600px]"
           />
         </Reveal>
         <Reveal delay={100} className="space-y-5 text-base leading-relaxed text-foreground/85">
           <p>
-            Mijn naam is Fay. Ik ben drieëntwintig, geboren en getogen in
-            Monster, en ik heb altijd al iets met eten gehad. Niet ingewikkeld
-            of chef-achtig, gewoon: koken voor mensen die ik leuk vind.
+            Rosí is de lunchroom aan de Molenstraat in Monster, gerund door twee vriendinnen met een
+            liefde voor lekker eten en mooie dingen. Olijfgroene muren, een warme bar, verse bloemen
+            op tafel: we hebben er een plek van gemaakt waar we zelf graag zouden zitten.
           </p>
           <p>
-            Op Koningsdag 2026 opende ik de deuren van Rosí. Een knus pand aan
-            de Molenstraat dat al jaren leeg stond. Mijn moeder en ik hebben
-            er weken geschuurd, geverfd en getimmerd. Mijn opa kwam elke dag
-            koffie brengen. Het is écht ons hoekje geworden.
+            Overdag draaien we op verse koffie, huisgemaakte cookies en brownies, en een lunchkaart
+            die meegaat met de seizoenen. We werken met verse ingrediënten en bakken zoveel mogelijk
+            zelf.
           </p>
           <p>
-            De naam? Rosí was de hond van mijn oma. Een trouwe, gezellige
-            schat die altijd in de keuken lag, hopend op een korstje brood.
-            Het voelde gewoon goed om de zaak naar haar te noemen.
+            En als de zon zakt, schuiven we door: om de zoveel weken is er een wine night, met goede
+            wijn, bites en muziek. Hou onze Instagram in de gaten voor de data.
           </p>
           <p>
-            Wat ik wil bieden is simpel: vers eten, goede koffie, en vooral
-            de tijd. Tijd om je krant uit te lezen, tijd om met je vriendin
-            te kletsen, tijd om gewoon even niets te doen.
+            Reserveren kan via een berichtje op Instagram. Binnenlopen mag natuurlijk altijd, voor
+            jong en oud.
           </p>
         </Reveal>
       </section>
 
-      <section className="bg-card/60 border-y border-border/60">
+      <section className="bg-[color:var(--olive-deep)] text-[color:var(--cream)]">
         <div className="container-prose py-20 text-center">
           <Reveal>
-            <WaveDivider className="mx-auto max-w-[160px]" />
-            <blockquote className="mx-auto mt-6 max-w-3xl font-serif italic text-2xl leading-relaxed text-foreground sm:text-3xl">
-              "Ik kook niet omdat het indrukwekkend moet zijn. Ik kook omdat
-              ik wil dat mensen even thuiskomen, ook als ze net binnen zijn."
+            <p className="font-script text-[2.2rem] leading-none text-[color:var(--blush)]">
+              your new favorite lunch spot
+            </p>
+            <blockquote className="mx-auto mt-6 max-w-3xl font-serif text-2xl leading-relaxed sm:text-3xl">
+              Coffee, bites & wine nights. Voor de eerste koffie van de dag tot het laatste glas van
+              de avond.
             </blockquote>
-            <p className="mt-4 text-sm uppercase tracking-[0.22em] text-muted-foreground">Fay Roos</p>
           </Reveal>
         </div>
       </section>
 
-      <section className="container-prose grid gap-6 py-20 md:grid-cols-3">
+      <section className="container-prose grid gap-6 py-20 md:grid-cols-4">
         {[
           { src: matchaCookies, alt: "IJskoude matcha latte naast een schaaltje cookies" },
+          { src: barCookies, alt: "Schalen met brownies en cookies op de bar" },
           { src: cocktailsTafel, alt: "Spritz en een coupe met aardbei tussen de bloesem" },
           { src: proost, alt: "Twee handen proosten voor een kast vol bloemen" },
         ].map((img, i) => (
@@ -101,15 +106,23 @@ function OverPage() {
       </section>
 
       <section className="container-prose pb-20 text-center">
-        <h2 className="font-serif text-4xl text-foreground">Kom een keer kennismaken</h2>
+        <h2 className="font-serif text-4xl text-foreground">Kom een keer langs</h2>
         <p className="mx-auto mt-3 max-w-lg text-muted-foreground">
-          Loop binnen voor een koffie, of reserveer een tafeltje voor de lunch.
+          Loop binnen voor een koffie, of reserveer via Instagram voor de lunch of een wine night.
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-3">
-          <Link to="/reserveren" className="rounded-full bg-primary px-6 py-3 text-sm text-primary-foreground hover:bg-[color:var(--terracotta)] transition-colors">
-            Reserveer een tafel
-          </Link>
-          <Link to="/menu" className="rounded-full border border-primary/30 bg-card px-6 py-3 text-sm text-foreground hover:border-primary transition-colors">
+          <a
+            href="https://ig.me/m/lunchroomrosi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center rounded-full bg-aperol px-6 py-3 text-sm font-semibold text-[color:var(--cream)] transition-colors hover:bg-[color:var(--terracotta)]"
+          >
+            Reserveer via Instagram
+          </a>
+          <Link
+            to="/menu"
+            className="rounded-full border border-primary/30 bg-card px-6 py-3 text-sm text-foreground transition-colors hover:border-primary"
+          >
             Bekijk de kaart
           </Link>
         </div>
