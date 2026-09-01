@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { useCookieKeuze, zetCookieKeuze } from "@/components/site/CookieBanner";
 import { MapPin, Mail, Instagram } from "lucide-react";
 import { Reveal } from "@/components/site/Reveal";
 import { WaveDivider } from "@/components/site/WaveDivider";
@@ -24,6 +25,43 @@ export const Route = createFileRoute("/contact")({
   }),
   component: ContactPage,
 });
+
+function KaartBlok() {
+  const keuze = useCookieKeuze();
+  const [geladen, setGeladen] = useState(false);
+
+  if (keuze === "ja" || geladen) {
+    return (
+      <iframe
+        title="Locatie Lunchroom Rosí op Google Maps"
+        src="https://www.google.com/maps?q=Molenstraat+35+Monster&output=embed"
+        className="h-72 w-full md:h-[360px]"
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      />
+    );
+  }
+
+  return (
+    <div className="flex h-72 w-full flex-col items-center justify-center gap-3 bg-[color:var(--blush)]/20 px-8 text-center md:h-[360px]">
+      <p className="max-w-xs text-sm leading-relaxed text-foreground/75">
+        Hier staat een kaart van Google Maps. Die laden we pas als jij dat goed vindt, want Google
+        kan daarbij cookies plaatsen.
+      </p>
+      <button
+        type="button"
+        onClick={() => {
+          zetCookieKeuze("ja");
+          setGeladen(true);
+        }}
+        className="rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-[color:var(--terracotta)]"
+      >
+        Kaart tonen
+      </button>
+      <p className="text-xs text-foreground/50">Molenstraat 35, Monster</p>
+    </div>
+  );
+}
 
 function ContactPage() {
   const [sent, setSent] = useState(false);
@@ -112,13 +150,7 @@ function ContactPage() {
 
         <Reveal delay={100}>
           <div className="overflow-hidden rounded-[28px] bg-card h-full">
-            <iframe
-              title="Locatie Rosí op Google Maps"
-              src="https://www.google.com/maps?q=Molenstraat+35+Monster&output=embed"
-              className="h-72 w-full md:h-[360px]"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+            <KaartBlok />
             <form onSubmit={onSubmit} className="grid gap-4 p-8">
               <h2 className="font-serif text-2xl text-foreground">Stuur een berichtje</h2>
               {sent ? (

@@ -30,10 +30,10 @@ function OverPage() {
       <section className="container-prose pt-12 pb-10 md:pt-20">
         <div className="max-w-2xl">
           <p className="font-script text-[1.9rem] leading-none text-[color:var(--terracotta)]">
-            over ons
+            ons verhaal
           </p>
           <h1 className="mt-3 font-serif text-5xl text-foreground sm:text-6xl">
-            Een nieuwe plek in <span className="italic text-primary">Monster</span>.
+            Begonnen op <span className="italic text-primary">Koningsdag</span>.
           </h1>
         </div>
       </section>
@@ -51,22 +51,24 @@ function OverPage() {
         </Reveal>
         <Reveal delay={100} className="space-y-5 text-base leading-relaxed text-foreground/85">
           <p>
-            Rosí is de lunchroom aan de Molenstraat in Monster, gerund door twee vriendinnen met een
-            liefde voor lekker eten en mooie dingen. Olijfgroene muren, een warme bar, verse bloemen
-            op tafel: we hebben er een plek van gemaakt waar we zelf graag zouden zitten.
+            Rosí is de droom van Fay. Ze liep al jaren rond met het idee voor een eigen plek, en
+            toen dit pand aan de Molenstraat vrijkwam, kwam ineens alles samen. Die kans kon ze niet
+            laten lopen: op Koningsdag gingen de deuren open.
+          </p>
+          <p>
+            Inmiddels staat hier een team van allemaal vrouwen dat elke ochtend de oven aanzet.
+            Olijfgroene muren, een warme bar, verse bloemen op tafel: we hebben er een plek van
+            gemaakt waar we zelf graag zouden zitten.
           </p>
           <p>
             Overdag draaien we op verse koffie, huisgemaakte cookies en brownies, en een lunchkaart
-            die meegaat met de seizoenen. We werken met verse ingrediënten en bakken zoveel mogelijk
-            zelf.
+            die meegaat met de seizoenen. We bakken zoveel mogelijk zelf en werken met verse
+            ingrediënten.
           </p>
           <p>
             En als de zon zakt, schuiven we door: om de zoveel weken is er een wine night, met goede
-            wijn, bites en muziek. Hou onze Instagram in de gaten voor de data.
-          </p>
-          <p>
-            Reserveren kan via een berichtje op Instagram. Binnenlopen mag natuurlijk altijd, voor
-            jong en oud.
+            wijn en bites. Reserveren gaat met een berichtje op Instagram; binnenlopen mag altijd,
+            voor jong en oud.
           </p>
         </Reveal>
       </section>

@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as MenuRouteImport } from './routes/menu'
 import { Route as OverRouteImport } from './routes/over'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ReserverenRouteImport } from './routes/reserveren'
 
 const IndexRoute = IndexRouteImport.update({
@@ -35,6 +36,11 @@ const OverRoute = OverRouteImport.update({
   path: '/over',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ReserverenRoute = ReserverenRouteImport.update({
   id: '/reserveren',
   path: '/reserveren',
@@ -46,6 +52,7 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/menu': typeof MenuRoute
   '/over': typeof OverRoute
+  '/privacy': typeof PrivacyRoute
   '/reserveren': typeof ReserverenRoute
 }
 export interface FileRoutesByTo {
@@ -53,6 +60,7 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/menu': typeof MenuRoute
   '/over': typeof OverRoute
+  '/privacy': typeof PrivacyRoute
   '/reserveren': typeof ReserverenRoute
 }
 export interface FileRoutesById {
@@ -61,14 +69,22 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/menu': typeof MenuRoute
   '/over': typeof OverRoute
+  '/privacy': typeof PrivacyRoute
   '/reserveren': typeof ReserverenRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contact' | '/menu' | '/over' | '/reserveren'
+  fullPaths: '/' | '/contact' | '/menu' | '/over' | '/privacy' | '/reserveren'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/menu' | '/over' | '/reserveren'
-  id: '__root__' | '/' | '/contact' | '/menu' | '/over' | '/reserveren'
+  to: '/' | '/contact' | '/menu' | '/over' | '/privacy' | '/reserveren'
+  id:
+    | '__root__'
+    | '/'
+    | '/contact'
+    | '/menu'
+    | '/over'
+    | '/privacy'
+    | '/reserveren'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -76,6 +92,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   MenuRoute: typeof MenuRoute
   OverRoute: typeof OverRoute
+  PrivacyRoute: typeof PrivacyRoute
   ReserverenRoute: typeof ReserverenRoute
 }
 
@@ -109,6 +126,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OverRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/reserveren': {
       id: '/reserveren'
       path: '/reserveren'
@@ -124,6 +148,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   MenuRoute: MenuRoute,
   OverRoute: OverRoute,
+  PrivacyRoute: PrivacyRoute,
   ReserverenRoute: ReserverenRoute,
 }
 export const routeTree = rootRouteImport
