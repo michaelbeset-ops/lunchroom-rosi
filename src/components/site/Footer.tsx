@@ -5,7 +5,7 @@ import { RosiMedaillon } from "@/components/site/RosiMark";
 export function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="mt-24 bg-[color:var(--olive-deep)] text-[color:var(--cream)]">
+    <footer className="border-t border-[color:var(--cream)]/15 bg-[color:var(--olive-deep)] text-[color:var(--cream)]">
       <div className="container-prose grid gap-10 py-14 md:grid-cols-[auto_1fr_1fr_1fr] md:gap-12">
         <RosiMedaillon className="hidden w-28 self-start md:block" />
 
