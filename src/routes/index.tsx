@@ -7,8 +7,9 @@ import barCookies from "@/assets/instagram/bar-cookies.jpg";
 import drankjeBank from "@/assets/instagram/drankje-bank.jpg";
 import cheesecake from "@/assets/instagram/cheesecake-citroen.jpg";
 import matchaCookies from "@/assets/instagram/matcha-cookies.jpg";
+import terrasCookies from "@/assets/instagram/terras-cookies.jpg";
 import { Reveal } from "@/components/site/Reveal";
-import { RosiMedaillon } from "@/components/site/RosiMark";
+import { RosiMedaillon, RosiRoos } from "@/components/site/RosiMark";
 import { WaveDivider } from "@/components/site/WaveDivider";
 import { InstagramFeed } from "@/components/site/InstagramFeed";
 import { menu } from "@/data/menu";
@@ -32,27 +33,6 @@ export const Route = createFileRoute("/")({
   }),
   component: HomePage,
 });
-
-const uspItems = [
-  {
-    title: "Vers en huisgemaakt",
-    body: "De cookies, brownies en taarten komen uit onze eigen oven. Wat er vandaag is, staat op het bord.",
-    tint: "bg-background/70",
-    accent: "bg-[color:var(--terracotta)]",
-  },
-  {
-    title: "Van koffie tot wine night",
-    body: "Ontbijt, lunch, goede koffie en om de zoveel weken een avond met wijn en bites.",
-    tint: "bg-[color:var(--blush)]/25",
-    accent: "bg-[color:var(--aperol)]",
-  },
-  {
-    title: "Elke dag open",
-    body: "Reserveren kan via Instagram, binnenlopen mag altijd. Voor jong en oud.",
-    tint: "bg-background/70",
-    accent: "bg-primary",
-  },
-];
 
 const openingHours = [
   ["Maandag t/m vrijdag", "08:30 – 17:00"],
@@ -142,8 +122,8 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Welkom */}
-      <section className="container-prose grid gap-12 py-20 md:grid-cols-[6fr_5fr] md:gap-16 md:py-28">
+      {/* Welkom: verhaal, beloftes en de collage met polaroid */}
+      <section className="container-prose grid gap-14 py-20 pb-28 md:grid-cols-[6fr_5fr] md:gap-16 md:py-28">
         <Reveal>
           <p className="font-script text-[1.9rem] leading-none text-[color:var(--terracotta)]">
             welkom bij Rosí
@@ -153,52 +133,52 @@ function HomePage() {
           </h2>
           <div className="mt-7 max-w-md space-y-4 text-base leading-relaxed text-foreground/80">
             <p>
-              Rosí is de lunchroom aan de Molenstraat in Monster. Olijfgroene muren, een warme bar
-              en verse bloemen op tafel: een plek om even te blijven hangen.
-            </p>
-            <p>
-              We werken met verse ingrediënten en bakken zelf. Kom voor een snelle koffie, een lange
-              lunch of een borrel met vriendinnen.
+              Rosí begon als de droom van Fay en wordt gerund door een team van allemaal vrouwen.
+              Olijfgroene muren, een warme bar en verse bloemen op tafel: een plek om even te
+              blijven hangen.
             </p>
           </div>
+          <ul className="mt-7 max-w-md space-y-3 text-[0.95rem] text-foreground/85">
+            {[
+              "Cookies, brownies en taarten uit onze eigen oven",
+              "Van de eerste koffie tot de laatste wine night",
+              "Elke dag open, reserveren via Instagram",
+            ].map((punt) => (
+              <li key={punt} className="flex items-center gap-3">
+                <RosiRoos className="h-6 w-auto flex-none text-primary [--roos-bloem:var(--terracotta)]" />
+                {punt}
+              </li>
+            ))}
+          </ul>
           <Link to="/over" className={`${btnQuiet} mt-8`}>
             Lees ons verhaal
           </Link>
         </Reveal>
 
-        <Reveal delay={120} className="grid grid-cols-2 gap-4 self-start">
+        {/* Collage: de dames achter de bar, met de terrasfoto als polaroid */}
+        <Reveal delay={120} className="relative self-center pb-16 md:pb-20">
           <img
             src={barCookies}
-            alt="Schalen met brownies en cookies op de bar bij Rosí"
+            alt="Het team van Rosí achter de bar, met schalen verse cookies"
             loading="lazy"
             width={1200}
             height={1600}
-            className="photo-soft aspect-[3/4] w-full object-cover"
+            className="photo-soft aspect-[4/5] w-full object-cover"
           />
-          <img
-            src={drankjeBank}
-            alt="Huisgemaakte limonade met bosbes en rozemarijn op een houten tafel"
-            loading="lazy"
-            width={1050}
-            height={1400}
-            className="photo-soft mt-10 aspect-[3/4] w-full object-cover"
-          />
+          <figure className="absolute bottom-0 left-1 w-[52%] max-w-[240px] -rotate-[5deg] bg-[color:var(--cream)] p-2.5 pb-1 shadow-[0_16px_36px_-16px_rgb(0_0_0/0.4)] md:-left-6">
+            <img
+              src={terrasCookies}
+              alt="Een van ons met schalen cookies op het terras, onder de roze parasols"
+              loading="lazy"
+              width={800}
+              height={800}
+              className="aspect-square w-full object-cover object-[45%_25%]"
+            />
+            <figcaption className="py-1.5 text-center font-script text-[1.45rem] leading-none text-[color:var(--terracotta)]">
+              dat zijn wij
+            </figcaption>
+          </figure>
         </Reveal>
-      </section>
-
-      {/* Drie beloftes */}
-      <section className="bg-soft">
-        <ul className="container-prose grid gap-6 py-16 md:grid-cols-3 md:py-20">
-          {uspItems.map((usp, i) => (
-            <Reveal as="li" key={usp.title} delay={i * 80}>
-              <div className={`h-full rounded-3xl p-8 ${usp.tint}`}>
-                <span aria-hidden="true" className={`block h-1 w-10 rounded-full ${usp.accent}`} />
-                <h3 className="mt-5 font-serif text-2xl text-foreground">{usp.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-foreground/75">{usp.body}</p>
-              </div>
-            </Reveal>
-          ))}
-        </ul>
       </section>
 
       {/* Uit de kaart */}
