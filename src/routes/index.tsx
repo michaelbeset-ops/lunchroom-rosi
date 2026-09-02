@@ -108,7 +108,10 @@ function HomePage() {
       </section>
 
       {/* Welkom: verhaal, beloftes en de collage met polaroid */}
-      <section className="container-prose grid gap-14 py-20 pb-28 md:grid-cols-[6fr_5fr] md:gap-16 md:py-28">
+      <section
+        id="verhaal"
+        className="container-prose grid scroll-mt-20 gap-14 py-20 pb-28 md:grid-cols-[6fr_5fr] md:gap-16 md:py-28"
+      >
         <Reveal>
           <p className="font-script text-[1.9rem] leading-none text-[color:var(--terracotta)]">
             welkom bij Rosí
@@ -118,7 +121,10 @@ function HomePage() {
           </h2>
           <div className="mt-7 max-w-md space-y-4 text-base leading-relaxed text-foreground/80">
             <p>
-              Rosí begon als de droom van Fay en wordt gerund door een team van allemaal vrouwen.
+              Rosí begon als de droom van Fay: toen dit pand vrijkwam, kwam alles samen en opende
+              ze op Koningsdag de deuren. Inmiddels staat hier een team van allemaal vrouwen.
+            </p>
+            <p>
               Olijfgroene muren, een warme bar en verse bloemen op tafel: een plek om even te
               blijven hangen.
             </p>
@@ -135,9 +141,6 @@ function HomePage() {
               </li>
             ))}
           </ul>
-          <Link to="/over" className={`${btnQuiet} mt-8`}>
-            Lees ons verhaal
-          </Link>
         </Reveal>
 
         {/* Collage: de dames achter de bar, met de terrasfoto als polaroid */}
@@ -236,7 +239,7 @@ function HomePage() {
       <Reviews />
 
       {/* Kom langs: donkergroen, als warme afsluiter */}
-      <section className="bg-[color:var(--olive-deep)] text-[color:var(--cream)]">
+      <section id="contact" className="scroll-mt-16 bg-[color:var(--olive-deep)] text-[color:var(--cream)]">
         <div className="container-prose grid items-center gap-12 py-20 md:grid-cols-[5fr_6fr] md:gap-16 md:py-28">
           <Reveal>
             <p className="font-script text-[1.9rem] leading-none text-[color:var(--blush)]">
@@ -256,7 +259,14 @@ function HomePage() {
                 </li>
               ))}
             </ul>
-            <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-3">
+            <p className="mt-4 text-sm text-[color:var(--cream)]/75">
+              Vragen? Mail{" "}
+              <a href="mailto:hallo@lunchroomrosi.nl" className="underline decoration-[color:var(--blush)] decoration-2 underline-offset-[3px] hover:text-[color:var(--blush)]">
+                hallo@lunchroomrosi.nl
+              </a>{" "}
+              of stuur een DM.
+            </p>
+            <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">
               <a
                 href="https://ig.me/m/lunchroomrosi"
                 target="_blank"
@@ -265,12 +275,14 @@ function HomePage() {
               >
                 Reserveer via Instagram
               </a>
-              <Link
-                to="/contact"
+              <a
+                href="https://www.google.com/maps/search/Molenstraat+35+Monster"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-sm font-semibold text-[color:var(--cream)] underline decoration-[color:var(--blush)] decoration-2 underline-offset-[5px] transition-colors hover:text-[color:var(--blush)]"
               >
-                Route en contact
-              </Link>
+                Route via Google Maps
+              </a>
             </div>
           </Reveal>
 
