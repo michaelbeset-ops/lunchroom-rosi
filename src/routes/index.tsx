@@ -8,11 +8,10 @@ import drankjeBank from "@/assets/instagram/drankje-bank.jpg";
 import cheesecake from "@/assets/instagram/cheesecake-citroen.jpg";
 import matchaCookies from "@/assets/instagram/matcha-cookies.jpg";
 import terrasCookies from "@/assets/instagram/terras-cookies.jpg";
+import proost from "@/assets/instagram/proost.jpg";
 import { Reveal } from "@/components/site/Reveal";
 import { RosiMedaillon, RosiRoos } from "@/components/site/RosiMark";
-import { WaveDivider } from "@/components/site/WaveDivider";
 import { InstagramFeed } from "@/components/site/InstagramFeed";
-import { menu } from "@/data/menu";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -34,30 +33,14 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
+const btnQuiet =
+  "inline-flex items-center rounded-full border border-primary/30 bg-card px-7 py-3.5 text-sm font-medium text-foreground transition-colors hover:border-primary hover:text-primary";
+
 const openingHours = [
   ["Maandag t/m vrijdag", "08:30 – 17:00"],
   ["Zaterdag", "09:00 – 17:00"],
   ["Zondag", "10:00 – 16:00"],
 ] as const;
-
-const highlightFotos: Record<string, { src: string; alt: string }> = {
-  lunch: { src: matchaCookies, alt: "IJskoude matcha latte naast een schaaltje cookies" },
-  broodjes: { src: barCookies, alt: "Schalen met vers gebak op de bar" },
-  zoet: { src: cheesecake, alt: "Punt citroencheesecake op een schulpbordje" },
-};
-
-const highlightIds = ["lunch", "broodjes", "zoet"] as const;
-
-const highlights = highlightIds
-  .map((id) => menu.find((c) => c.id === id))
-  .filter((c): c is NonNullable<typeof c> => Boolean(c))
-  .map((cat) => ({ ...cat, items: cat.items.slice(0, 3) }));
-
-const btnPrimary =
-  "inline-flex items-center rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-[color:var(--terracotta)]";
-const btnQuiet =
-  "inline-flex items-center rounded-full border border-primary/30 bg-card px-7 py-3.5 text-sm font-medium text-foreground transition-colors hover:border-primary hover:text-primary";
-const eyebrow = "text-xs uppercase tracking-[0.28em] text-primary/80";
 
 function HomePage() {
   return (
@@ -181,55 +164,54 @@ function HomePage() {
         </Reveal>
       </section>
 
-      {/* Uit de kaart */}
-      <section className="container-prose py-20 md:py-28">
-        <div className="text-center">
-          <p className={eyebrow}>Uit de kaart</p>
-          <h2 className="mt-3 font-serif text-4xl text-foreground sm:text-5xl">
-            Een greep uit wat er <span className="italic text-primary">staat</span>.
-          </h2>
-          <WaveDivider className="mx-auto mt-7 max-w-[190px]" />
-        </div>
+      {/* Uit de kaart: compacte teaser in parasolroze, met boogfoto's */}
+      <section className="bg-[color:var(--blush)]/30">
+        <div className="container-prose grid items-center gap-10 py-16 md:grid-cols-[6fr_5fr] md:py-20">
+          <Reveal>
+            <p className="font-script text-[1.9rem] leading-none text-[color:var(--terracotta)]">
+              onze kaart
+            </p>
+            <h2 className="mt-3 font-serif text-4xl leading-[1.1] text-foreground sm:text-5xl">
+              Vers, eerlijk en <span className="italic text-primary">huisgemaakt</span>.
+            </h2>
+            <p className="mt-4 max-w-md leading-relaxed text-foreground/80">
+              Cookies en taarten uit eigen oven, een lunchkaart die meegaat met de seizoenen en
+              goede koffie. En om de zoveel weken: wine night.
+            </p>
+            <Link
+              to="/menu"
+              className="mt-7 inline-flex items-center rounded-full bg-aperol px-7 py-3.5 text-sm font-semibold text-[color:var(--cream)] transition-colors hover:bg-[color:var(--terracotta)]"
+            >
+              Bekijk de hele kaart
+            </Link>
+          </Reveal>
 
-        <div className="mt-14 grid gap-x-14 gap-y-12 md:grid-cols-3">
-          {highlights.map((cat, i) => (
-            <Reveal key={cat.id} delay={i * 80}>
-              <img
-                src={highlightFotos[cat.id].src}
-                alt={highlightFotos[cat.id].alt}
-                loading="lazy"
-                width={800}
-                height={800}
-                className="photo-soft mb-5 aspect-[4/3] w-full object-cover"
-              />
-              <h3 className="font-serif text-2xl text-[color:var(--terracotta)]">{cat.title}</h3>
-              <div className="rule-soft mt-3" />
-              <ul className="mt-5 space-y-5">
-                {cat.items.map((item) => (
-                  <li key={item.name}>
-                    <div className="flex items-baseline">
-                      <h4 className="font-serif text-lg text-foreground">{item.name}</h4>
-                      <span className="menu-dots" aria-hidden="true" />
-                      <span className="font-serif tabular-nums text-foreground">
-                        € {item.price}
-                      </span>
-                    </div>
-                    {item.description && (
-                      <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-                        {item.description}
-                      </p>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-          ))}
-        </div>
-
-        <div className="mt-14 text-center">
-          <Link to="/menu" className={btnPrimary}>
-            De hele kaart
-          </Link>
+          <Reveal delay={120} className="flex items-end justify-center gap-4 md:justify-end">
+            <img
+              src={matchaCookies}
+              alt="IJskoude matcha latte naast een schaaltje cookies"
+              loading="lazy"
+              width={800}
+              height={1100}
+              className="h-44 w-30 rounded-t-full object-cover sm:h-52 sm:w-36"
+            />
+            <img
+              src={cheesecake}
+              alt="Punt citroencheesecake op een schulpbordje"
+              loading="lazy"
+              width={800}
+              height={1100}
+              className="mb-8 h-44 w-30 rounded-t-full object-cover sm:h-52 sm:w-36"
+            />
+            <img
+              src={proost}
+              alt="Twee glazen proosten tijdens een wine night"
+              loading="lazy"
+              width={800}
+              height={1100}
+              className="h-44 w-30 rounded-t-full object-cover sm:h-52 sm:w-36"
+            />
+          </Reveal>
         </div>
       </section>
 
