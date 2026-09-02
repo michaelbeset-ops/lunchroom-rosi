@@ -109,12 +109,14 @@ function MenuPage() {
             Laat het ons weten, we doen wat we kunnen om iets lekkers voor je te maken. Vegan,
             glutenvrij of lactosevrij is bijna altijd mogelijk.
           </p>
-          <Link
-            to="/contact"
-            className="mt-6 inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm text-primary-foreground hover:bg-[color:var(--terracotta)] transition-colors"
+          <a
+            href="https://ig.me/m/lunchroomrosi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm text-primary-foreground transition-colors hover:bg-[color:var(--terracotta)]"
           >
-            Neem contact op
-          </Link>
+            Stuur ons een berichtje
+          </a>
         </div>
       </section>
     </>

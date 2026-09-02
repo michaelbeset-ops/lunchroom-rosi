@@ -10,20 +10,12 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as ContactRouteImport } from './routes/contact'
 import { Route as MenuRouteImport } from './routes/menu'
-import { Route as OverRouteImport } from './routes/over'
 import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as ReserverenRouteImport } from './routes/reserveren'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MenuRoute = MenuRouteImport.update({
@@ -31,69 +23,40 @@ const MenuRoute = MenuRouteImport.update({
   path: '/menu',
   getParentRoute: () => rootRouteImport,
 } as any)
-const OverRoute = OverRouteImport.update({
-  id: '/over',
-  path: '/over',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ReserverenRoute = ReserverenRouteImport.update({
-  id: '/reserveren',
-  path: '/reserveren',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/contact': typeof ContactRoute
   '/menu': typeof MenuRoute
-  '/over': typeof OverRoute
   '/privacy': typeof PrivacyRoute
-  '/reserveren': typeof ReserverenRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/contact': typeof ContactRoute
   '/menu': typeof MenuRoute
-  '/over': typeof OverRoute
   '/privacy': typeof PrivacyRoute
-  '/reserveren': typeof ReserverenRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/contact': typeof ContactRoute
   '/menu': typeof MenuRoute
-  '/over': typeof OverRoute
   '/privacy': typeof PrivacyRoute
-  '/reserveren': typeof ReserverenRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/contact' | '/menu' | '/over' | '/privacy' | '/reserveren'
+  fullPaths: '/' | '/menu' | '/privacy'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/contact' | '/menu' | '/over' | '/privacy' | '/reserveren'
-  id:
-    | '__root__'
-    | '/'
-    | '/contact'
-    | '/menu'
-    | '/over'
-    | '/privacy'
-    | '/reserveren'
+  to: '/' | '/menu' | '/privacy'
+  id: '__root__' | '/' | '/menu' | '/privacy'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  ContactRoute: typeof ContactRoute
   MenuRoute: typeof MenuRoute
-  OverRoute: typeof OverRoute
   PrivacyRoute: typeof PrivacyRoute
-  ReserverenRoute: typeof ReserverenRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -105,25 +68,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/menu': {
       id: '/menu'
       path: '/menu'
       fullPath: '/menu'
       preLoaderRoute: typeof MenuRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/over': {
-      id: '/over'
-      path: '/over'
-      fullPath: '/over'
-      preLoaderRoute: typeof OverRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -133,23 +82,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/reserveren': {
-      id: '/reserveren'
-      path: '/reserveren'
-      fullPath: '/reserveren'
-      preLoaderRoute: typeof ReserverenRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  ContactRoute: ContactRoute,
   MenuRoute: MenuRoute,
-  OverRoute: OverRoute,
   PrivacyRoute: PrivacyRoute,
-  ReserverenRoute: ReserverenRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

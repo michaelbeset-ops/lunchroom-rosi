@@ -3,12 +3,16 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { RosiRoos } from "@/components/site/RosiMark";
 
-const links = [
+const paginaLinks = [
   { to: "/", label: "Home" },
   { to: "/menu", label: "Menu" },
-  { to: "/over", label: "Over" },
-  { to: "/reserveren", label: "Reserveren" },
-  { to: "/contact", label: "Contact" },
+] as const;
+
+/* Ankers op de homepage; gewone links zodat ze ook vanaf de menupagina
+   werken (volledige navigatie, browser scrolt zelf naar het anker) */
+const ankerLinks = [
+  { anker: "verhaal", label: "Ons verhaal" },
+  { anker: "contact", label: "Contact" },
 ] as const;
 
 export function Header() {
@@ -40,7 +44,7 @@ export function Header() {
         </Link>
 
         <nav className="hidden items-center gap-7 md:flex">
-          {links.map((l) => (
+          {paginaLinks.map((l) => (
             <Link
               key={l.to}
               to={l.to}
@@ -52,6 +56,15 @@ export function Header() {
             >
               {l.label}
             </Link>
+          ))}
+          {ankerLinks.map((l) => (
+            <a
+              key={l.anker}
+              href={`${import.meta.env.BASE_URL}#${l.anker}`}
+              className="text-sm text-foreground/70 transition-colors hover:text-primary"
+            >
+              {l.label}
+            </a>
           ))}
         </nav>
 
@@ -68,7 +81,7 @@ export function Header() {
       {open && (
         <div className="border-t border-border bg-background md:hidden">
           <nav className="flex flex-col px-5 py-2">
-            {links.map((l) => (
+            {paginaLinks.map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
@@ -79,6 +92,16 @@ export function Header() {
               >
                 {l.label}
               </Link>
+            ))}
+            {ankerLinks.map((l) => (
+              <a
+                key={l.anker}
+                href={`${import.meta.env.BASE_URL}#${l.anker}`}
+                onClick={() => setOpen(false)}
+                className="border-b border-border/60 py-3.5 text-base text-foreground last:border-0"
+              >
+                {l.label}
+              </a>
             ))}
           </nav>
         </div>

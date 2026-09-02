@@ -73,9 +73,9 @@ export function Footer() {
             <Link to="/menu" className="hover:text-[color:var(--blush)]">
               Menu
             </Link>
-            <Link to="/contact" className="hover:text-[color:var(--blush)]">
+            <a href={`${import.meta.env.BASE_URL}#contact`} className="hover:text-[color:var(--blush)]">
               Contact
-            </Link>
+            </a>
             <Link to="/privacy" className="hover:text-[color:var(--blush)]">
               Privacy &amp; cookies
             </Link>
