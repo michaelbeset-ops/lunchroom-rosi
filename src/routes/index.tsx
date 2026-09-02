@@ -9,6 +9,7 @@ import cheesecake from "@/assets/instagram/cheesecake-citroen.jpg";
 import matchaCookies from "@/assets/instagram/matcha-cookies.jpg";
 import terrasCookies from "@/assets/instagram/terras-cookies.jpg";
 import proost from "@/assets/instagram/proost.jpg";
+import teamfoto from "@/assets/instagram/teamfoto.jpg";
 import { Reveal } from "@/components/site/Reveal";
 import { RosiMedaillon, RosiRoos } from "@/components/site/RosiMark";
 import { InstagramFeed } from "@/components/site/InstagramFeed";
@@ -258,13 +259,16 @@ function HomePage() {
 
           <Reveal delay={120}>
             <img
-              src={cheesecake}
-              alt="Punt citroencheesecake op een schulpbordje in de zon"
+              src={teamfoto}
+              alt="De meiden van Rosí samen op een zomerse avond"
               loading="lazy"
-              width={935}
-              height={1247}
-              className="photo-soft aspect-[4/3] w-full object-cover"
+              width={1400}
+              height={1867}
+              className="photo-soft aspect-square w-full object-cover object-[50%_42%]"
             />
+            <p className="mt-4 text-center font-script text-[1.7rem] leading-none text-[color:var(--blush)]">
+              de meiden van Rosí
+            </p>
           </Reveal>
         </div>
       </section>
