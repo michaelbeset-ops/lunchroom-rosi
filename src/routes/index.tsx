@@ -166,30 +166,59 @@ function HomePage() {
         </Reveal>
       </section>
 
-      {/* Uit de kaart: sfeerfoto met een menukaartje er schuin overheen,
-          zoals de polaroid in de welkomsectie */}
+      {/* Uit de kaart: uitgelichte gerechten met beschrijving en prijsrondje,
+          grote foto ernaast */}
       <section className="bg-[color:var(--blush)]/30">
-        <div className="container-prose grid items-center gap-14 py-16 pb-24 md:grid-cols-[6fr_5fr] md:gap-16 md:py-20 md:pb-24">
+        <div className="container-prose grid items-center gap-12 py-16 md:grid-cols-[6fr_5fr] md:gap-16 md:py-24">
           <Reveal>
             <p className="font-script text-[1.9rem] leading-none text-[color:var(--terracotta)]">
               onze kaart
             </p>
             <h2 className="mt-3 font-serif text-4xl leading-[1.1] text-foreground sm:text-5xl">
-              Vers, eerlijk en <span className="italic text-primary">huisgemaakt</span>.
+              Uitgelicht<span className="text-primary">.</span>
             </h2>
-            <p className="mt-4 max-w-md leading-relaxed text-foreground/80">
-              Cookies en taarten uit eigen oven, een lunchkaart die meegaat met de seizoenen en
-              goede koffie. En om de zoveel weken: wine night.
-            </p>
+
+            <ul className="mt-8 max-w-lg space-y-7">
+              {[
+                {
+                  naam: "Burrata salade",
+                  omschrijving: "Westlandse tomaat, basilicum, olijfolie en zuurdesem",
+                  prijs: "12,50",
+                },
+                {
+                  naam: "Brie & vijg",
+                  omschrijving: "Gegrilde brie, vijgenjam, walnoot en honing",
+                  prijs: "9,75",
+                },
+                {
+                  naam: "Cheesecake",
+                  omschrijving: "Met seizoensfruit en een speculaaskruim",
+                  prijs: "5,25",
+                },
+              ].map((item) => (
+                <li key={item.naam} className="flex items-start justify-between gap-5">
+                  <div>
+                    <h3 className="font-serif text-xl text-foreground">{item.naam}</h3>
+                    <p className="mt-1 text-sm leading-relaxed text-foreground/70">
+                      {item.omschrijving}
+                    </p>
+                  </div>
+                  <span className="flex h-12 w-12 flex-none items-center justify-center rounded-full bg-background font-serif text-[13px] tabular-nums text-[color:var(--terracotta)] shadow-[0_6px_16px_-8px_rgb(0_0_0/0.25)]">
+                    {item.prijs}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
             <Link
               to="/menu"
-              className="mt-7 inline-flex items-center rounded-full bg-aperol px-7 py-3.5 text-sm font-semibold text-[color:var(--cream)] transition-colors hover:bg-[color:var(--terracotta)]"
+              className="mt-9 inline-flex items-center rounded-full bg-aperol px-7 py-3.5 text-sm font-semibold text-[color:var(--cream)] transition-colors hover:bg-[color:var(--terracotta)]"
             >
               Bekijk de hele kaart
             </Link>
           </Reveal>
 
-          <Reveal delay={120} className="relative self-center pb-10 md:pb-12">
+          <Reveal delay={120}>
             <img
               src={matchaCookies}
               alt="IJskoude matcha latte met een schaaltje cookies op tafel"
@@ -198,31 +227,6 @@ function HomePage() {
               height={1400}
               className="photo-soft aspect-[4/5] w-full object-cover"
             />
-            <div className="absolute right-1 bottom-0 w-[72%] max-w-[290px] rotate-2 bg-[color:var(--cream)] p-6 shadow-[0_16px_36px_-16px_rgb(0_0_0/0.4)] md:-right-6">
-              <p className="text-center font-script text-[1.6rem] leading-none text-[color:var(--terracotta)]">
-                vandaag bij Rosí
-              </p>
-              <ul className="mt-4 space-y-2.5 text-sm text-foreground">
-                {[
-                  ["Tomatensoep van het huis", "6,75"],
-                  ["Brie & vijg", "9,75"],
-                  ["Taart van de dag", "4,75"],
-                  ["Flat white", "4,25"],
-                ].map(([naam, prijs]) => (
-                  <li key={naam} className="flex items-baseline">
-                    <span className="font-serif">{naam}</span>
-                    <span className="menu-dots" aria-hidden="true" />
-                    <span className="font-serif tabular-nums">{prijs}</span>
-                  </li>
-                ))}
-              </ul>
-              <Link
-                to="/menu"
-                className="mt-4 block text-center text-xs font-semibold tracking-wide text-[color:var(--terracotta)] underline decoration-2 underline-offset-[4px] transition-colors hover:text-foreground"
-              >
-                en nog veel meer
-              </Link>
-            </div>
           </Reveal>
         </div>
       </section>
