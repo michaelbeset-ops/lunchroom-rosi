@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useRef } from "react";
 /* Aangeleverd interieur met saliegroene muren en olijfgroene stoelen,
    past een-op-een op het palet. Een 2000px-versie maakt dit nog
    scherper op grote schermen. */
@@ -165,9 +166,10 @@ function HomePage() {
         </Reveal>
       </section>
 
-      {/* Uit de kaart: compacte teaser in parasolroze, met boogfoto's */}
+      {/* Uit de kaart: sfeerfoto met een menukaartje er schuin overheen,
+          zoals de polaroid in de welkomsectie */}
       <section className="bg-[color:var(--blush)]/30">
-        <div className="container-prose grid items-center gap-10 py-16 md:grid-cols-[6fr_5fr] md:py-20">
+        <div className="container-prose grid items-center gap-14 py-16 pb-24 md:grid-cols-[6fr_5fr] md:gap-16 md:py-20 md:pb-24">
           <Reveal>
             <p className="font-script text-[1.9rem] leading-none text-[color:var(--terracotta)]">
               onze kaart
@@ -187,95 +189,47 @@ function HomePage() {
             </Link>
           </Reveal>
 
-          <Reveal delay={120} className="flex items-end justify-center gap-4 md:justify-end">
+          <Reveal delay={120} className="relative self-center pb-10 md:pb-12">
             <img
               src={matchaCookies}
-              alt="IJskoude matcha latte naast een schaaltje cookies"
+              alt="IJskoude matcha latte met een schaaltje cookies op tafel"
               loading="lazy"
-              width={800}
-              height={1100}
-              className="h-44 w-30 rounded-t-full object-cover sm:h-52 sm:w-36"
+              width={788}
+              height={1400}
+              className="photo-soft aspect-[4/5] w-full object-cover"
             />
-            <img
-              src={cheesecake}
-              alt="Punt citroencheesecake op een schulpbordje"
-              loading="lazy"
-              width={800}
-              height={1100}
-              className="mb-8 h-44 w-30 rounded-t-full object-cover sm:h-52 sm:w-36"
-            />
-            <img
-              src={proost}
-              alt="Twee glazen proosten tijdens een wine night"
-              loading="lazy"
-              width={800}
-              height={1100}
-              className="h-44 w-30 rounded-t-full object-cover sm:h-52 sm:w-36"
-            />
+            <div className="absolute right-1 bottom-0 w-[72%] max-w-[290px] rotate-2 bg-[color:var(--cream)] p-6 shadow-[0_16px_36px_-16px_rgb(0_0_0/0.4)] md:-right-6">
+              <p className="text-center font-script text-[1.6rem] leading-none text-[color:var(--terracotta)]">
+                vandaag bij Rosí
+              </p>
+              <ul className="mt-4 space-y-2.5 text-sm text-foreground">
+                {[
+                  ["Tomatensoep van het huis", "6,75"],
+                  ["Brie & vijg", "9,75"],
+                  ["Taart van de dag", "4,75"],
+                  ["Flat white", "4,25"],
+                ].map(([naam, prijs]) => (
+                  <li key={naam} className="flex items-baseline">
+                    <span className="font-serif">{naam}</span>
+                    <span className="menu-dots" aria-hidden="true" />
+                    <span className="font-serif tabular-nums">{prijs}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                to="/menu"
+                className="mt-4 block text-center text-xs font-semibold tracking-wide text-[color:var(--terracotta)] underline decoration-2 underline-offset-[4px] transition-colors hover:text-foreground"
+              >
+                en nog veel meer
+              </Link>
+            </div>
           </Reveal>
         </div>
       </section>
 
       <InstagramFeed />
 
-      {/* Lieve woorden: echte reviews van Google */}
-      <section className="container-prose py-20 md:py-24">
-        <div className="text-center">
-          <p className="font-script text-[1.9rem] leading-none text-[color:var(--terracotta)]">
-            lieve woorden
-          </p>
-          <h2 className="mt-3 font-serif text-4xl text-foreground sm:text-5xl">
-            Wat gasten <span className="italic text-primary">zeggen</span>.
-          </h2>
-        </div>
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {[
-            {
-              tekst:
-                "Heerlijk broodje gehad, er is echt zorg aan besteed. Mooi opgemaakt en smaakte top. Leuk personeel, gezellig praatje aan tafel.",
-              naam: "Ellen",
-            },
-            {
-              tekst:
-                "Een mooie aanvulling voor het dorp. Lekker gevarieerde kaart, voor ieder wat wils. En het terras is heerlijk vanaf de middag.",
-              naam: "Marvin",
-            },
-            {
-              tekst:
-                "Wat een aanwinst! Eindelijk een plek voor heerlijke thee, een echte matcha en arretjescake erbij, mooi gepresenteerd.",
-              naam: "Gitta",
-            },
-          ].map((review, i) => (
-            <Reveal as="div" key={review.naam} delay={i * 80}>
-              <figure className="flex h-full flex-col rounded-3xl bg-card p-8">
-                <div
-                  className="text-[color:var(--terracotta)]"
-                  role="img"
-                  aria-label="Vijf van de vijf sterren"
-                >
-                  {"\u2605\u2605\u2605\u2605\u2605"}
-                </div>
-                <blockquote className="mt-4 flex-1 font-serif text-lg leading-relaxed text-foreground">
-                  {review.tekst}
-                </blockquote>
-                <figcaption className="mt-4 text-sm text-foreground/60">
-                  {review.naam} &middot; via Google
-                </figcaption>
-              </figure>
-            </Reveal>
-          ))}
-        </div>
-        <p className="mt-8 text-center text-sm">
-          <a
-            href="https://www.google.com/maps/search/Lunchroom+Ros%C3%AD+Monster"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-semibold text-foreground underline decoration-primary decoration-2 underline-offset-[5px] transition-colors hover:text-primary"
-          >
-            Lees alle 22 reviews op Google
-          </a>
-        </p>
-      </section>
+      <Reviews />
 
       {/* Kom langs: donkergroen, als warme afsluiter */}
       <section className="bg-[color:var(--olive-deep)] text-[color:var(--cream)]">
@@ -332,5 +286,156 @@ function HomePage() {
         </div>
       </section>
     </>
+  );
+}
+
+const reviews = [
+  {
+    tekst:
+      "Heerlijk broodje gehad, er is echt zorg aan besteed. Mooi opgemaakt en smaakte top. Leuk personeel, gezellig praatje aan tafel.",
+    naam: "Ellen",
+  },
+  {
+    tekst:
+      "Prachtige zaak met een heel fijne sfeer, aan elk detail is aandacht besteed. We bestelden een lunch om te delen: supersmakelijk en mooi opgemaakt.",
+    naam: "Marjon & Kees",
+  },
+  {
+    tekst:
+      "Een mooie aanvulling voor het dorp. Lekker gevarieerde kaart, voor ieder wat wils. En het terras is heerlijk vanaf de middag.",
+    naam: "Marvin",
+  },
+  {
+    tekst:
+      "Wat een aanwinst! Eindelijk een plek voor heerlijke thee, een echte matcha en arretjescake erbij, mooi gepresenteerd.",
+    naam: "Gitta",
+  },
+  {
+    tekst:
+      "Superleuke, gezellige lunchroom met een heel vriendelijke eigenaresse en lieve meiden in de bediening. Heerlijke broodjes.",
+    naam: "Christiny",
+  },
+  {
+    tekst:
+      "Op de openingsdag heerlijke koffie en appeltaart gehad. Mooi ingericht en supervriendelijk personeel. Wij komen zeker terug.",
+    naam: "Martin",
+  },
+  {
+    tekst:
+      "Gisteren langs geweest: het eten was heerlijk, de koffie en matcha top (ook om mee te nemen) en het personeel vriendelijk. En 's middags zit je buiten in het zonnetje.",
+    naam: "",
+  },
+  {
+    tekst:
+      "Geweldig! Een fantastische aanwinst voor Monster. De kaart is verrassend en het eten erg goed. Een aanrader!",
+    naam: "",
+  },
+  {
+    tekst: "Supergezellig en heerlijk eten, dikke aanrader.",
+    naam: "",
+  },
+];
+
+function Reviews() {
+  const baan = useRef<HTMLUListElement>(null);
+
+  function schuif(richting: number) {
+    const el = baan.current;
+    if (!el) return;
+    const kaart = el.firstElementChild as HTMLElement | null;
+    el.scrollBy({ left: richting * ((kaart?.clientWidth ?? 340) + 24), behavior: "smooth" });
+  }
+
+  return (
+    <section className="py-20 md:py-24">
+      <div className="container-prose flex flex-wrap items-end justify-between gap-x-8 gap-y-4">
+        <div>
+          <p className="font-script text-[1.9rem] leading-none text-[color:var(--terracotta)]">
+            lieve woorden
+          </p>
+          <h2 className="mt-3 font-serif text-4xl text-foreground sm:text-5xl">
+            Wat gasten <span className="italic text-primary">zeggen</span>.
+          </h2>
+        </div>
+        <div className="hidden gap-2 md:flex">
+          <button
+            type="button"
+            onClick={() => schuif(-1)}
+            aria-label="Vorige reviews"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-primary/30 text-foreground transition-colors hover:border-primary hover:text-primary"
+          >
+            <svg
+              viewBox="0 0 16 16"
+              width="15"
+              height="15"
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M10 3 5 8l5 5" />
+            </svg>
+          </button>
+          <button
+            type="button"
+            onClick={() => schuif(1)}
+            aria-label="Volgende reviews"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-primary/30 text-foreground transition-colors hover:border-primary hover:text-primary"
+          >
+            <svg
+              viewBox="0 0 16 16"
+              width="15"
+              height="15"
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="m6 3 5 5-5 5" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <ul
+        ref={baan}
+        className="geen-scrollbalk review-baan mt-10 flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth"
+      >
+        {reviews.map((review) => (
+          <li key={review.naam} className="w-[82%] max-w-[360px] flex-none snap-start sm:w-[360px]">
+            <figure className="flex h-full flex-col rounded-3xl bg-card p-8">
+              <div
+                className="text-[color:var(--terracotta)]"
+                role="img"
+                aria-label="Vijf van de vijf sterren"
+              >
+                {"\u2605\u2605\u2605\u2605\u2605"}
+              </div>
+              <blockquote className="mt-4 flex-1 font-serif text-lg leading-relaxed text-foreground">
+                {review.tekst}
+              </blockquote>
+              <figcaption className="mt-4 text-sm text-foreground/60">
+                {review.naam} &middot; via Google
+              </figcaption>
+            </figure>
+          </li>
+        ))}
+      </ul>
+
+      <p className="container-prose mt-8 text-sm">
+        <a
+          href="https://www.google.com/maps/search/Lunchroom+Ros%C3%AD+Monster"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold text-foreground underline decoration-primary decoration-2 underline-offset-[5px] transition-colors hover:text-primary"
+        >
+          Lees alle 22 reviews op Google
+        </a>
+      </p>
+    </section>
   );
 }

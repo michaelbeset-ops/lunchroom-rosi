@@ -63,14 +63,24 @@ function ReserverenPage() {
   return (
     <>
       <section className="container-prose pt-12 pb-10 md:pt-20 text-center">
-        <p className="text-xs uppercase tracking-[0.28em] text-primary/80">Reserveren</p>
+        <p className="font-script text-[1.9rem] leading-none text-[color:var(--terracotta)]">
+          reserveren
+        </p>
         <h1 className="mt-3 font-serif text-5xl text-foreground sm:text-6xl">
           Een tafeltje <span className="italic text-primary">voor jou</span>.
         </h1>
         <p className="mx-auto mt-5 max-w-xl text-muted-foreground">
-          Vul het formulier in en wij sturen je per mail of telefoon een bevestiging, meestal binnen
-          een paar uur.
+          Het snelst gaat het met een berichtje via Instagram. Liever mailen? Vul dan het formulier
+          in, dan bevestigen wij je reservering zo snel mogelijk.
         </p>
+        <a
+          href="https://ig.me/m/lunchroomrosi"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-6 inline-flex items-center rounded-full bg-aperol px-7 py-3.5 text-sm font-semibold text-[color:var(--cream)] transition-colors hover:bg-[color:var(--terracotta)]"
+        >
+          Reserveer via Instagram
+        </a>
         <WaveDivider className="mt-8 mx-auto max-w-[160px]" />
       </section>
 

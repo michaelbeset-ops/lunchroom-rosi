@@ -268,6 +268,26 @@
     font-family: "Ephesis", cursive;
   }
 
+  .geen-scrollbalk {
+    scrollbar-width: none;
+  }
+
+  /* Swipebare reviewbaan: eerste kaart lijnt uit met de container,
+     de baan zelf loopt tot de schermrand */
+  .review-baan {
+    padding-inline: 1.25rem;
+    scroll-padding-inline: 1.25rem;
+  }
+  @media (min-width: 768px) {
+    .review-baan {
+      padding-inline: max(1.25rem, calc((100vw - 72rem) / 2 + 1.25rem));
+      scroll-padding-inline: max(1.25rem, calc((100vw - 72rem) / 2 + 1.25rem));
+    }
+  }
+  .geen-scrollbalk::-webkit-scrollbar {
+    display: none;
+  }
+
   /* De parasol-volant: gestreept met geschulpte rand, zoals hun parasols.
      Je kijkt vanonder de parasol de straat op. */
   .volant {

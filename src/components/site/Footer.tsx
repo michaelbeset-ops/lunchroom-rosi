@@ -7,10 +7,16 @@ export function Footer() {
   return (
     <footer className="border-t border-[color:var(--cream)]/15 bg-[color:var(--olive-deep)] text-[color:var(--cream)]">
       <div className="container-prose grid gap-10 py-14 md:grid-cols-[auto_1fr_1fr_1fr] md:gap-12">
-        <RosiMedaillon className="hidden w-28 self-start md:block" />
+        <Link to="/" aria-label="Naar de homepagina" className="hidden self-start md:block">
+          <RosiMedaillon className="w-28" />
+        </Link>
 
         <div>
-          <p className="font-serif text-3xl tracking-[0.14em]">ROSÍ</p>
+          <p className="font-serif text-3xl tracking-[0.14em]">
+            <Link to="/" className="transition-colors hover:text-[color:var(--blush)]">
+              ROSÍ
+            </Link>
+          </p>
           <p className="mt-3 text-sm leading-relaxed text-[color:var(--cream)]/70">
             Koffie, bites en wine nights aan de Molenstraat in Monster. Vers, huisgemaakt en elke
             dag open.
