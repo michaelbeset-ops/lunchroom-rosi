@@ -77,11 +77,11 @@ function HomePage() {
               lunchroom
             </p>
             <h1 className="mt-2 max-w-[11em] font-serif text-[clamp(2.2rem,8.5vw,3.6rem)] leading-[1.04]">
-              Eerst koffie, straks een <em className="italic text-[color:var(--blush)]">spritz</em>.
+              Koffie, lunch &amp; <em className="italic text-[color:var(--blush)]">wine nights</em>.
             </h1>
             <p className="mt-3 max-w-md leading-relaxed text-[color:var(--cream)]/85 md:mt-4">
-              Cookies uit de oven, lunch in het zonnetje en om de zoveel weken een wine night.
-              Schuif gewoon aan, een plan is niet nodig.
+              Vers en huisgemaakt, midden in Monster. Reserveren kan met een berichtje via
+              Instagram, binnenlopen mag altijd.
             </p>
             <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-3 md:mt-6">
               <a
@@ -217,6 +217,65 @@ function HomePage() {
       </section>
 
       <InstagramFeed />
+
+      {/* Lieve woorden: echte reviews van Google */}
+      <section className="container-prose py-20 md:py-24">
+        <div className="text-center">
+          <p className="font-script text-[1.9rem] leading-none text-[color:var(--terracotta)]">
+            lieve woorden
+          </p>
+          <h2 className="mt-3 font-serif text-4xl text-foreground sm:text-5xl">
+            Wat gasten <span className="italic text-primary">zeggen</span>.
+          </h2>
+        </div>
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {[
+            {
+              tekst:
+                "Heerlijk broodje gehad, er is echt zorg aan besteed. Mooi opgemaakt en smaakte top. Leuk personeel, gezellig praatje aan tafel.",
+              naam: "Ellen",
+            },
+            {
+              tekst:
+                "Een mooie aanvulling voor het dorp. Lekker gevarieerde kaart, voor ieder wat wils. En het terras is heerlijk vanaf de middag.",
+              naam: "Marvin",
+            },
+            {
+              tekst:
+                "Wat een aanwinst! Eindelijk een plek voor heerlijke thee, een echte matcha en arretjescake erbij, mooi gepresenteerd.",
+              naam: "Gitta",
+            },
+          ].map((review, i) => (
+            <Reveal as="div" key={review.naam} delay={i * 80}>
+              <figure className="flex h-full flex-col rounded-3xl bg-card p-8">
+                <div
+                  className="text-[color:var(--terracotta)]"
+                  role="img"
+                  aria-label="Vijf van de vijf sterren"
+                >
+                  {"\u2605\u2605\u2605\u2605\u2605"}
+                </div>
+                <blockquote className="mt-4 flex-1 font-serif text-lg leading-relaxed text-foreground">
+                  {review.tekst}
+                </blockquote>
+                <figcaption className="mt-4 text-sm text-foreground/60">
+                  {review.naam} &middot; via Google
+                </figcaption>
+              </figure>
+            </Reveal>
+          ))}
+        </div>
+        <p className="mt-8 text-center text-sm">
+          <a
+            href="https://www.google.com/maps/search/Lunchroom+Ros%C3%AD+Monster"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-foreground underline decoration-primary decoration-2 underline-offset-[5px] transition-colors hover:text-primary"
+          >
+            Lees alle 22 reviews op Google
+          </a>
+        </p>
+      </section>
 
       {/* Kom langs: donkergroen, als warme afsluiter */}
       <section className="bg-[color:var(--olive-deep)] text-[color:var(--cream)]">
