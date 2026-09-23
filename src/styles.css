@@ -356,6 +356,10 @@
     }
   }
 
+  .hero-tekst {
+    text-shadow: 0 2px 18px rgb(85 47 36 / 0.55);
+  }
+
   /* Warme, onregelmatige fotolijst: net iets minder blokkerig dan een rechthoek */
   .photo-soft {
     border-radius: 26px;
