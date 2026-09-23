@@ -52,6 +52,10 @@ export function Header() {
         <Link
           to="/"
           aria-label="Rosí, naar de homepagina"
+          onClick={() => {
+            setOpen(false);
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
           className={`inline-flex items-center gap-2.5 transition-colors ${linkKleur}`}
         >
           <RosiRoos className="h-9 w-auto" />
@@ -92,7 +96,10 @@ export function Header() {
               <Link
                 key={l.to}
                 to={l.to}
-                onClick={() => setOpen(false)}
+                onClick={() => {
+                  setOpen(false);
+                  window.scrollTo({ top: 0 });
+                }}
                 className="border-b border-border/60 py-3.5 text-base font-semibold uppercase tracking-[0.14em] text-primary last:border-0"
                 activeProps={{ className: "underline underline-offset-8" }}
                 activeOptions={{ exact: l.to === "/" }}

@@ -12,6 +12,7 @@ export function Footer() {
         <Link
           to="/"
           aria-label="Rosí Lunchroom, naar de homepagina"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="relative mx-auto block w-[min(84vw,820px)] pb-[6%]"
         >
           <RosiWoordmerk className="block h-auto w-full" />
