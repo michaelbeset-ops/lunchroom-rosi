@@ -23,7 +23,7 @@ function PrivacyPage() {
   return (
     <section className="container-prose py-16 md:py-24">
       <div className="mx-auto max-w-2xl">
-        <p className="font-script text-[1.9rem] leading-none text-[color:var(--terracotta)]">
+        <p className="font-script text-[1.3rem] leading-[1.6] text-[color:var(--terracotta)]">
           goed geregeld
         </p>
         <h1 className="mt-3 font-serif text-4xl text-foreground sm:text-5xl">

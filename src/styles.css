@@ -33,29 +33,32 @@
   font-display: swap;
   src: url("../fonts/fraunces-italic.woff2") format("woff2");
 }
+/* Handschrift: Homemade Apple, de gratis tegenhanger van Adobe
+   Handwriting Ernie uit de huisstijl. */
 @font-face {
-  font-family: "Ephesis";
+  font-family: "Homemade Apple";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("../fonts/ephesis.woff2") format("woff2");
+  src: url("../fonts/homemade-apple.woff2") format("woff2");
 }
+/* Platte tekst: Montserrat (variabel, huisstijl zegt Medium) */
 @font-face {
-  font-family: "DM Sans";
+  font-family: "Montserrat";
   font-style: normal;
-  font-weight: 400 600;
+  font-weight: 400 700;
   font-display: swap;
-  src: url("../fonts/dm-sans-latin.woff2") format("woff2");
+  src: url("../fonts/montserrat-latin.woff2") format("woff2");
   unicode-range:
     U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
     U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
-  font-family: "DM Sans";
+  font-family: "Montserrat";
   font-style: normal;
-  font-weight: 400 600;
+  font-weight: 400 700;
   font-display: swap;
-  src: url("../fonts/dm-sans-latin-ext.woff2") format("woff2");
+  src: url("../fonts/montserrat-latin-ext.woff2") format("woff2");
   unicode-range:
     U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329,
     U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
@@ -100,6 +103,7 @@
   --color-blush: var(--blush);
   --color-cream: var(--cream);
   --color-aperol: var(--aperol);
+  --color-terracotta-deep: var(--terracotta-deep);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
@@ -109,51 +113,54 @@
   --color-black: #000;
   --color-transparent: transparent;
 
-  --font-sans: "DM Sans", "Helvetica Neue", Arial, sans-serif;
+  --font-sans: "Montserrat", "Helvetica Neue", Arial, sans-serif;
   --font-serif: "Fraunces", "Iowan Old Style", Georgia, serif;
 
-  --shadow-soft: 0 18px 40px -28px oklch(0.3 0.03 110 / 0.55);
+  --shadow-soft: 0 18px 40px -28px rgb(85 47 36 / 0.55); /* schaduwkleur #552F24 */
 }
 
 :root {
   --radius: 14px;
 
-  /* Palet uit de zaak zelf: olijfgroene lambrisering, terracotta bar,
-     roomkleurige muren, roze parasols. Zie ook het logo. */
-  --background: oklch(0.958 0.019 88); /* warme room */
-  --foreground: oklch(0.295 0.024 108); /* diep olijfbruin, de inkt */
+  /* Huisstijl Rosí (briefing): achtergrond #F5EDE7, groen #777758 en
+     terracotta #AC6960. Nooit puur wit of zwart. Op groen en terracotta
+     alleen tekst in #F5EDE7, op de achtergrond alleen groen. */
+  --background: #f5ede7;
+  --foreground: #5e5e45; /* het merkgroen, iets dieper voor leesbare lopende tekst */
 
-  --card: oklch(0.928 0.026 96); /* zachte zandkleur */
-  --card-foreground: oklch(0.295 0.024 108);
+  --card: #ede2da;
+  --card-foreground: #5e5e45;
 
-  --popover: oklch(0.958 0.019 88);
-  --popover-foreground: oklch(0.295 0.024 108);
+  --popover: #f5ede7;
+  --popover-foreground: #5e5e45;
 
-  --primary: oklch(0.565 0.055 118); /* olijfgroen, de merkkleur uit het logo */
-  --primary-foreground: oklch(0.968 0.017 88);
+  --primary: #777758;
+  --primary-foreground: #f5ede7;
 
-  --secondary: oklch(0.9 0.03 100);
-  --secondary-foreground: oklch(0.295 0.024 108);
+  --secondary: #ede2da;
+  --secondary-foreground: #5e5e45;
 
-  --muted: oklch(0.915 0.024 96);
-  --muted-foreground: oklch(0.475 0.028 106);
+  --muted: #ede2da;
+  --muted-foreground: #777758;
 
-  --accent: oklch(0.605 0.128 46); /* terracotta van de bar */
-  --accent-foreground: oklch(0.968 0.017 88);
+  --accent: #ac6960;
+  --accent-foreground: #f5ede7;
 
-  --terracotta: oklch(0.605 0.128 46);
-  --olive: oklch(0.565 0.055 118);
-  --olive-deep: oklch(0.4 0.048 120); /* de donkere lambrisering */
-  --blush: oklch(0.82 0.062 22); /* het roze van de parasols */
-  --cream: oklch(0.968 0.017 88);
-  --aperol: oklch(0.66 0.155 44); /* spritz-oranje, alleen voor de primaire knop */
+  --terracotta: #ac6960;
+  --terracotta-deep: #6f2f2e; /* hover op terracotta knoppen */
+  --olive: #777758;
+  --olive-deep: #777758; /* de groene vlakken: hetzelfde merkgroen */
+  --blush: #e5c8c1;
+  --cream: #f5ede7;
+  --aperol: #ac6960; /* de primaire knop, voorheen oranje */
+  --shadow: #552f24;
 
-  --destructive: oklch(0.53 0.15 32);
-  --destructive-foreground: oklch(0.968 0.017 88);
+  --destructive: #6f2f2e;
+  --destructive-foreground: #f5ede7;
 
-  --border: oklch(0.855 0.026 96);
-  --input: oklch(0.855 0.026 96);
-  --ring: oklch(0.605 0.128 46);
+  --border: #e2d3c9;
+  --input: #e2d3c9;
+  --ring: #ac6960;
 }
 
 @layer base {
@@ -175,6 +182,7 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    font-weight: 500;
     font-optical-sizing: auto;
     -webkit-font-smoothing: antialiased;
   }
@@ -264,8 +272,10 @@
     }
   }
 
+  /* Homemade Apple is breed en hoog: gebruik hem een maatje kleiner
+     dan een gewone script. */
   .font-script {
-    font-family: "Ephesis", cursive;
+    font-family: "Homemade Apple", cursive;
   }
 
   .geen-scrollbalk {
@@ -348,17 +358,6 @@
       to {
         opacity: 1;
         transform: none;
-      }
-    }
-
-    /* De tekstring van het medaillon draait langzaam rond */
-    .medaillon-draai {
-      animation: medaillon-rond 28s linear infinite;
-      transform-origin: 80px 80px;
-    }
-    @keyframes medaillon-rond {
-      to {
-        transform: rotate(360deg);
       }
     }
   }

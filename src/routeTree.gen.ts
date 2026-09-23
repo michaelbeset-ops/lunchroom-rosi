@@ -9,13 +9,19 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as MenuRouteImport } from './routes/menu'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as OnsVerhaalRouteImport } from './routes/ons-verhaal'
+import { Route as MenuRouteImport } from './routes/menu'
+import { Route as IndexRouteImport } from './routes/index'
 
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OnsVerhaalRoute = OnsVerhaalRouteImport.update({
+  id: '/ons-verhaal',
+  path: '/ons-verhaal',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MenuRoute = MenuRouteImport.update({
@@ -23,49 +29,60 @@ const MenuRoute = MenuRouteImport.update({
   path: '/menu',
   getParentRoute: () => rootRouteImport,
 } as any)
-const PrivacyRoute = PrivacyRouteImport.update({
-  id: '/privacy',
-  path: '/privacy',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/menu': typeof MenuRoute
+  '/ons-verhaal': typeof OnsVerhaalRoute
   '/privacy': typeof PrivacyRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/menu': typeof MenuRoute
+  '/ons-verhaal': typeof OnsVerhaalRoute
   '/privacy': typeof PrivacyRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/menu': typeof MenuRoute
+  '/ons-verhaal': typeof OnsVerhaalRoute
   '/privacy': typeof PrivacyRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/menu' | '/privacy'
+  fullPaths: '/' | '/menu' | '/ons-verhaal' | '/privacy'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/menu' | '/privacy'
-  id: '__root__' | '/' | '/menu' | '/privacy'
+  to: '/' | '/menu' | '/ons-verhaal' | '/privacy'
+  id: '__root__' | '/' | '/menu' | '/ons-verhaal' | '/privacy'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   MenuRoute: typeof MenuRoute
+  OnsVerhaalRoute: typeof OnsVerhaalRoute
   PrivacyRoute: typeof PrivacyRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ons-verhaal': {
+      id: '/ons-verhaal'
+      path: '/ons-verhaal'
+      fullPath: '/ons-verhaal'
+      preLoaderRoute: typeof OnsVerhaalRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/menu': {
@@ -75,11 +92,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MenuRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/privacy': {
-      id: '/privacy'
-      path: '/privacy'
-      fullPath: '/privacy'
-      preLoaderRoute: typeof PrivacyRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -88,6 +105,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   MenuRoute: MenuRoute,
+  OnsVerhaalRoute: OnsVerhaalRoute,
   PrivacyRoute: PrivacyRoute,
 }
 export const routeTree = rootRouteImport

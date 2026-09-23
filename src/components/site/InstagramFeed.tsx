@@ -19,10 +19,10 @@ export function InstagramFeed() {
   const [groot, ...klein] = tegels;
 
   return (
-    <section className="bg-soft">
+    <section className="bg-background">
       <div className="container-prose py-20 md:py-28">
         <div className="text-center">
-          <p className="font-script text-[1.9rem] leading-none text-[color:var(--terracotta)]">
+          <p className="font-script text-[1.3rem] leading-[1.6] text-[color:var(--terracotta)]">
             uit de zaak
           </p>
           <h2 className="mt-3 font-serif text-4xl text-foreground sm:text-5xl">
@@ -47,7 +47,7 @@ export function InstagramFeed() {
               href={instagramUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex h-full w-full flex-col items-center justify-center gap-3 rounded-2xl bg-[color:var(--olive-deep)] p-4 text-center text-[color:var(--cream)] transition-colors hover:bg-primary"
+              className="flex h-full w-full flex-col items-center justify-center gap-3 rounded-2xl bg-[color:var(--olive-deep)] p-4 text-center text-[color:var(--cream)] transition-colors hover:bg-[color:var(--terracotta)]"
             >
               <RosiMedaillon className="w-20 sm:w-24" />
               <span className="inline-flex items-center gap-2 text-sm font-semibold">

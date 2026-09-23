@@ -85,8 +85,8 @@ export function WelkomPopup() {
             <path d="M3 3l10 10M13 3L3 13" />
           </svg>
         </button>
-        <RosiRoos className="mx-auto h-12 w-auto text-primary [--roos-bloem:var(--terracotta)]" />
-        <p className="mt-3 font-script text-[1.9rem] leading-none text-[color:var(--terracotta)]">
+        <RosiRoos className="mx-auto h-16 w-auto text-[color:var(--terracotta)]" />
+        <p className="mt-3 font-script text-[1.3rem] leading-[1.6] text-[color:var(--terracotta)]">
           leuk dat je er bent
         </p>
         <h2 id="welkom-titel" className="mt-2 font-serif text-2xl text-foreground">
@@ -100,7 +100,7 @@ export function WelkomPopup() {
           href="https://instagram.com/lunchroomrosi"
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-5 inline-flex items-center rounded-full bg-aperol px-6 py-3 text-sm font-semibold text-[color:var(--cream)] transition-colors hover:bg-[color:var(--terracotta)]"
+          className="mt-5 inline-flex items-center rounded-full bg-aperol px-6 py-3 text-sm font-semibold text-[color:var(--cream)] transition-colors hover:bg-[color:var(--terracotta-deep)]"
         >
           Volg @lunchroomrosi
         </a>

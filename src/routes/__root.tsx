@@ -23,7 +23,7 @@ function NotFoundComponent() {
         </p>
         <Link
           to="/"
-          className="mt-6 inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm text-primary-foreground hover:bg-[color:var(--terracotta)] transition-colors"
+          className="mt-6 inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm text-primary-foreground hover:bg-[color:var(--terracotta-deep)] transition-colors"
         >
           Terug naar home
         </Link>
@@ -48,7 +48,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
               router.invalidate();
               reset();
             }}
-            className="rounded-full bg-primary px-5 py-2.5 text-sm text-primary-foreground hover:bg-[color:var(--terracotta)] transition-colors"
+            className="rounded-full bg-primary px-5 py-2.5 text-sm text-primary-foreground hover:bg-[color:var(--terracotta-deep)] transition-colors"
           >
             Probeer opnieuw
           </button>
@@ -75,7 +75,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "Rosí in het hart van Monster. Verse koffie, huisgemaakte lunch en taart, en een warm welkom.",
       },
-      { name: "theme-color", content: "#7f8a5e" },
+      { name: "theme-color", content: "#777758" },
       { property: "og:title", content: "Rosí | Monster" },
       {
         property: "og:description",

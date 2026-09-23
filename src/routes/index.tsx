@@ -7,13 +7,14 @@ import heroImg from "@/assets/hero-sfeer-v2.jpg";
 import barCookies from "@/assets/instagram/bar-cookies.jpg";
 import drankjeBank from "@/assets/instagram/drankje-bank.jpg";
 import cheesecake from "@/assets/instagram/cheesecake-citroen.jpg";
-import matchaCookies from "@/assets/instagram/matcha-cookies.jpg";
 import terrasCookies from "@/assets/instagram/terras-cookies.jpg";
 import proost from "@/assets/instagram/proost.jpg";
-import teamfoto from "@/assets/instagram/teamfoto.jpg";
+import fay from "@/assets/fay.jpg";
 import { Reveal } from "@/components/site/Reveal";
 import { RosiMedaillon, RosiRoos } from "@/components/site/RosiMark";
 import { InstagramFeed } from "@/components/site/InstagramFeed";
+import { openingstijden, telefoon } from "@/data/openingstijden";
+import { special } from "@/data/special";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -38,12 +39,6 @@ export const Route = createFileRoute("/")({
 const btnQuiet =
   "inline-flex items-center rounded-full border border-primary/30 bg-card px-7 py-3.5 text-sm font-medium text-foreground transition-colors hover:border-primary hover:text-primary";
 
-const openingHours = [
-  ["Maandag t/m vrijdag", "08:30 – 17:00"],
-  ["Zaterdag", "09:00 – 17:00"],
-  ["Zondag", "10:00 – 16:00"],
-] as const;
-
 function HomePage() {
   return (
     <>
@@ -62,10 +57,10 @@ function HomePage() {
           className="kenburns absolute inset-0 h-full w-full object-cover object-[42%_58%]"
         />
 
-        {/* Crème verloop bovenin zodat de navigatie leesbaar blijft */}
+        {/* Donker verloop bovenin zodat de lichte navigatie leesbaar blijft */}
         <div
           aria-hidden="true"
-          className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-background via-background/60 to-transparent"
+          className="absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-[color:var(--shadow)]/55 via-[color:var(--shadow)]/20 to-transparent"
         />
 
         {/* Tekstvlak, vast aan de onderrand; op desktop rechtsonder zodat
@@ -74,11 +69,8 @@ function HomePage() {
           <RosiMedaillon className="absolute -top-14 right-5 z-20 w-[104px] md:-top-16 md:right-10 md:w-[124px]" />
           <div className="schulprand" aria-hidden="true" />
           <div className="hero-reveal bg-[color:var(--olive-deep)] px-5 pt-5 pb-6 text-[color:var(--cream)] md:px-10 md:pt-7 md:pb-9">
-            <p className="font-script text-[2rem] leading-none text-[color:var(--blush)] md:text-[2.4rem]">
-              lunchroom
-            </p>
-            <h1 className="mt-2 max-w-[11em] font-serif text-[clamp(2.2rem,8.5vw,3.6rem)] leading-[1.04]">
-              Koffie, lunch &amp; <em className="italic text-[color:var(--blush)]">wine nights</em>.
+            <h1 className="mt-1 max-w-[11em] font-serif text-[clamp(2.2rem,8.5vw,3.6rem)] leading-[1.04]">
+              Koffie, lunch &amp; <em className="italic">wine nights</em>.
             </h1>
             <p className="mt-3 max-w-md leading-relaxed text-[color:var(--cream)]/85 md:mt-4">
               Vers en huisgemaakt, midden in Monster. Reserveren kan met een berichtje via
@@ -89,19 +81,19 @@ function HomePage() {
                 href="https://ig.me/m/lunchroomrosi"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center rounded-full bg-aperol px-7 py-3.5 text-sm font-semibold text-[color:var(--cream)] transition-colors hover:bg-[color:var(--terracotta)]"
+                className="inline-flex items-center rounded-full bg-aperol px-7 py-3.5 text-sm font-semibold text-[color:var(--cream)] transition-colors hover:bg-[color:var(--terracotta-deep)]"
               >
                 Reserveer via Instagram
               </a>
               <Link
                 to="/menu"
-                className="text-sm font-semibold text-[color:var(--cream)] underline decoration-[color:var(--blush)] decoration-2 underline-offset-[5px] transition-colors hover:text-[color:var(--blush)]"
+                className="text-sm font-semibold text-[color:var(--cream)] underline decoration-[color:var(--cream)]/60 decoration-2 underline-offset-[5px] transition-colors hover:decoration-[color:var(--cream)]"
               >
                 Bekijk de kaart
               </Link>
             </div>
             <p className="mt-5 border-t border-[color:var(--cream)]/20 pt-4 text-sm tracking-wide text-[color:var(--cream)]/75">
-              Molenstraat 35, Monster &middot; elke dag open
+              Molenstraat 35, Monster &middot; dinsdag t/m zondag open
             </p>
           </div>
         </div>
@@ -113,7 +105,7 @@ function HomePage() {
         className="container-prose grid scroll-mt-20 gap-14 py-20 pb-28 md:grid-cols-[6fr_5fr] md:gap-16 md:py-28"
       >
         <Reveal>
-          <p className="font-script text-[1.9rem] leading-none text-[color:var(--terracotta)]">
+          <p className="font-script text-[1.3rem] leading-[1.6] text-[color:var(--terracotta)]">
             welkom bij Rosí
           </p>
           <h2 className="mt-3 font-serif text-4xl leading-[1.1] text-foreground sm:text-5xl">
@@ -121,8 +113,8 @@ function HomePage() {
           </h2>
           <div className="mt-7 max-w-md space-y-4 text-base leading-relaxed text-foreground/80">
             <p>
-              Rosí begon als de droom van Fay: toen dit pand vrijkwam, kwam alles samen en opende
-              ze op Koningsdag de deuren. Inmiddels staat hier een team van allemaal vrouwen.
+              Rosí begon als de droom van Fay: toen dit pand vrijkwam, kwam alles samen en opende ze
+              op Koningsdag de deuren. Inmiddels staat hier een team van allemaal vrouwen.
             </p>
             <p>
               Olijfgroene muren, een warme bar en verse bloemen op tafel: een plek om even te
@@ -133,14 +125,20 @@ function HomePage() {
             {[
               "Cookies, brownies en taarten uit onze eigen oven",
               "Van de eerste koffie tot de laatste wine night",
-              "Elke dag open, reserveren via Instagram",
+              "Dinsdag t/m zondag open, reserveren via Instagram",
             ].map((punt) => (
               <li key={punt} className="flex items-center gap-3">
-                <RosiRoos className="h-6 w-auto flex-none text-primary [--roos-bloem:var(--terracotta)]" />
+                <RosiRoos className="h-7 w-auto flex-none text-[color:var(--terracotta)]" />
                 {punt}
               </li>
             ))}
           </ul>
+          <Link
+            to="/ons-verhaal"
+            className="mt-8 inline-flex text-sm font-semibold text-primary underline decoration-[color:var(--terracotta)] decoration-2 underline-offset-[5px] transition-colors hover:text-[color:var(--terracotta)]"
+          >
+            Lees hoe het allemaal begon
+          </Link>
         </Reveal>
 
         {/* Collage: de dames achter de bar, met de terrasfoto als polaroid */}
@@ -169,62 +167,44 @@ function HomePage() {
         </Reveal>
       </section>
 
-      {/* Uit de kaart: uitgelichte gerechten met beschrijving en prijsrondje,
-          grote foto ernaast */}
-      <section className="bg-[color:var(--blush)]/30">
+      {/* Uitgelicht: de maandspecial, elke maand nieuw via src/data/special.ts */}
+      <section className="bg-[color:var(--blush)]/45">
         <div className="container-prose grid items-center gap-12 py-16 md:grid-cols-[6fr_5fr] md:gap-16 md:py-24">
           <Reveal>
-            <p className="font-script text-[1.9rem] leading-none text-[color:var(--terracotta)]">
-              onze kaart
+            <p className="font-script text-[1.3rem] leading-[1.6] text-[color:var(--terracotta)]">
+              {special.maand}
             </p>
-            <h2 className="mt-3 font-serif text-4xl leading-[1.1] text-foreground sm:text-5xl">
-              Uitgelicht<span className="text-primary">.</span>
+            <h2 className="mt-3 font-serif text-4xl leading-[1.1] text-primary sm:text-5xl">
+              {special.titel}
+              <span className="text-[color:var(--terracotta)]">.</span>
             </h2>
+            <p className="mt-6 max-w-lg font-serif text-xl italic text-primary">
+              {special.ondertitel}
+            </p>
+            <p className="mt-4 max-w-lg leading-relaxed text-foreground/85">{special.tekst}</p>
 
-            <ul className="mt-8 max-w-lg space-y-7">
-              {[
-                {
-                  naam: "Burrata salade",
-                  omschrijving: "Westlandse tomaat, basilicum, olijfolie en zuurdesem",
-                  prijs: "12,50",
-                },
-                {
-                  naam: "Brie & vijg",
-                  omschrijving: "Gegrilde brie, vijgenjam, walnoot en honing",
-                  prijs: "9,75",
-                },
-                {
-                  naam: "Cheesecake",
-                  omschrijving: "Met seizoensfruit en een speculaaskruim",
-                  prijs: "5,25",
-                },
-              ].map((item) => (
-                <li key={item.naam} className="flex items-start justify-between gap-5">
-                  <div>
-                    <h3 className="font-serif text-xl text-foreground">{item.naam}</h3>
-                    <p className="mt-1 text-sm leading-relaxed text-foreground/70">
-                      {item.omschrijving}
-                    </p>
-                  </div>
-                  <span className="flex h-12 w-12 flex-none items-center justify-center rounded-full bg-background font-serif text-[13px] tabular-nums text-[color:var(--terracotta)] shadow-[0_6px_16px_-8px_rgb(0_0_0/0.25)]">
-                    {item.prijs}
-                  </span>
-                </li>
-              ))}
-            </ul>
-
-            <Link
-              to="/menu"
-              className="mt-9 inline-flex items-center rounded-full bg-aperol px-7 py-3.5 text-sm font-semibold text-[color:var(--cream)] transition-colors hover:bg-[color:var(--terracotta)]"
-            >
-              Bekijk de hele kaart
-            </Link>
+            <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-3">
+              <a
+                href={special.videoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-full bg-aperol px-7 py-3.5 text-sm font-semibold text-[color:var(--cream)] transition-colors hover:bg-[color:var(--terracotta-deep)]"
+              >
+                Bekijk de video
+              </a>
+              <Link
+                to="/menu"
+                className="text-sm font-semibold text-primary underline decoration-[color:var(--terracotta)] decoration-2 underline-offset-[5px] transition-colors hover:text-[color:var(--terracotta)]"
+              >
+                Bekijk de hele kaart
+              </Link>
+            </div>
           </Reveal>
 
           <Reveal delay={120}>
             <img
-              src={matchaCookies}
-              alt="IJskoude matcha latte met een schaaltje cookies op tafel"
+              src={special.foto}
+              alt={special.fotoAlt}
               loading="lazy"
               width={788}
               height={1400}
@@ -239,17 +219,20 @@ function HomePage() {
       <Reviews />
 
       {/* Kom langs: donkergroen, als warme afsluiter */}
-      <section id="contact" className="scroll-mt-16 bg-[color:var(--olive-deep)] text-[color:var(--cream)]">
+      <section
+        id="contact"
+        className="scroll-mt-16 bg-[color:var(--olive-deep)] text-[color:var(--cream)]"
+      >
         <div className="container-prose grid items-center gap-12 py-20 md:grid-cols-[5fr_6fr] md:gap-16 md:py-28">
           <Reveal>
-            <p className="font-script text-[1.9rem] leading-none text-[color:var(--blush)]">
-              tot zo
+            <p className="font-script text-[1.6rem] leading-[1.5] text-[color:var(--cream)]">
+              Liefs, Team Rosí
             </p>
             <h2 className="mt-3 font-serif text-4xl leading-[1.1] sm:text-5xl">
-              Molenstraat 35, <span className="italic text-[color:var(--blush)]">Monster</span>.
+              Molenstraat 35, <span className="italic">Monster</span>.
             </h2>
             <ul className="mt-8 text-sm">
-              {openingHours.map(([days, hours]) => (
+              {openingstijden.map(([days, hours]) => (
                 <li
                   key={days}
                   className="flex items-baseline justify-between gap-4 border-b border-[color:var(--cream)]/15 py-3 last:border-0"
@@ -259,9 +242,19 @@ function HomePage() {
                 </li>
               ))}
             </ul>
-            <p className="mt-4 text-sm text-[color:var(--cream)]/75">
-              Vragen? Mail{" "}
-              <a href="mailto:hallo@lunchroomrosi.nl" className="underline decoration-[color:var(--blush)] decoration-2 underline-offset-[3px] hover:text-[color:var(--blush)]">
+            <p className="mt-4 text-sm leading-relaxed text-[color:var(--cream)]/85">
+              Vragen? Bel{" "}
+              <a
+                href={telefoon.link}
+                className="whitespace-nowrap underline decoration-[color:var(--cream)]/50 decoration-2 underline-offset-[3px] hover:decoration-[color:var(--cream)]"
+              >
+                {telefoon.weergave}
+              </a>
+              , mail{" "}
+              <a
+                href="mailto:hallo@lunchroomrosi.nl"
+                className="underline decoration-[color:var(--cream)]/50 decoration-2 underline-offset-[3px] hover:decoration-[color:var(--cream)]"
+              >
                 hallo@lunchroomrosi.nl
               </a>{" "}
               of stuur een DM.
@@ -271,7 +264,7 @@ function HomePage() {
                 href="https://ig.me/m/lunchroomrosi"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center rounded-full bg-aperol px-7 py-3.5 text-sm font-semibold text-[color:var(--cream)] transition-colors hover:bg-[color:var(--terracotta)]"
+                className="inline-flex items-center rounded-full bg-aperol px-7 py-3.5 text-sm font-semibold text-[color:var(--cream)] transition-colors hover:bg-[color:var(--terracotta-deep)]"
               >
                 Reserveer via Instagram
               </a>
@@ -279,7 +272,7 @@ function HomePage() {
                 href="https://www.google.com/maps/search/Molenstraat+35+Monster"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm font-semibold text-[color:var(--cream)] underline decoration-[color:var(--blush)] decoration-2 underline-offset-[5px] transition-colors hover:text-[color:var(--blush)]"
+                className="text-sm font-semibold text-[color:var(--cream)] underline decoration-[color:var(--cream)]/60 decoration-2 underline-offset-[5px] transition-colors hover:decoration-[color:var(--cream)]"
               >
                 Route via Google Maps
               </a>
@@ -288,16 +281,13 @@ function HomePage() {
 
           <Reveal delay={120}>
             <img
-              src={teamfoto}
-              alt="De meiden van Rosí samen op een zomerse avond"
+              src={fay}
+              alt="Fay, de oprichter van Rosí, op de roestkleurige bank in de zaak"
               loading="lazy"
-              width={1400}
-              height={1867}
-              className="photo-soft aspect-square w-full object-cover object-[50%_42%]"
+              width={320}
+              height={405}
+              className="photo-soft mx-auto aspect-[4/5] w-full max-w-[360px] object-cover"
             />
-            <p className="mt-4 text-center font-script text-[1.7rem] leading-none text-[color:var(--blush)]">
-              de meiden van Rosí
-            </p>
           </Reveal>
         </div>
       </section>
@@ -366,7 +356,7 @@ function Reviews() {
     <section className="py-20 md:py-24">
       <div className="container-prose flex flex-wrap items-end justify-between gap-x-8 gap-y-4">
         <div>
-          <p className="font-script text-[1.9rem] leading-none text-[color:var(--terracotta)]">
+          <p className="font-script text-[1.3rem] leading-[1.6] text-[color:var(--terracotta)]">
             lieve woorden
           </p>
           <h2 className="mt-3 font-serif text-4xl text-foreground sm:text-5xl">

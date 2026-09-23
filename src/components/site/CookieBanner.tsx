@@ -68,7 +68,7 @@ export function CookieBanner() {
         <button
           type="button"
           onClick={() => zetCookieKeuze("ja")}
-          className="rounded-full bg-aperol px-5 py-2.5 text-sm font-semibold text-[color:var(--cream)] transition-colors hover:bg-[color:var(--terracotta)]"
+          className="rounded-full bg-aperol px-5 py-2.5 text-sm font-semibold text-[color:var(--cream)] transition-colors hover:bg-[color:var(--terracotta-deep)]"
         >
           Accepteren
         </button>
