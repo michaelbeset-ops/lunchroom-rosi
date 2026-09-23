@@ -11,6 +11,7 @@ import {
 
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
+import { telefoon } from "@/data/openingstijden";
 
 function NotFoundComponent() {
   return (
@@ -99,15 +100,40 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "CafeOrCoffeeShop",
-          name: "Rosí",
+          name: "Lunchroom Rosí",
+          url: "https://michaelbeset-ops.github.io/lunchroom-rosi/",
           image: "https://michaelbeset-ops.github.io/lunchroom-rosi/og.jpg",
+          telephone: telefoon.link.replace("tel:", ""),
+          email: "info@lunchroomrosi.nl",
           address: {
             "@type": "PostalAddress",
             streetAddress: "Molenstraat 35",
             addressLocality: "Monster",
             addressCountry: "NL",
           },
-          servesCuisine: ["Lunch", "Coffee", "Pastries"],
+          sameAs: ["https://www.instagram.com/lunchroomrosi/"],
+          /* Openingstijden voor Google (zelfde bron als de site) */
+          openingHoursSpecification: [
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: ["Tuesday", "Wednesday", "Thursday"],
+              opens: "09:00",
+              closes: "17:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: ["Friday", "Saturday"],
+              opens: "09:00",
+              closes: "19:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Sunday",
+              opens: "10:00",
+              closes: "16:00",
+            },
+          ],
+          servesCuisine: ["Lunch", "Koffie", "Gebak"],
           priceRange: "€€",
         }),
       },
