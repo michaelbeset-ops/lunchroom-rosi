@@ -35,5 +35,6 @@ in plaats van echte gegevens:
     kan Ernie er zo in.
 14. **Instagram-collage** — nu vaste foto's; een automatische koppeling
     kan via een (betaalde) dienst als Behold of Elfsight.
-15. **Catering** — staat in de briefing als pagina, maar er is nog geen
-    tekst of foto voor aangeleverd.
+15. **Catering** — de pagina bestaat (`src/routes/catering.tsx`) met een
+    korte uitnodiging om contact op te nemen. Echte tekst, prijzen en foto's
+    nog aanleveren.

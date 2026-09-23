@@ -76,12 +76,15 @@ export function Footer() {
             <Link to="/ons-verhaal" className="hover:text-[color:var(--cream)]">
               Ons verhaal
             </Link>
-            <a
-              href={`${import.meta.env.BASE_URL}#contact`}
-              className="hover:text-[color:var(--cream)]"
-            >
+            <Link to="/catering" className="hover:text-[color:var(--cream)]">
+              Catering
+            </Link>
+            <Link to="/contact" className="hover:text-[color:var(--cream)]">
               Contact
-            </a>
+            </Link>
+            <Link to="/socials" className="hover:text-[color:var(--cream)]">
+              Socials
+            </Link>
             <Link to="/privacy" className="hover:text-[color:var(--cream)]">
               Privacy &amp; cookies
             </Link>

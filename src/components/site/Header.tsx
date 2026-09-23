@@ -3,15 +3,15 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { RosiRoos, RosiWoordmerk } from "@/components/site/RosiMark";
 
+/* De pagina's uit de briefing: Homepage, Menu, About, Catering, Contact, Socials */
 const paginaLinks = [
   { to: "/", label: "Home" },
   { to: "/menu", label: "Menu" },
   { to: "/ons-verhaal", label: "Ons verhaal" },
+  { to: "/catering", label: "Catering" },
+  { to: "/contact", label: "Contact" },
+  { to: "/socials", label: "Socials" },
 ] as const;
-
-/* Anker op de homepage; gewone link zodat hij ook vanaf andere pagina's
-   werkt (volledige navigatie, browser scrolt zelf naar het anker) */
-const ankerLinks = [{ anker: "contact", label: "Contact" }] as const;
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -51,12 +51,12 @@ export function Header() {
         </Link>
 
         {/* Midden uitgelijnd, hoofdletters en een flink stuk groter */}
-        <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-10 md:flex">
+        <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-5 md:flex lg:gap-8">
           {paginaLinks.map((l) => (
             <Link
               key={l.to}
               to={l.to}
-              className={`text-[0.95rem] font-semibold uppercase tracking-[0.18em] transition-colors ${linkKleur}`}
+              className={`whitespace-nowrap text-[0.78rem] font-semibold uppercase tracking-[0.14em] lg:text-[0.9rem] lg:tracking-[0.18em] transition-colors ${linkKleur}`}
               activeProps={{
                 className: "underline underline-offset-8 decoration-2",
               }}
@@ -64,15 +64,6 @@ export function Header() {
             >
               {l.label}
             </Link>
-          ))}
-          {ankerLinks.map((l) => (
-            <a
-              key={l.anker}
-              href={`${import.meta.env.BASE_URL}#${l.anker}`}
-              className={`text-[0.95rem] font-semibold uppercase tracking-[0.18em] transition-colors ${linkKleur}`}
-            >
-              {l.label}
-            </a>
           ))}
         </nav>
 
@@ -100,16 +91,6 @@ export function Header() {
               >
                 {l.label}
               </Link>
-            ))}
-            {ankerLinks.map((l) => (
-              <a
-                key={l.anker}
-                href={`${import.meta.env.BASE_URL}#${l.anker}`}
-                onClick={() => setOpen(false)}
-                className="border-b border-border/60 py-3.5 text-base font-semibold uppercase tracking-[0.14em] text-primary last:border-0"
-              >
-                {l.label}
-              </a>
             ))}
           </nav>
         </div>
