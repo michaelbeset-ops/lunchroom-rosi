@@ -2,6 +2,7 @@ import { Link, useLocation } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { RosiRoos, RosiWoordmerk } from "@/components/site/RosiMark";
+import { telefoon } from "@/data/openingstijden";
 
 /* De pagina's uit de briefing: Homepage, Menu, About, Catering, Contact, Socials */
 const paginaLinks = [
@@ -24,6 +25,13 @@ export function Header() {
   const linkKleur = opFoto
     ? "text-[color:var(--cream)] hover:opacity-80 [text-shadow:0_1px_12px_rgb(85_47_36/0.45)]"
     : "text-primary hover:opacity-75";
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -78,7 +86,7 @@ export function Header() {
       </div>
 
       {open && (
-        <div className="border-t border-border bg-background md:hidden">
+        <div className="flex h-[calc(100svh-4rem)] flex-col overflow-y-auto border-t border-border bg-background md:hidden">
           <nav className="flex flex-col px-5 py-2">
             {paginaLinks.map((l) => (
               <Link
@@ -93,6 +101,22 @@ export function Header() {
               </Link>
             ))}
           </nav>
+          <div className="mt-auto flex flex-col gap-3 px-5 pt-4 pb-8">
+            <a
+              href="https://ig.me/m/lunchroomrosi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full bg-aperol px-6 py-3.5 text-sm font-semibold text-[color:var(--cream)] transition-colors hover:bg-[color:var(--terracotta-deep)]"
+            >
+              Reserveer via Instagram
+            </a>
+            <a
+              href={telefoon.link}
+              className="inline-flex items-center justify-center rounded-full border border-primary/40 px-6 py-3.5 text-sm font-semibold text-primary"
+            >
+              Bel {telefoon.weergave}
+            </a>
+          </div>
         </div>
       )}
     </header>

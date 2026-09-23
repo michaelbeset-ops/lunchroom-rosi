@@ -44,7 +44,7 @@ function HomePage() {
           ligt het groene tekstvlak rechtsonder over de foto, op mobiel
           staat het eronder zodat de tekst in de foto vrij blijft. */}
       <section className="relative -mt-16 flex flex-col overflow-hidden md:min-h-svh md:justify-end">
-        <div className="relative aspect-[16/10] md:absolute md:inset-0 md:aspect-auto">
+        <div className="relative aspect-[4/3] md:absolute md:inset-0 md:aspect-auto">
           <img
             src={heroImg}
             alt="Roze pioenrozen met de tekst Gezelligheid in Monster"
@@ -68,7 +68,7 @@ function HomePage() {
           />
           <div className="schulprand" aria-hidden="true" />
           <div className="hero-reveal bg-[color:var(--olive-deep)] px-5 pt-5 pb-6 text-[color:var(--cream)] md:px-9 md:pt-6 md:pb-7">
-            <h1 className="max-w-[12em] font-script text-[clamp(1.5rem,4.2vw,2.1rem)] leading-[1.45] font-normal tracking-normal">
+            <h1 className="max-w-[12em] font-script text-[clamp(1.35rem,4.2vw,2.1rem)] leading-[1.45] font-normal tracking-normal">
               Koffie, lunch &amp; wine nights.
             </h1>
             <p className="mt-2 max-w-md text-[0.95rem] leading-relaxed text-[color:var(--cream)]">
@@ -92,7 +92,7 @@ function HomePage() {
               </Link>
             </div>
             <p className="mt-4 border-t border-[color:var(--cream)]/20 pt-3 text-sm tracking-wide text-[color:var(--cream)]">
-              Molenstraat 35, Monster &middot; dinsdag t/m zondag open
+              Molenstraat 35, Monster &middot; di t/m zo open
             </p>
           </div>
         </div>
