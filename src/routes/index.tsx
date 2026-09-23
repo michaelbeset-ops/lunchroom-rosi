@@ -40,26 +40,26 @@ const btnQuiet =
 
 function HeroBlok() {
   return (
-    <div className="relative z-10 ml-auto w-[90%] md:w-[min(560px,42vw)]">
+    <div className="relative z-10 ml-auto w-[84%] md:w-[min(560px,42vw)]">
       <RosiMedaillon
         licht
-        className="absolute -top-14 right-5 z-20 w-[104px] md:-top-16 md:right-8 md:w-[116px]"
+        className="absolute -top-11 right-4 z-20 w-[84px] md:-top-16 md:right-8 md:w-[116px]"
       />
       <div className="schulprand" aria-hidden="true" />
-      <div className="hero-reveal rounded-tl-2xl bg-[color:var(--olive-deep)] px-5 pt-5 pb-6 text-[color:var(--cream)] md:rounded-none md:px-9 md:pt-6 md:pb-7">
-        <h1 className="max-w-[12em] font-script text-[clamp(1.35rem,4.2vw,2.1rem)] leading-[1.45] font-normal tracking-normal">
+      <div className="hero-reveal rounded-tl-2xl bg-[color:var(--olive-deep)] px-4 pt-4 pb-4 text-[color:var(--cream)] md:rounded-none md:px-9 md:pt-6 md:pb-7">
+        <h1 className="max-w-[12em] font-script text-[clamp(1.15rem,4.2vw,2.1rem)] leading-[1.45] font-normal tracking-normal">
           Koffie, lunch &amp; wine nights.
         </h1>
-        <p className="mt-2 max-w-md text-[0.95rem] leading-relaxed text-[color:var(--cream)]">
+        <p className="mt-1.5 max-w-md text-[0.85rem] leading-snug text-[color:var(--cream)] md:mt-2 md:text-[0.95rem] md:leading-relaxed">
           Vers en huisgemaakt, midden in Monster. Reserveren kan met een berichtje via Instagram,
           binnenlopen mag altijd.
         </p>
-        <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-3">
+        <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 md:mt-4 md:gap-x-6 md:gap-y-3">
           <a
             href="https://ig.me/m/lunchroomrosi"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center rounded-full bg-aperol px-6 py-3 text-sm font-semibold text-[color:var(--cream)] transition-colors hover:bg-[color:var(--terracotta-deep)]"
+            className="inline-flex items-center rounded-full bg-aperol px-5 py-2.5 text-sm font-semibold text-[color:var(--cream)] transition-colors hover:bg-[color:var(--terracotta-deep)] md:px-6 md:py-3"
           >
             Reserveer via Instagram
           </a>
@@ -70,7 +70,7 @@ function HeroBlok() {
             Bekijk de kaart
           </Link>
         </div>
-        <p className="mt-4 border-t border-[color:var(--cream)]/20 pt-3 text-sm tracking-wide text-[color:var(--cream)]">
+        <p className="mt-3 border-t border-[color:var(--cream)]/20 pt-2.5 text-[0.8rem] tracking-wide text-[color:var(--cream)] md:mt-4 md:pt-3 md:text-sm">
           Molenstraat 35, Monster &middot; di t/m zo open
         </p>
       </div>
