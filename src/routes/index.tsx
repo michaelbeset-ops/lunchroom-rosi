@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 /* Herofoto uit de aanlevering: roze pioenrozen met "Gezelligheid in
    Monster" in handschrift (aanlevering/Homepage foto 1). */
 import heroImg from "@/assets/hero-gezelligheid.jpg";
@@ -38,30 +38,15 @@ export const Route = createFileRoute("/")({
 const btnQuiet =
   "inline-flex items-center rounded-full border border-primary/30 bg-card px-7 py-3.5 text-sm font-medium text-foreground transition-colors hover:border-primary hover:text-primary";
 
-function useHeroVariant(): 1 | 2 | 3 {
-  const [v, setV] = useState<1 | 2 | 3>(1);
-  useEffect(() => {
-    const q = new URLSearchParams(window.location.search).get("hero");
-    if (q === "2" || q === "3") setV(Number(q) as 2 | 3);
-  }, []);
-  return v;
-}
-
-function HeroBlok({ variant }: { variant: 1 | 2 | 3 }) {
-  const wrap =
-    variant === 3
-      ? "relative z-10 w-full md:ml-auto md:w-[min(560px,42vw)]"
-      : "relative z-10 ml-auto w-[90%] md:w-[min(560px,42vw)]";
+function HeroBlok() {
   return (
-    <div className={wrap}>
+    <div className="relative z-10 ml-auto w-[90%] md:w-[min(560px,42vw)]">
       <RosiMedaillon
         licht
         className="absolute -top-14 right-5 z-20 w-[104px] md:-top-16 md:right-8 md:w-[116px]"
       />
       <div className="schulprand" aria-hidden="true" />
-      <div
-        className={`hero-reveal bg-[color:var(--olive-deep)] px-5 pt-5 pb-6 text-[color:var(--cream)] md:rounded-none md:px-9 md:pt-6 md:pb-7 ${variant === 3 ? "" : "rounded-tl-2xl"}`}
-      >
+      <div className="hero-reveal rounded-tl-2xl bg-[color:var(--olive-deep)] px-5 pt-5 pb-6 text-[color:var(--cream)] md:rounded-none md:px-9 md:pt-6 md:pb-7">
         <h1 className="max-w-[12em] font-script text-[clamp(1.35rem,4.2vw,2.1rem)] leading-[1.45] font-normal tracking-normal">
           Koffie, lunch &amp; wine nights.
         </h1>
@@ -100,8 +85,8 @@ const navVerloop = (
   />
 );
 
-function Hero({ variant }: { variant: 1 | 2 | 3 }) {
-  /* Desktopfoto (met tekst) is in alle varianten gelijk */
+function Hero() {
+  /* Desktop: de aangeleverde foto met de tekst erin */
   const desktopFoto = (
     <div className="absolute inset-0 hidden md:block">
       <img
@@ -116,81 +101,38 @@ function Hero({ variant }: { variant: 1 | 2 | 3 }) {
     </div>
   );
 
-  if (variant === 1) {
-    /* 1: pioenrozen schermvullend, de tekst als echte tekst eroverheen */
-    return (
-      <section className="relative -mt-16 flex min-h-svh flex-col justify-end overflow-hidden">
-        {desktopFoto}
-        <div className="absolute inset-0 md:hidden">
-          <img
-            src={pioenrozen}
-            alt="Roze pioenrozen"
-            width={1400}
-            height={2098}
-            fetchPriority="high"
-            className="kenburns absolute inset-0 h-full w-full object-cover object-[50%_35%]"
-          />
-          <div aria-hidden="true" className="absolute inset-0 bg-[color:var(--shadow)]/25" />
-          {navVerloop}
-          <p className="hero-tekst absolute inset-x-5 top-[22%] text-center font-script text-[2.6rem] leading-[1.3] text-[color:var(--cream)]">
-            Gezelligheid
-            <br />
-            in Monster
-          </p>
-        </div>
-        <HeroBlok variant={variant} />
-      </section>
-    );
-  }
-
-  if (variant === 2) {
-    /* 2: de aangeleverde foto schermvullend, bijgesneden (tekst valt weg) */
-    return (
-      <section className="relative -mt-16 flex min-h-svh flex-col justify-end overflow-hidden">
-        {desktopFoto}
-        <div className="absolute inset-0 md:hidden">
-          <img
-            src={heroImg}
-            alt="Roze pioenrozen"
-            width={2400}
-            height={1351}
-            fetchPriority="high"
-            className="kenburns absolute inset-0 h-full w-full object-cover object-[62%_50%]"
-          />
-          {navVerloop}
-        </div>
-        <HeroBlok variant={variant} />
-      </section>
-    );
-  }
-
-  /* 3: foto als kaart onder de balk, groen blok eronder */
+  /* Mobiel: pioenrozen schermvullend met de tekst als echte tekst eroverheen */
   return (
-    <section className="relative -mt-16 flex flex-col overflow-hidden md:min-h-svh md:justify-end">
+    <section className="relative -mt-16 flex min-h-svh flex-col justify-end overflow-hidden">
       {desktopFoto}
-      <div className="px-4 pt-20 pb-6 md:hidden">
+      <div className="absolute inset-0 md:hidden">
         <img
-          src={heroImg}
-          alt="Roze pioenrozen met de tekst Gezelligheid in Monster"
-          width={2400}
-          height={1351}
+          src={pioenrozen}
+          alt="Roze pioenrozen"
+          width={1400}
+          height={2098}
           fetchPriority="high"
-          className="photo-soft aspect-[16/10] w-full object-cover"
+          className="kenburns absolute inset-0 h-full w-full object-cover object-[50%_35%]"
         />
+        <div aria-hidden="true" className="absolute inset-0 bg-[color:var(--shadow)]/25" />
+        {navVerloop}
+        <p className="hero-tekst absolute inset-x-5 top-[22%] text-center font-script text-[2.6rem] leading-[1.3] text-[color:var(--cream)]">
+          Gezelligheid
+          <br />
+          in Monster
+        </p>
       </div>
-      <HeroBlok variant={variant} />
+      <HeroBlok />
     </section>
   );
 }
 
 function HomePage() {
-  const heroVariant = useHeroVariant();
   return (
     <>
-      {/* Hero. Desktop: de pioenrozenfoto met "Gezelligheid in Monster" en het
-          groene tekstvlak rechtsonder. Mobiel: drie varianten ter keuze,
-          tijdelijk te kiezen met ?hero=1|2|3 (default 1). */}
-      <Hero variant={heroVariant} />
+      {/* Hero: desktop de pioenrozenfoto met "Gezelligheid in Monster", mobiel
+          de losse pioenrozen met de tekst eroverheen; groen tekstvlak rechtsonder */}
+      <Hero />
 
       {/* Welkom: verhaal, beloftes en de fotocollage */}
       <section
