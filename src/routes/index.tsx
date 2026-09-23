@@ -233,12 +233,12 @@ function HomePage() {
                   key={days}
                   className="flex items-baseline justify-between gap-4 border-b border-[color:var(--cream)]/15 py-3 last:border-0"
                 >
-                  <span className="text-[color:var(--cream)]/80">{days}</span>
+                  <span className="text-[color:var(--cream)]">{days}</span>
                   <span className="font-serif tabular-nums">{hours}</span>
                 </li>
               ))}
             </ul>
-            <p className="mt-4 text-sm leading-relaxed text-[color:var(--cream)]/85">
+            <p className="mt-4 text-sm leading-relaxed text-[color:var(--cream)]">
               Vragen? Bel{" "}
               <a
                 href={telefoon.link}

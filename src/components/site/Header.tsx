@@ -22,7 +22,7 @@ export function Header() {
   const opHome = pathname === "/" || pathname === import.meta.env.BASE_URL;
   const opFoto = opHome && !scrolled && !open;
   const linkKleur = opFoto
-    ? "text-[color:var(--cream)] hover:text-[color:var(--blush)] [text-shadow:0_1px_12px_rgb(85_47_36/0.45)]"
+    ? "text-[color:var(--cream)] hover:opacity-80 [text-shadow:0_1px_12px_rgb(85_47_36/0.45)]"
     : "text-primary hover:opacity-75";
 
   useEffect(() => {

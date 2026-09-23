@@ -53,12 +53,12 @@ export function CookieBanner() {
       className="fixed inset-x-4 bottom-4 z-[60] mx-auto max-w-md rounded-3xl bg-[color:var(--olive-deep)] p-6 text-[color:var(--cream)] shadow-[0_18px_50px_-20px_rgb(85_47_36/0.45)] sm:inset-x-auto sm:left-6 sm:bottom-6"
     >
       <p className="font-serif text-xl">Een koekje erbij?</p>
-      <p className="mt-2 text-sm leading-relaxed text-[color:var(--cream)]/85">
+      <p className="mt-2 text-sm leading-relaxed text-[color:var(--cream)]">
         Wij gebruiken alleen cookies om je voorkeuren te onthouden en om de kaart van Google Maps te
         tonen als jij dat goed vindt. Geen advertenties, geen gevolg over het web.{" "}
         <a
           href="/lunchroom-rosi/privacy"
-          className="underline decoration-[color:var(--blush)] decoration-2 underline-offset-2"
+          className="underline decoration-[color:var(--cream)]/60 decoration-2 underline-offset-2"
         >
           Lees ons cookiebeleid
         </a>
