@@ -22,15 +22,18 @@ in plaats van echte gegevens:
 
 ## Uit de briefing (september), nog open
 
-9. **Foto's** — de foto van Fay komt nu uit de PDF (320px, wat klein).
-   Graag het origineel. Ook de echte foto voor de maandspecial ontbreekt
-   nog; tot die tijd staat er een matchafoto (`src/data/special.ts`).
+9. **Foto's** — de foto van Fay, de twee gerechten bij "welkom" en de
+   Pear Matcha-foto komen nu uit de briefing-PDF en zijn klein (300-430px).
+   Graag de originelen, dan worden ze scherp.
 10. **Herofoto** — twijfel of die anders moet; nog geen besluit.
 11. **Menukaart als afbeeldingen** — per categorie een 1080x1920-afbeelding
     zonder achtergrond, dan komen die op de menupagina.
 12. **Maandspecial** — elke maand nieuwe tekst, foto en videolink in
     `src/data/special.ts`.
-13. **Lettertype** — Adobe Handwriting Ernie vervangen door het gratis
-    Homemade Apple. Als er een Adobe Fonts-account is, kan Ernie er zo in.
+13. **Lettertype** — titels in Homemade Apple (gratis tegenhanger van Adobe
+    Handwriting Ernie), de rest in Montserrat. Met een Adobe Fonts-account
+    kan Ernie er zo in.
 14. **Instagram-collage** — nu vaste foto's; een automatische koppeling
     kan via een (betaalde) dienst als Behold of Elfsight.
+15. **Catering** — staat in de briefing als pagina, maar er is nog geen
+    tekst of foto voor aangeleverd.

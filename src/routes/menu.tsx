@@ -25,11 +25,9 @@ function MenuPage() {
   return (
     <>
       <section className="container-prose pt-12 pb-10 md:pt-20 text-center">
-        <p className="font-script text-[1.3rem] leading-[1.6] text-[color:var(--terracotta)]">
-          onze kaart
-        </p>
-        <h1 className="mt-3 font-serif text-5xl text-foreground sm:text-6xl">
-          Vers, eerlijk en <span className="italic text-primary">huisgemaakt</span>.
+        <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">onze kaart</p>
+        <h1 className="mt-3 font-script font-normal tracking-normal text-[1.9rem] leading-[1.5] text-primary sm:text-[2.6rem]">
+          Vers, eerlijk en huisgemaakt.
         </h1>
         <p className="mx-auto mt-5 max-w-xl text-muted-foreground">
           De kaart wisselt mee met de seizoenen. Vraag gerust naar de specials, die staan op het
@@ -45,7 +43,7 @@ function MenuPage() {
             <li key={c.id}>
               <a
                 href={`#${c.id}`}
-                className="inline-flex items-center rounded-full border border-border bg-card px-4 py-2 text-foreground/80 hover:border-primary hover:text-primary transition-colors"
+                className="inline-flex items-center rounded-full border border-border bg-card px-4 py-2 text-foreground hover:border-primary hover:text-primary transition-colors"
               >
                 {c.title}
               </a>
@@ -59,7 +57,9 @@ function MenuPage() {
           <Reveal key={cat.id} delay={i * 60}>
             <article id={cat.id} className="scroll-mt-28">
               <header className="mb-6">
-                <h2 className="font-serif text-3xl text-[color:var(--terracotta)]">{cat.title}</h2>
+                <h2 className="font-script font-normal tracking-normal text-2xl leading-[1.5] text-primary">
+                  {cat.title}
+                </h2>
                 {cat.subtitle && (
                   <p className="mt-1 text-xs uppercase tracking-[0.22em] text-muted-foreground">
                     {cat.subtitle}
@@ -92,7 +92,9 @@ function MenuPage() {
 
       <section className="container-prose pb-20">
         <div className="rounded-[28px] bg-[color:var(--blush)]/25 p-10 text-center">
-          <h2 className="font-serif text-3xl text-foreground">Allergie of dieetwens?</h2>
+          <h2 className="font-script font-normal tracking-normal text-2xl leading-[1.5] text-primary">
+            Allergie of dieetwens?
+          </h2>
           <p className="mx-auto mt-3 max-w-lg text-muted-foreground">
             Laat het ons weten, we doen wat we kunnen om iets lekkers voor je te maken. Vegan,
             glutenvrij of lactosevrij is bijna altijd mogelijk.

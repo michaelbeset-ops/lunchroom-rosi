@@ -23,7 +23,7 @@ export function Header() {
   const opFoto = opHome && !scrolled && !open;
   const linkKleur = opFoto
     ? "text-[color:var(--cream)] hover:text-[color:var(--blush)] [text-shadow:0_1px_12px_rgb(85_47_36/0.45)]"
-    : "text-primary hover:text-[color:var(--terracotta)]";
+    : "text-primary hover:opacity-75";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -95,7 +95,7 @@ export function Header() {
                 to={l.to}
                 onClick={() => setOpen(false)}
                 className="border-b border-border/60 py-3.5 text-base font-semibold uppercase tracking-[0.14em] text-primary last:border-0"
-                activeProps={{ className: "text-[color:var(--terracotta)]" }}
+                activeProps={{ className: "underline underline-offset-8" }}
                 activeOptions={{ exact: l.to === "/" }}
               >
                 {l.label}

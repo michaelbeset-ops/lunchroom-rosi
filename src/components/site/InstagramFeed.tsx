@@ -22,11 +22,11 @@ export function InstagramFeed() {
     <section className="bg-background">
       <div className="container-prose py-20 md:py-28">
         <div className="text-center">
-          <p className="font-script text-[1.3rem] leading-[1.6] text-[color:var(--terracotta)]">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
             uit de zaak
           </p>
-          <h2 className="mt-3 font-serif text-4xl text-foreground sm:text-5xl">
-            Elke dag iets <span className="italic text-primary">vers</span> op de plaat.
+          <h2 className="mt-3 font-script font-normal tracking-normal text-[1.9rem] leading-[1.5] text-primary sm:text-[2.6rem]">
+            Elke dag iets vers op de plaat.
           </h2>
           <WaveDivider className="mx-auto mt-7 max-w-[190px]" />
         </div>

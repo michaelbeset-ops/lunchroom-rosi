@@ -16,17 +16,17 @@ export const Route = createFileRoute("/privacy")({
   component: PrivacyPage,
 });
 
-const h2 = "mt-10 font-serif text-2xl text-foreground";
-const p = "mt-3 leading-relaxed text-foreground/80";
+const h2 = "mt-10 font-script text-xl font-normal leading-[1.6] tracking-normal text-primary";
+const p = "mt-3 leading-relaxed text-foreground";
 
 function PrivacyPage() {
   return (
     <section className="container-prose py-16 md:py-24">
       <div className="mx-auto max-w-2xl">
-        <p className="font-script text-[1.3rem] leading-[1.6] text-[color:var(--terracotta)]">
+        <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">
           goed geregeld
         </p>
-        <h1 className="mt-3 font-serif text-4xl text-foreground sm:text-5xl">
+        <h1 className="mt-3 font-script font-normal tracking-normal text-[1.9rem] leading-[1.5] text-primary sm:text-[2.6rem]">
           Privacy &amp; cookies
         </h1>
         <p className={p}>

@@ -49,7 +49,7 @@ function OnsVerhaalPage() {
           Hoe het allemaal is begonnen&hellip;
         </h1>
 
-        <div className="mt-8 max-w-lg space-y-5 text-[1.05rem] leading-relaxed text-foreground/90">
+        <div className="mt-8 max-w-lg space-y-5 text-[1.05rem] leading-relaxed text-foreground">
           {alineas.map((tekst) => (
             <p key={tekst}>{tekst}</p>
           ))}

@@ -12,10 +12,10 @@ export function Footer() {
         <Link
           to="/"
           aria-label="Rosí Lunchroom, naar de homepagina"
-          className="relative mx-auto block w-[min(84vw,820px)] pb-[7%]"
+          className="relative mx-auto block w-[min(84vw,820px)] pb-[6%]"
         >
           <RosiWoordmerk className="block h-auto w-full" />
-          <span className="absolute bottom-0 left-[-2%] -rotate-[4deg] font-script text-[min(7.5vw,4.6rem)] leading-none">
+          <span className="absolute bottom-0 left-[-5%] -rotate-[4deg] font-script text-[min(9vw,5.6rem)] leading-none [text-shadow:0_2px_14px_rgb(85_47_36/0.35)]">
             Lunchroom
           </span>
         </Link>

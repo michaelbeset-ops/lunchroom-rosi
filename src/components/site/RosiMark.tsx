@@ -45,17 +45,25 @@ export function RosiWoordmerk({ className = "" }: { className?: string }) {
   );
 }
 
-/* Rond logo: groene cirkel met de roos en het woordmerk in de
-   achtergrondkleur, zoals het ronde logo in de huisstijl. */
-export function RosiMedaillon({ className = "" }: { className?: string }) {
+/* Rond logo zoals in de huisstijl: groen met lichte tekening (Instagram),
+   of licht met groene tekening (licht, zoals in de hero). */
+export function RosiMedaillon({
+  className = "",
+  licht = false,
+}: {
+  className?: string;
+  licht?: boolean;
+}) {
+  const vlak = licht ? "var(--cream)" : "var(--olive)";
+  const inkt = licht ? "var(--olive)" : "var(--cream)";
   return (
     <svg viewBox="0 0 160 160" className={className} aria-hidden="true">
-      <circle cx="80" cy="80" r="79" fill="var(--olive)" />
-      <circle cx="80" cy="80" r="72" fill="none" stroke="var(--cream)" strokeOpacity="0.45" />
-      <svg x="59" y="24" width="42" height="62" viewBox="0 0 249.82 367.64" fill="var(--cream)">
+      <circle cx="80" cy="80" r="79" fill={vlak} />
+      <circle cx="80" cy="80" r="72" fill="none" stroke={inkt} strokeOpacity="0.45" />
+      <svg x="59" y="24" width="42" height="62" viewBox="0 0 249.82 367.64" fill={inkt}>
         <RoosPaden />
       </svg>
-      <svg x="46" y="98" width="68" height="28" viewBox="0 0 621.49 253.61" fill="var(--cream)">
+      <svg x="46" y="98" width="68" height="28" viewBox="0 0 621.49 253.61" fill={inkt}>
         <WoordPaden />
       </svg>
     </svg>

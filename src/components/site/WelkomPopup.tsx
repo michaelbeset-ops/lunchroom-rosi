@@ -65,13 +65,13 @@ export function WelkomPopup() {
         className="absolute inset-0 bg-[color:var(--olive-deep)]/40"
         tabIndex={-1}
       />
-      <div className="relative w-full max-w-sm rounded-3xl bg-background p-8 text-center shadow-[0_24px_60px_-24px_rgb(0_0_0/0.5)]">
+      <div className="relative w-full max-w-sm rounded-3xl bg-background p-8 text-center shadow-[0_24px_60px_-24px_rgb(85_47_36/0.5)]">
         <button
           ref={sluitKnop}
           type="button"
           onClick={sluit}
           aria-label="Popup sluiten"
-          className="absolute top-3 right-3 flex h-9 w-9 items-center justify-center rounded-full text-foreground/60 transition-colors hover:bg-card hover:text-foreground"
+          className="absolute top-3 right-3 flex h-9 w-9 items-center justify-center rounded-full text-foreground transition-colors hover:bg-card hover:text-foreground"
         >
           <svg
             viewBox="0 0 16 16"
@@ -86,13 +86,16 @@ export function WelkomPopup() {
           </svg>
         </button>
         <RosiRoos className="mx-auto h-16 w-auto text-[color:var(--terracotta)]" />
-        <p className="mt-3 font-script text-[1.3rem] leading-[1.6] text-[color:var(--terracotta)]">
+        <p className="mt-3 text-xs font-semibold uppercase tracking-[0.25em] text-primary">
           leuk dat je er bent
         </p>
-        <h2 id="welkom-titel" className="mt-2 font-serif text-2xl text-foreground">
+        <h2
+          id="welkom-titel"
+          className="mt-2 font-script font-normal tracking-normal text-2xl text-primary"
+        >
           Zin in een wine night?
         </h2>
-        <p className="mt-2 text-sm leading-relaxed text-foreground/75">
+        <p className="mt-2 text-sm leading-relaxed text-foreground">
           Op Instagram zetten we de data van de wine nights en wat er vandaag uit de oven komt.
           Reserveren gaat daar ook, met een berichtje.
         </p>
@@ -107,7 +110,7 @@ export function WelkomPopup() {
         <button
           type="button"
           onClick={sluit}
-          className="mt-3 block w-full text-xs text-foreground/50 underline underline-offset-2 hover:text-foreground/80"
+          className="mt-3 block w-full text-xs text-foreground underline underline-offset-2 hover:text-foreground"
         >
           Nee bedankt, ik kijk gewoon even rond
         </button>
