@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { RosiRoos } from "@/components/site/RosiMark";
 import { getCookieKeuze } from "@/components/site/CookieBanner";
+import pioenrozen from "@/assets/pioenrozen.jpg";
 
 /* Subtiele welkomst-popup: verschijnt één keer per sessie, pas nadat de
    cookiekeuze is gemaakt (nooit twee lagen tegelijk), en is overal mee
@@ -65,55 +66,64 @@ export function WelkomPopup() {
         className="absolute inset-0 bg-[color:var(--olive-deep)]/40"
         tabIndex={-1}
       />
-      <div className="relative w-full max-w-sm rounded-3xl bg-background p-8 text-center shadow-[0_24px_60px_-24px_rgb(85_47_36/0.5)]">
-        <button
-          ref={sluitKnop}
-          type="button"
-          onClick={sluit}
-          aria-label="Popup sluiten"
-          className="absolute top-3 right-3 flex h-9 w-9 items-center justify-center rounded-full text-foreground transition-colors hover:bg-card hover:text-foreground"
-        >
-          <svg
-            viewBox="0 0 16 16"
-            width="14"
-            height="14"
-            aria-hidden="true"
-            stroke="currentColor"
-            strokeWidth="1.8"
-            strokeLinecap="round"
+      <div className="relative w-full max-w-sm overflow-hidden rounded-3xl bg-background text-center shadow-[0_24px_60px_-24px_rgb(85_47_36/0.5)]">
+        <img
+          src={pioenrozen}
+          alt=""
+          width={1400}
+          height={2098}
+          className="h-28 w-full object-cover object-[50%_35%]"
+        />
+        <div className="p-8 pt-6">
+          <button
+            ref={sluitKnop}
+            type="button"
+            onClick={sluit}
+            aria-label="Popup sluiten"
+            className="absolute top-3 right-3 flex h-9 w-9 items-center justify-center rounded-full bg-background/80 text-foreground transition-colors hover:bg-card"
           >
-            <path d="M3 3l10 10M13 3L3 13" />
-          </svg>
-        </button>
-        <RosiRoos className="mx-auto h-16 w-auto text-[color:var(--terracotta)]" />
-        <p className="mt-3 text-xs font-semibold uppercase tracking-[0.25em] text-primary">
-          leuk dat je er bent
-        </p>
-        <h2
-          id="welkom-titel"
-          className="mt-2 font-script font-normal tracking-normal text-2xl text-primary"
-        >
-          Zin in een wine night?
-        </h2>
-        <p className="mt-2 text-sm leading-relaxed text-foreground">
-          Op Instagram zetten we de data van de wine nights en wat er vandaag uit de oven komt.
-          Reserveren gaat daar ook, met een berichtje.
-        </p>
-        <a
-          href="https://instagram.com/lunchroomrosi"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-5 inline-flex items-center rounded-full bg-aperol px-6 py-3 text-sm font-semibold text-[color:var(--cream)] transition-colors hover:bg-[color:var(--terracotta-deep)]"
-        >
-          Volg @lunchroomrosi
-        </a>
-        <button
-          type="button"
-          onClick={sluit}
-          className="mt-3 block w-full text-xs text-foreground underline underline-offset-2 hover:text-foreground"
-        >
-          Nee bedankt, ik kijk gewoon even rond
-        </button>
+            <svg
+              viewBox="0 0 16 16"
+              width="14"
+              height="14"
+              aria-hidden="true"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+            >
+              <path d="M3 3l10 10M13 3L3 13" />
+            </svg>
+          </button>
+          <RosiRoos className="mx-auto h-16 w-auto text-[color:var(--terracotta)]" />
+          <p className="mt-3 text-xs font-semibold uppercase tracking-[0.25em] text-primary">
+            leuk dat je er bent
+          </p>
+          <h2
+            id="welkom-titel"
+            className="mt-2 font-script font-normal tracking-normal text-2xl text-primary"
+          >
+            Zin in een wine night?
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-foreground">
+            Op Instagram zetten we de data van de wine nights en wat er vandaag uit de oven komt.
+            Reserveren gaat daar ook, met een berichtje.
+          </p>
+          <a
+            href="https://instagram.com/lunchroomrosi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 inline-flex items-center rounded-full bg-aperol px-6 py-3 text-sm font-semibold text-[color:var(--cream)] transition-colors hover:bg-[color:var(--terracotta-deep)]"
+          >
+            Volg @lunchroomrosi
+          </a>
+          <button
+            type="button"
+            onClick={sluit}
+            className="mt-3 block w-full text-xs text-foreground underline underline-offset-2 hover:text-foreground"
+          >
+            Nee bedankt, ik kijk gewoon even rond
+          </button>
+        </div>
       </div>
     </div>
   );

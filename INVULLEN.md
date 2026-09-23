@@ -15,17 +15,17 @@ in plaats van echte gegevens:
    postcode. Postcode aanleveren voor de contactpagina en Google.
 6. **Naam/verhaal checken** — het verhaal op de over-pagina noemt Fay en
    het vrouwenteam en de opening op Koningsdag. Even laten meelezen.
-7. **Grote sfeerfoto** — de herofoto is 850px breed en opgeschaald.
-   Een origineel van 2000px+ maakt hem echt scherp.
-8. **Logo** — de nieuwe roos en het woordmerk zijn als vector uit de
-   briefing-PDF gehaald (`src/components/site/RosiMark.tsx`).
+7. **Herofoto** — nu "Gezelligheid in Monster" uit de aanlevering, scherp.
+8. **Logo** — de aangeleverde SVG's (roos in ovaal en woordmerk) zitten in
+   `src/components/site/RosiMark.tsx` en de favicon.
 
 ## Uit de briefing (september), nog open
 
-9. **Foto's** — de foto van Fay, de twee gerechten bij "welkom" en de
-   Pear Matcha-foto komen nu uit de briefing-PDF en zijn klein (300-430px).
-   Graag de originelen, dan worden ze scherp.
-10. **Herofoto** — twijfel of die anders moet; nog geen besluit.
+9. **Foto's** — Fay, de gerechten en de collage komen uit de aanlevering
+   (map `aanlevering/`, verkleind in `src/assets/`). Alleen de Pear
+   Matcha-foto komt nog uit de PDF en is klein; graag het origineel.
+10. **Niet gebruikt** — "Rosí World" en "Get to know Team Rosí" (svg) zijn
+    Instagram-graphics; die passen nergens op de site.
 11. **Menukaart als afbeeldingen** — per categorie een 1080x1920-afbeelding
     zonder achtergrond, dan komen die op de menupagina.
 12. **Maandspecial** — elke maand nieuwe tekst, foto en videolink in

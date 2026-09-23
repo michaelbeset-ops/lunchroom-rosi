@@ -1,9 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useRef } from "react";
-/* Aangeleverd interieur met saliegroene muren en olijfgroene stoelen,
-   past een-op-een op het palet. Een 2000px-versie maakt dit nog
-   scherper op grote schermen. */
-import heroImg from "@/assets/hero-sfeer-v2.jpg";
+/* Herofoto uit de aanlevering: roze pioenrozen met "Gezelligheid in
+   Monster" in handschrift (aanlevering/Homepage foto 1). */
+import heroImg from "@/assets/hero-gezelligheid.jpg";
 import etenBowl from "@/assets/eten-bowl.jpg";
 import etenBroodje from "@/assets/eten-broodje.jpg";
 import drankjeBank from "@/assets/instagram/drankje-bank.jpg";
@@ -42,62 +41,64 @@ const btnQuiet =
 function HomePage() {
   return (
     <>
-      {/* Hero: schermvullende foto; tekst op een diep olijfgroen vlak
-          rechtsonder, met het Rosí-medaillon als lakzegel op de rand. */}
-      <section className="relative -mt-16 flex min-h-svh flex-col justify-end overflow-hidden">
-        {/* Ideale foto om aan te leveren: gouden avondlicht, de twee
-            eigenaressen proosten met een spritz voor het raam met het
-            Rosí-logo. Ongefilterd, minimaal 2000px breed. */}
-        <img
-          src={heroImg}
-          alt="Restaurantinterieur met saliegroene muren, olijfgroene stoelen en veel planten"
-          width={1800}
-          height={1200}
-          fetchPriority="high"
-          className="kenburns absolute inset-0 h-full w-full object-cover object-[42%_58%]"
-        />
+      {/* Hero: de pioenrozenfoto met "Gezelligheid in Monster" volledig in
+          beeld, daaronder een groen vlak met de tekst. */}
+      <section className="relative -mt-16 flex min-h-svh flex-col">
+        <div className="relative aspect-[16/10] overflow-hidden md:aspect-auto md:min-h-[420px] md:flex-1">
+          <img
+            src={heroImg}
+            alt="Roze pioenrozen met de tekst Gezelligheid in Monster"
+            width={2400}
+            height={1351}
+            fetchPriority="high"
+            className="kenburns absolute inset-0 h-full w-full object-cover object-[50%_45%]"
+          />
+          {/* Donker verloop bovenin zodat de lichte navigatie leesbaar blijft */}
+          <div
+            aria-hidden="true"
+            className="absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-[color:var(--shadow)]/55 via-[color:var(--shadow)]/20 to-transparent"
+          />
+        </div>
 
-        {/* Donker verloop bovenin zodat de lichte navigatie leesbaar blijft */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-[color:var(--shadow)]/55 via-[color:var(--shadow)]/20 to-transparent"
-        />
-
-        {/* Tekstvlak, vast aan de onderrand; op desktop rechtsonder zodat
-            het gezicht op de foto links vrij blijft. */}
-        <div className="relative z-10 w-full md:ml-auto md:w-[min(620px,48vw)]">
+        <div className="relative z-10 w-full">
           <RosiMedaillon
             licht
             className="absolute -top-14 right-5 z-20 w-[104px] md:-top-16 md:right-10 md:w-[124px]"
           />
           <div className="schulprand" aria-hidden="true" />
-          <div className="hero-reveal bg-[color:var(--olive-deep)] px-5 pt-5 pb-6 text-[color:var(--cream)] md:px-10 md:pt-7 md:pb-9">
-            <h1 className="mt-1 max-w-[11em] font-script font-normal tracking-normal text-[clamp(1.7rem,6vw,2.7rem)] leading-[1.45] ">
-              Koffie, lunch &amp; wine nights.
-            </h1>
-            <p className="mt-3 max-w-md leading-relaxed text-[color:var(--cream)]/85 md:mt-4">
-              Vers en huisgemaakt, midden in Monster. Reserveren kan met een berichtje via
-              Instagram, binnenlopen mag altijd.
-            </p>
-            <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-3 md:mt-6">
-              <a
-                href="https://ig.me/m/lunchroomrosi"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center rounded-full bg-aperol px-7 py-3.5 text-sm font-semibold text-[color:var(--cream)] transition-colors hover:bg-[color:var(--terracotta-deep)]"
-              >
-                Reserveer via Instagram
-              </a>
-              <Link
-                to="/menu"
-                className="text-sm font-semibold text-[color:var(--cream)] underline decoration-[color:var(--cream)]/60 decoration-2 underline-offset-[5px] transition-colors hover:decoration-[color:var(--cream)]"
-              >
-                Bekijk de kaart
-              </Link>
+          <div className="hero-reveal bg-[color:var(--olive-deep)] text-[color:var(--cream)]">
+            <div className="container-prose grid gap-x-16 gap-y-5 py-8 md:grid-cols-[7fr_5fr] md:items-end md:py-10">
+              <div>
+                <h1 className="max-w-[12em] font-script text-[clamp(1.7rem,4.5vw,2.6rem)] leading-[1.45] font-normal tracking-normal">
+                  Koffie, lunch &amp; wine nights.
+                </h1>
+                <p className="mt-3 max-w-md leading-relaxed text-[color:var(--cream)]">
+                  Vers en huisgemaakt, midden in Monster. Reserveren kan met een berichtje via
+                  Instagram, binnenlopen mag altijd.
+                </p>
+              </div>
+              <div className="md:pb-1">
+                <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
+                  <a
+                    href="https://ig.me/m/lunchroomrosi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center rounded-full bg-aperol px-7 py-3.5 text-sm font-semibold text-[color:var(--cream)] transition-colors hover:bg-[color:var(--terracotta-deep)]"
+                  >
+                    Reserveer via Instagram
+                  </a>
+                  <Link
+                    to="/menu"
+                    className="text-sm font-semibold text-[color:var(--cream)] underline decoration-[color:var(--cream)]/60 decoration-2 underline-offset-[5px] transition-colors hover:decoration-[color:var(--cream)]"
+                  >
+                    Bekijk de kaart
+                  </Link>
+                </div>
+                <p className="mt-5 text-sm tracking-wide text-[color:var(--cream)]">
+                  Molenstraat 35, Monster &middot; dinsdag t/m zondag open
+                </p>
+              </div>
             </div>
-            <p className="mt-5 border-t border-[color:var(--cream)]/20 pt-4 text-sm tracking-wide text-[color:var(--cream)]/75">
-              Molenstraat 35, Monster &middot; dinsdag t/m zondag open
-            </p>
           </div>
         </div>
       </section>
@@ -150,17 +151,17 @@ function HomePage() {
             src={etenBowl}
             alt="Een salade in een schaaltje, er wordt een kroket bij gepakt, met een glas wijn"
             loading="lazy"
-            width={367}
-            height={439}
-            className="photo-soft relative w-[62%] object-cover"
+            width={1200}
+            height={1800}
+            className="photo-soft relative aspect-[4/5] w-[62%] object-cover"
           />
           <img
             src={etenBroodje}
             alt="Een belegd broodje dat wordt aangesneden, met een matcha latte ernaast"
             loading="lazy"
-            width={431}
-            height={362}
-            className="photo-soft relative -mt-[34%] ml-auto w-[68%] object-cover"
+            width={1200}
+            height={1800}
+            className="photo-soft relative -mt-[45%] ml-auto aspect-[4/5] w-[62%] object-cover"
           />
         </Reveal>
       </section>
@@ -279,9 +280,9 @@ function HomePage() {
               src={fay}
               alt="Fay, de oprichter van Rosí, op de roestkleurige bank in de zaak"
               loading="lazy"
-              width={320}
-              height={405}
-              className="photo-soft mx-auto aspect-[4/5] w-full max-w-[360px] object-cover"
+              width={1000}
+              height={1501}
+              className="photo-soft mx-auto aspect-[4/5] w-full max-w-[420px] object-cover object-[50%_30%]"
             />
           </Reveal>
         </div>

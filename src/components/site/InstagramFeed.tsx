@@ -9,10 +9,10 @@ import { instagramHandle, instagramPosts, instagramUrl } from "@/data/instagram"
    src/data/instagram.ts; kies foto's die elders op de homepage nog
    niet staan. */
 const tegels = [
-  instagramPosts[5], // groot: achter de bar
-  instagramPosts[4], // cocktails op tafel
-  instagramPosts[8], // limonade met bosbes
-  instagramPosts[6], // drankje op de bank
+  instagramPosts[0], // groot: ontbijt en lunch
+  instagramPosts[1], // koffie
+  instagramPosts[2], // koekje
+  instagramPosts[3], // wijn
 ].filter(Boolean);
 
 export function InstagramFeed() {
