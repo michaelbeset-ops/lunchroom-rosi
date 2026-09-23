@@ -51,7 +51,7 @@ function HomePage() {
             width={2400}
             height={1351}
             fetchPriority="high"
-            className="kenburns hero-foto absolute inset-y-0 right-0 h-full max-w-none object-cover object-[50%_100%]"
+            className="kenburns hero-foto absolute inset-y-0 right-0 h-full max-w-none object-cover object-[50%_60%] md:object-[50%_100%]"
           />
           {/* Donker verloop bovenin zodat de lichte navigatie leesbaar blijft */}
           <div
@@ -61,13 +61,13 @@ function HomePage() {
         </div>
 
         {/* Tekstvlak, vast aan de onderrand; op desktop rechtsonder */}
-        <div className="relative z-10 w-full md:ml-auto md:w-[min(560px,42vw)]">
+        <div className="relative z-10 -mt-10 ml-auto w-[90%] md:mt-0 md:w-[min(560px,42vw)]">
           <RosiMedaillon
             licht
             className="absolute -top-14 right-5 z-20 w-[104px] md:-top-16 md:right-8 md:w-[116px]"
           />
           <div className="schulprand" aria-hidden="true" />
-          <div className="hero-reveal bg-[color:var(--olive-deep)] px-5 pt-5 pb-6 text-[color:var(--cream)] md:px-9 md:pt-6 md:pb-7">
+          <div className="hero-reveal rounded-tl-2xl bg-[color:var(--olive-deep)] px-5 pt-5 pb-6 text-[color:var(--cream)] md:rounded-none md:px-9 md:pt-6 md:pb-7">
             <h1 className="max-w-[12em] font-script text-[clamp(1.35rem,4.2vw,2.1rem)] leading-[1.45] font-normal tracking-normal">
               Koffie, lunch &amp; wine nights.
             </h1>
