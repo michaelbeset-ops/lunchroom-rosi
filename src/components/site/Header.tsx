@@ -1,23 +1,29 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useLocation } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { RosiRoos } from "@/components/site/RosiMark";
+import { RosiRoos, RosiWoordmerk } from "@/components/site/RosiMark";
 
 const paginaLinks = [
   { to: "/", label: "Home" },
   { to: "/menu", label: "Menu" },
+  { to: "/ons-verhaal", label: "Ons verhaal" },
 ] as const;
 
-/* Ankers op de homepage; gewone links zodat ze ook vanaf de menupagina
-   werken (volledige navigatie, browser scrolt zelf naar het anker) */
-const ankerLinks = [
-  { anker: "verhaal", label: "Ons verhaal" },
-  { anker: "contact", label: "Contact" },
-] as const;
+/* Anker op de homepage; gewone link zodat hij ook vanaf andere pagina's
+   werkt (volledige navigatie, browser scrolt zelf naar het anker) */
+const ankerLinks = [{ anker: "contact", label: "Contact" }] as const;
 
 export function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { pathname } = useLocation();
+  /* Bovenaan de homepage ligt de header over de herofoto: dan tekst in
+     de achtergrondkleur, anders in het merkgroen. */
+  const opHome = pathname === "/" || pathname === import.meta.env.BASE_URL;
+  const opFoto = opHome && !scrolled && !open;
+  const linkKleur = opFoto
+    ? "text-[color:var(--cream)] hover:text-[color:var(--blush)] [text-shadow:0_1px_12px_rgb(85_47_36/0.45)]"
+    : "text-primary hover:text-[color:var(--terracotta)]";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -34,23 +40,25 @@ export function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="flex items-center justify-between px-5 py-4 md:px-10">
+      <div className="relative flex items-center justify-between px-5 py-4 md:px-10">
         <Link
           to="/"
-          className="inline-flex items-center gap-2.5 font-serif text-2xl tracking-[0.14em] text-primary transition-colors hover:text-[color:var(--terracotta)]"
+          aria-label="Rosí, naar de homepagina"
+          className={`inline-flex items-center gap-2.5 transition-colors ${linkKleur}`}
         >
-          <RosiRoos className="h-7 w-auto [--roos-bloem:var(--terracotta)]" />
-          ROSÍ
+          <RosiRoos className="h-9 w-auto" />
+          <RosiWoordmerk className="h-5 w-auto" />
         </Link>
 
-        <nav className="hidden items-center gap-7 md:flex">
+        {/* Midden uitgelijnd, hoofdletters en een flink stuk groter */}
+        <nav className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-10 md:flex">
           {paginaLinks.map((l) => (
             <Link
               key={l.to}
               to={l.to}
-              className="text-sm text-foreground/70 transition-colors hover:text-primary"
+              className={`text-[0.95rem] font-semibold uppercase tracking-[0.18em] transition-colors ${linkKleur}`}
               activeProps={{
-                className: "text-primary underline underline-offset-8 decoration-1",
+                className: "underline underline-offset-8 decoration-2",
               }}
               activeOptions={{ exact: l.to === "/" }}
             >
@@ -61,7 +69,7 @@ export function Header() {
             <a
               key={l.anker}
               href={`${import.meta.env.BASE_URL}#${l.anker}`}
-              className="text-sm text-foreground/70 transition-colors hover:text-primary"
+              className={`text-[0.95rem] font-semibold uppercase tracking-[0.18em] transition-colors ${linkKleur}`}
             >
               {l.label}
             </a>
@@ -69,7 +77,7 @@ export function Header() {
         </nav>
 
         <button
-          className="inline-flex items-center justify-center p-2 text-foreground md:hidden"
+          className={`inline-flex items-center justify-center p-2 md:hidden ${linkKleur}`}
           aria-label={open ? "Sluit menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
@@ -86,8 +94,8 @@ export function Header() {
                 key={l.to}
                 to={l.to}
                 onClick={() => setOpen(false)}
-                className="border-b border-border/60 py-3.5 text-base text-foreground last:border-0"
-                activeProps={{ className: "text-primary" }}
+                className="border-b border-border/60 py-3.5 text-base font-semibold uppercase tracking-[0.14em] text-primary last:border-0"
+                activeProps={{ className: "text-[color:var(--terracotta)]" }}
                 activeOptions={{ exact: l.to === "/" }}
               >
                 {l.label}
@@ -98,7 +106,7 @@ export function Header() {
                 key={l.anker}
                 href={`${import.meta.env.BASE_URL}#${l.anker}`}
                 onClick={() => setOpen(false)}
-                className="border-b border-border/60 py-3.5 text-base text-foreground last:border-0"
+                className="border-b border-border/60 py-3.5 text-base font-semibold uppercase tracking-[0.14em] text-primary last:border-0"
               >
                 {l.label}
               </a>

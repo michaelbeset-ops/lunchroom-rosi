@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { menu } from "@/data/menu";
-import barCookies from "@/assets/instagram/bar-cookies.jpg";
 import { Reveal } from "@/components/site/Reveal";
 import { WaveDivider } from "@/components/site/WaveDivider";
 
@@ -26,7 +25,7 @@ function MenuPage() {
   return (
     <>
       <section className="container-prose pt-12 pb-10 md:pt-20 text-center">
-        <p className="font-script text-[1.9rem] leading-none text-[color:var(--terracotta)]">
+        <p className="font-script text-[1.3rem] leading-[1.6] text-[color:var(--terracotta)]">
           onze kaart
         </p>
         <h1 className="mt-3 font-serif text-5xl text-foreground sm:text-6xl">
@@ -37,17 +36,6 @@ function MenuPage() {
           bord boven de bar.
         </p>
         <WaveDivider className="mt-8 mx-auto max-w-[200px]" />
-      </section>
-
-      <section className="container-prose pb-14">
-        <img
-          src={barCookies}
-          alt="Schalen met brownies, cookies en matcha cookies op de bar bij Rosí"
-          loading="lazy"
-          width={1200}
-          height={1600}
-          className="photo-soft aspect-[16/7] w-full object-cover object-[center_62%]"
-        />
       </section>
 
       {/* Categorie nav */}
@@ -113,7 +101,7 @@ function MenuPage() {
             href="https://ig.me/m/lunchroomrosi"
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-6 inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm text-primary-foreground transition-colors hover:bg-[color:var(--terracotta)]"
+            className="mt-6 inline-flex items-center rounded-full bg-primary px-6 py-3 text-sm text-primary-foreground transition-colors hover:bg-[color:var(--terracotta-deep)]"
           >
             Stuur ons een berichtje
           </a>
