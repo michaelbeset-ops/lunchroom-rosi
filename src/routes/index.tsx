@@ -205,9 +205,9 @@ function HomePage() {
               src={special.foto}
               alt={special.fotoAlt}
               loading="lazy"
-              width={276}
-              height={359}
-              className="photo-soft mx-auto w-full max-w-[340px] object-cover"
+              width={695}
+              height={838}
+              className="photo-soft mx-auto w-full max-w-[440px] object-cover"
             />
           </Reveal>
         </div>

@@ -22,8 +22,8 @@ in plaats van echte gegevens:
 ## Uit de briefing (september), nog open
 
 9. **Foto's** — Fay, de gerechten en de collage komen uit de aanlevering
-   (map `aanlevering/`, verkleind in `src/assets/`). Alleen de Pear
-   Matcha-foto komt nog uit de PDF en is klein; graag het origineel.
+   (map `aanlevering/`, verkleind in `src/assets/`). De Pear Matcha-foto
+   komt van de Instagram-post (695px, scherp genoeg voor de site).
 10. **Niet gebruikt** — "Rosí World" en "Get to know Team Rosí" (svg) zijn
     Instagram-graphics; die passen nergens op de site.
 11. **Menukaart als afbeeldingen** — per categorie een 1080x1920-afbeelding
