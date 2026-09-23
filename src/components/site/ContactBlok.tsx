@@ -42,10 +42,10 @@ export function ContactBlok({ kop = "h2" }: { kop?: "h1" | "h2" }) {
               </a>
               , mail{" "}
               <a
-                href="mailto:hallo@lunchroomrosi.nl"
+                href="mailto:info@lunchroomrosi.nl"
                 className="underline decoration-[color:var(--cream)]/50 decoration-2 underline-offset-[3px] hover:decoration-[color:var(--cream)]"
               >
-                hallo@lunchroomrosi.nl
+                info@lunchroomrosi.nl
               </a>{" "}
               of stuur een DM.
             </p>

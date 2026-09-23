@@ -7,8 +7,7 @@ in plaats van echte gegevens:
    voorbeeld (staat ook als melding op de menupagina).
 2. **Openingstijden** — bijgewerkt volgens de briefing, staan nu op één
    plek: `src/data/openingstijden.ts`.
-3. **E-mailadres** — overal staat hallo@lunchroomrosi.nl. Bestaat dat, of
-   moet er een ander adres in?
+3. **E-mailadres** — info@lunchroomrosi.nl, overal doorgevoerd.
 4. **Telefoonnummer** — +31 6 33011418 staat nu bij contact en in de
    footer (`src/data/openingstijden.ts`).
 5. **Adres bevestigen** — Molenstraat 35, Monster staat overal, zonder
