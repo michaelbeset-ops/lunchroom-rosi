@@ -10,7 +10,9 @@ export const special = {
   tekst:
     "De zachte, sappige zoetheid van peer ontmoet de diepe, aardse frisheid van ceremonial grade matcha. Een verrassende combinatie die precies past bij september.",
   videoUrl: "https://www.instagram.com/lunchroomrosi/reel/DdgVUX3tbis/",
-  /* Uit de briefing-PDF (klein); vervangen door het origineel zodra dat er is */
+  /* De Instagram-post met de foto van de special */
+  postUrl: "https://www.instagram.com/lunchroomrosi/p/DdWVz7ZNgBf/",
+  /* De Instagram-post van de special */
   foto,
   fotoAlt: "September special: een pear matcha latte naast een peer",
 };

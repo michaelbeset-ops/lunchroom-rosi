@@ -84,10 +84,10 @@ function PrivacyPage() {
           Je mag altijd vragen welke gegevens we van je hebben, en of we ze aanpassen of
           verwijderen. Mail ons op{" "}
           <a
-            href="mailto:hallo@lunchroomrosi.nl"
+            href="mailto:info@lunchroomrosi.nl"
             className="underline decoration-primary decoration-2 underline-offset-2 hover:text-primary"
           >
-            hallo@lunchroomrosi.nl
+            info@lunchroomrosi.nl
           </a>{" "}
           en we regelen het. Kom je er met ons niet uit, dan kun je terecht bij de Autoriteit
           Persoonsgegevens.

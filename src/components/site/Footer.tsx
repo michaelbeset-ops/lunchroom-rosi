@@ -50,8 +50,8 @@ export function Footer() {
               {telefoon.weergave}
             </a>
             <br />
-            <a href="mailto:hallo@lunchroomrosi.nl" className="hover:text-[color:var(--cream)]">
-              hallo@lunchroomrosi.nl
+            <a href="mailto:info@lunchroomrosi.nl" className="hover:text-[color:var(--cream)]">
+              info@lunchroomrosi.nl
             </a>
           </address>
           <a

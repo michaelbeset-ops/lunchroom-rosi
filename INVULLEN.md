@@ -7,8 +7,7 @@ in plaats van echte gegevens:
    voorbeeld (staat ook als melding op de menupagina).
 2. **Openingstijden** — bijgewerkt volgens de briefing, staan nu op één
    plek: `src/data/openingstijden.ts`.
-3. **E-mailadres** — overal staat hallo@lunchroomrosi.nl. Bestaat dat, of
-   moet er een ander adres in?
+3. **E-mailadres** — info@lunchroomrosi.nl, overal doorgevoerd.
 4. **Telefoonnummer** — +31 6 33011418 staat nu bij contact en in de
    footer (`src/data/openingstijden.ts`).
 5. **Adres bevestigen** — Molenstraat 35, Monster staat overal, zonder
@@ -22,8 +21,8 @@ in plaats van echte gegevens:
 ## Uit de briefing (september), nog open
 
 9. **Foto's** — Fay, de gerechten en de collage komen uit de aanlevering
-   (map `aanlevering/`, verkleind in `src/assets/`). Alleen de Pear
-   Matcha-foto komt nog uit de PDF en is klein; graag het origineel.
+   (map `aanlevering/`, verkleind in `src/assets/`). De Pear Matcha-foto
+   komt van de Instagram-post (695px, scherp genoeg voor de site).
 10. **Niet gebruikt** — "Rosí World" en "Get to know Team Rosí" (svg) zijn
     Instagram-graphics; die passen nergens op de site.
 11. **Menukaart als afbeeldingen** — per categorie een 1080x1920-afbeelding

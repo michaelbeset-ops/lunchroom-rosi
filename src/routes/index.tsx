@@ -183,9 +183,17 @@ function HomePage() {
               >
                 Bekijk op Instagram
               </a>
+              <a
+                href={special.postUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-semibold text-primary underline decoration-primary/50 decoration-2 underline-offset-[5px] transition-colors hover:opacity-75 hover:decoration-primary"
+              >
+                Bekijk de post
+              </a>
               <Link
                 to="/menu"
-                className="text-sm font-semibold text-primary underline decoration-primary/50 hover:decoration-primary decoration-2 underline-offset-[5px] transition-colors hover:opacity-75"
+                className="text-sm font-semibold text-primary underline decoration-primary/50 decoration-2 underline-offset-[5px] transition-colors hover:opacity-75 hover:decoration-primary"
               >
                 Bekijk de hele kaart
               </Link>
@@ -197,9 +205,9 @@ function HomePage() {
               src={special.foto}
               alt={special.fotoAlt}
               loading="lazy"
-              width={276}
-              height={359}
-              className="photo-soft mx-auto w-full max-w-[340px] object-cover"
+              width={695}
+              height={838}
+              className="photo-soft mx-auto w-full max-w-[440px] object-cover"
             />
           </Reveal>
         </div>
