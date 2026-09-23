@@ -339,6 +339,23 @@
     }
   }
 
+  /* Herofoto: op desktop iets breder dan het scherm en rechts uitgelijnd,
+     zodat de tekst in de foto links van het groene vlak valt. Op brede,
+     lage schermen wordt de foto al verticaal bijgesneden en past hij zo. */
+  .hero-foto {
+    width: 100%;
+  }
+  @media (min-width: 768px) {
+    .hero-foto {
+      width: 124%;
+    }
+  }
+  @media (min-width: 768px) and (min-aspect-ratio: 2/1) {
+    .hero-foto {
+      width: 100%;
+    }
+  }
+
   /* Warme, onregelmatige fotolijst: net iets minder blokkerig dan een rechthoek */
   .photo-soft {
     border-radius: 26px;

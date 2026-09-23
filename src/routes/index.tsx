@@ -51,7 +51,7 @@ function HomePage() {
             width={2400}
             height={1351}
             fetchPriority="high"
-            className="kenburns absolute inset-y-0 right-0 h-full w-full max-w-none object-cover object-[50%_100%] md:w-[124%]"
+            className="kenburns hero-foto absolute inset-y-0 right-0 h-full max-w-none object-cover object-[50%_100%]"
           />
           {/* Donker verloop bovenin zodat de lichte navigatie leesbaar blijft */}
           <div
