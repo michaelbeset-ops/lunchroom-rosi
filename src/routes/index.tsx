@@ -3,6 +3,7 @@ import { useRef } from "react";
 /* Herofoto uit de aanlevering: roze pioenrozen met "Gezelligheid in
    Monster" in handschrift (aanlevering/Homepage foto 1). */
 import heroImg from "@/assets/hero-gezelligheid.jpg";
+import pioenrozen from "@/assets/pioenrozen.jpg";
 import etenBowl from "@/assets/eten-bowl.jpg";
 import etenBroodje from "@/assets/eten-broodje.jpg";
 import drankjeBank from "@/assets/instagram/drankje-bank.jpg";
@@ -37,66 +38,101 @@ export const Route = createFileRoute("/")({
 const btnQuiet =
   "inline-flex items-center rounded-full border border-primary/30 bg-card px-7 py-3.5 text-sm font-medium text-foreground transition-colors hover:border-primary hover:text-primary";
 
+function HeroBlok() {
+  return (
+    <div className="relative z-10 ml-auto w-[90%] md:w-[min(560px,42vw)]">
+      <RosiMedaillon
+        licht
+        className="absolute -top-14 right-5 z-20 w-[104px] md:-top-16 md:right-8 md:w-[116px]"
+      />
+      <div className="schulprand" aria-hidden="true" />
+      <div className="hero-reveal rounded-tl-2xl bg-[color:var(--olive-deep)] px-5 pt-5 pb-6 text-[color:var(--cream)] md:rounded-none md:px-9 md:pt-6 md:pb-7">
+        <h1 className="max-w-[12em] font-script text-[clamp(1.35rem,4.2vw,2.1rem)] leading-[1.45] font-normal tracking-normal">
+          Koffie, lunch &amp; wine nights.
+        </h1>
+        <p className="mt-2 max-w-md text-[0.95rem] leading-relaxed text-[color:var(--cream)]">
+          Vers en huisgemaakt, midden in Monster. Reserveren kan met een berichtje via Instagram,
+          binnenlopen mag altijd.
+        </p>
+        <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-3">
+          <a
+            href="https://ig.me/m/lunchroomrosi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center rounded-full bg-aperol px-6 py-3 text-sm font-semibold text-[color:var(--cream)] transition-colors hover:bg-[color:var(--terracotta-deep)]"
+          >
+            Reserveer via Instagram
+          </a>
+          <Link
+            to="/menu"
+            className="text-sm font-semibold text-[color:var(--cream)] underline decoration-[color:var(--cream)]/60 decoration-2 underline-offset-[5px] transition-colors hover:decoration-[color:var(--cream)]"
+          >
+            Bekijk de kaart
+          </Link>
+        </div>
+        <p className="mt-4 border-t border-[color:var(--cream)]/20 pt-3 text-sm tracking-wide text-[color:var(--cream)]">
+          Molenstraat 35, Monster &middot; di t/m zo open
+        </p>
+      </div>
+    </div>
+  );
+}
+
+const navVerloop = (
+  <div
+    aria-hidden="true"
+    className="absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-[color:var(--shadow)]/55 via-[color:var(--shadow)]/20 to-transparent"
+  />
+);
+
+function Hero() {
+  /* Desktop: de aangeleverde foto met de tekst erin */
+  const desktopFoto = (
+    <div className="absolute inset-0 hidden md:block">
+      <img
+        src={heroImg}
+        alt="Roze pioenrozen met de tekst Gezelligheid in Monster"
+        width={2400}
+        height={1351}
+        fetchPriority="high"
+        className="kenburns hero-foto absolute inset-y-0 right-0 h-full max-w-none object-cover object-[50%_100%]"
+      />
+      {navVerloop}
+    </div>
+  );
+
+  /* Mobiel: pioenrozen schermvullend met de tekst als echte tekst eroverheen */
+  return (
+    <section className="relative -mt-16 flex min-h-svh flex-col justify-end overflow-hidden">
+      {desktopFoto}
+      <div className="absolute inset-0 md:hidden">
+        <img
+          src={pioenrozen}
+          alt="Roze pioenrozen"
+          width={1400}
+          height={2098}
+          fetchPriority="high"
+          className="kenburns absolute inset-0 h-full w-full object-cover object-[50%_35%]"
+        />
+        <div aria-hidden="true" className="absolute inset-0 bg-[color:var(--shadow)]/25" />
+        {navVerloop}
+        <p className="hero-tekst absolute inset-x-5 top-[22%] text-center font-script text-[2.6rem] leading-[1.3] text-[color:var(--cream)]">
+          Gezelligheid
+          <br />
+          in Monster
+        </p>
+      </div>
+      <HeroBlok />
+    </section>
+  );
+}
+
 function HomePage() {
   return (
     <>
-      {/* Hero: de pioenrozenfoto met "Gezelligheid in Monster"; op desktop
-          ligt het groene tekstvlak rechtsonder over de foto, op mobiel
-          staat het eronder zodat de tekst in de foto vrij blijft. */}
-      <section className="relative -mt-16 flex flex-col overflow-hidden md:min-h-svh md:justify-end">
-        <div className="relative aspect-[16/10] md:absolute md:inset-0 md:aspect-auto">
-          <img
-            src={heroImg}
-            alt="Roze pioenrozen met de tekst Gezelligheid in Monster"
-            width={2400}
-            height={1351}
-            fetchPriority="high"
-            className="kenburns hero-foto absolute inset-y-0 right-0 h-full max-w-none object-cover object-[50%_100%]"
-          />
-          {/* Donker verloop bovenin zodat de lichte navigatie leesbaar blijft */}
-          <div
-            aria-hidden="true"
-            className="absolute inset-x-0 top-0 h-36 bg-gradient-to-b from-[color:var(--shadow)]/55 via-[color:var(--shadow)]/20 to-transparent"
-          />
-        </div>
-
-        {/* Tekstvlak, vast aan de onderrand; op desktop rechtsonder */}
-        <div className="relative z-10 w-full md:ml-auto md:w-[min(560px,42vw)]">
-          <RosiMedaillon
-            licht
-            className="absolute -top-14 right-5 z-20 w-[104px] md:-top-16 md:right-8 md:w-[116px]"
-          />
-          <div className="schulprand" aria-hidden="true" />
-          <div className="hero-reveal bg-[color:var(--olive-deep)] px-5 pt-5 pb-6 text-[color:var(--cream)] md:px-9 md:pt-6 md:pb-7">
-            <h1 className="max-w-[12em] font-script text-[clamp(1.5rem,4.2vw,2.1rem)] leading-[1.45] font-normal tracking-normal">
-              Koffie, lunch &amp; wine nights.
-            </h1>
-            <p className="mt-2 max-w-md text-[0.95rem] leading-relaxed text-[color:var(--cream)]">
-              Vers en huisgemaakt, midden in Monster. Reserveren kan met een berichtje via
-              Instagram, binnenlopen mag altijd.
-            </p>
-            <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-3">
-              <a
-                href="https://ig.me/m/lunchroomrosi"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center rounded-full bg-aperol px-6 py-3 text-sm font-semibold text-[color:var(--cream)] transition-colors hover:bg-[color:var(--terracotta-deep)]"
-              >
-                Reserveer via Instagram
-              </a>
-              <Link
-                to="/menu"
-                className="text-sm font-semibold text-[color:var(--cream)] underline decoration-[color:var(--cream)]/60 decoration-2 underline-offset-[5px] transition-colors hover:decoration-[color:var(--cream)]"
-              >
-                Bekijk de kaart
-              </Link>
-            </div>
-            <p className="mt-4 border-t border-[color:var(--cream)]/20 pt-3 text-sm tracking-wide text-[color:var(--cream)]">
-              Molenstraat 35, Monster &middot; dinsdag t/m zondag open
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Hero: desktop de pioenrozenfoto met "Gezelligheid in Monster", mobiel
+          de losse pioenrozen met de tekst eroverheen; groen tekstvlak rechtsonder */}
+      <Hero />
 
       {/* Welkom: verhaal, beloftes en de fotocollage */}
       <section
@@ -182,14 +218,6 @@ function HomePage() {
                 className="inline-flex items-center rounded-full bg-aperol px-7 py-3.5 text-sm font-semibold text-[color:var(--cream)] transition-colors hover:bg-[color:var(--terracotta-deep)]"
               >
                 Bekijk op Instagram
-              </a>
-              <a
-                href={special.postUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm font-semibold text-primary underline decoration-primary/50 decoration-2 underline-offset-[5px] transition-colors hover:opacity-75 hover:decoration-primary"
-              >
-                Bekijk de post
               </a>
               <Link
                 to="/menu"
