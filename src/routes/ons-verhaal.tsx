@@ -36,10 +36,10 @@ function OnsVerhaalPage() {
         <img
           src={fay}
           alt="Fay, de oprichter van Rosí, op de roestkleurige bank in de zaak"
-          width={320}
-          height={405}
+          width={1000}
+          height={1501}
           fetchPriority="high"
-          className="photo-soft photo-arch mx-auto aspect-[4/5] w-full max-w-[400px] object-cover"
+          className="photo-soft photo-arch mx-auto aspect-[4/5] w-full max-w-[440px] object-cover object-[50%_30%]"
         />
       </Reveal>
 
@@ -49,7 +49,7 @@ function OnsVerhaalPage() {
           Hoe het allemaal is begonnen&hellip;
         </h1>
 
-        <div className="mt-8 max-w-lg space-y-5 text-[1.05rem] leading-relaxed text-foreground/90">
+        <div className="mt-8 max-w-lg space-y-5 text-[1.05rem] leading-relaxed text-foreground">
           {alineas.map((tekst) => (
             <p key={tekst}>{tekst}</p>
           ))}

@@ -10,14 +10,15 @@ import {
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { CookieBanner } from "@/components/site/CookieBanner";
-import { WelkomPopup } from "@/components/site/WelkomPopup";
 
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="font-serif text-7xl text-primary">404</h1>
-        <h2 className="mt-4 font-serif text-2xl text-foreground">Hier is niets te vinden</h2>
+        <h1 className="font-script font-normal tracking-normal text-6xl text-primary">404</h1>
+        <h2 className="mt-4 font-script font-normal tracking-normal text-2xl text-primary">
+          Hier is niets te vinden
+        </h2>
         <p className="mt-2 text-sm text-muted-foreground">
           Deze pagina bestaat niet (meer). Loop gerust terug naar de voordeur.
         </p>
@@ -38,7 +39,9 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
-        <h1 className="font-serif text-2xl text-foreground">Oeps, dat ging niet helemaal goed</h1>
+        <h1 className="font-script font-normal tracking-normal text-2xl text-primary">
+          Oeps, dat ging niet helemaal goed
+        </h1>
         <p className="mt-2 text-sm text-muted-foreground">
           Probeer het nog eens of ga terug naar de homepagina.
         </p>
@@ -122,7 +125,6 @@ function RootComponent() {
         </main>
         <Footer />
         <CookieBanner />
-        <WelkomPopup />
       </div>
     </QueryClientProvider>
   );

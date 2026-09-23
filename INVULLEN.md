@@ -15,22 +15,28 @@ in plaats van echte gegevens:
    postcode. Postcode aanleveren voor de contactpagina en Google.
 6. **Naam/verhaal checken** — het verhaal op de over-pagina noemt Fay en
    het vrouwenteam en de opening op Koningsdag. Even laten meelezen.
-7. **Grote sfeerfoto** — de herofoto is 850px breed en opgeschaald.
-   Een origineel van 2000px+ maakt hem echt scherp.
-8. **Logo** — de nieuwe roos en het woordmerk zijn als vector uit de
-   briefing-PDF gehaald (`src/components/site/RosiMark.tsx`).
+7. **Herofoto** — nu "Gezelligheid in Monster" uit de aanlevering, scherp.
+8. **Logo** — de aangeleverde SVG's (roos in ovaal en woordmerk) zitten in
+   `src/components/site/RosiMark.tsx` en de favicon.
 
 ## Uit de briefing (september), nog open
 
-9. **Foto's** — de foto van Fay komt nu uit de PDF (320px, wat klein).
-   Graag het origineel. Ook de echte foto voor de maandspecial ontbreekt
-   nog; tot die tijd staat er een matchafoto (`src/data/special.ts`).
-10. **Herofoto** — twijfel of die anders moet; nog geen besluit.
+9. **Foto's** — Fay, de gerechten en de collage komen uit de aanlevering
+   (map `aanlevering/`, verkleind in `src/assets/`). Alleen de Pear
+   Matcha-foto komt nog uit de PDF en is klein; graag het origineel.
+10. **Niet gebruikt** — "Rosí World" en "Get to know Team Rosí" (svg) zijn
+    Instagram-graphics; die passen nergens op de site.
 11. **Menukaart als afbeeldingen** — per categorie een 1080x1920-afbeelding
     zonder achtergrond, dan komen die op de menupagina.
 12. **Maandspecial** — elke maand nieuwe tekst, foto en videolink in
     `src/data/special.ts`.
-13. **Lettertype** — Adobe Handwriting Ernie vervangen door het gratis
-    Homemade Apple. Als er een Adobe Fonts-account is, kan Ernie er zo in.
-14. **Instagram-collage** — nu vaste foto's; een automatische koppeling
-    kan via een (betaalde) dienst als Behold of Elfsight.
+13. **Lettertype** — titels in Homemade Apple (gratis tegenhanger van Adobe
+    Handwriting Ernie), de rest in Montserrat. Met een Adobe Fonts-account
+    kan Ernie er zo in.
+14. **Instagram-koppeling via Behold** — klaar in de code. Nog te doen:
+    account maken op behold.so, Instagram koppelen, een feed van het type
+    "API / JSON" aanmaken en het feed-ID plakken in `src/data/instagram.ts`
+    (`beholdFeedId`). Zolang dat leeg is, staan de vaste foto's.
+15. **Catering** — de pagina bestaat (`src/routes/catering.tsx`) met een
+    korte uitnodiging om contact op te nemen. Echte tekst, prijzen en foto's
+    nog aanleveren.

@@ -9,11 +9,19 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SocialsRouteImport } from './routes/socials'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as OnsVerhaalRouteImport } from './routes/ons-verhaal'
 import { Route as MenuRouteImport } from './routes/menu'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CateringRouteImport } from './routes/catering'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SocialsRoute = SocialsRouteImport.update({
+  id: '/socials',
+  path: '/socials',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
@@ -29,6 +37,16 @@ const MenuRoute = MenuRouteImport.update({
   path: '/menu',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CateringRoute = CateringRouteImport.update({
+  id: '/catering',
+  path: '/catering',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -37,40 +55,81 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/catering': typeof CateringRoute
+  '/contact': typeof ContactRoute
   '/menu': typeof MenuRoute
   '/ons-verhaal': typeof OnsVerhaalRoute
   '/privacy': typeof PrivacyRoute
+  '/socials': typeof SocialsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/catering': typeof CateringRoute
+  '/contact': typeof ContactRoute
   '/menu': typeof MenuRoute
   '/ons-verhaal': typeof OnsVerhaalRoute
   '/privacy': typeof PrivacyRoute
+  '/socials': typeof SocialsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/catering': typeof CateringRoute
+  '/contact': typeof ContactRoute
   '/menu': typeof MenuRoute
   '/ons-verhaal': typeof OnsVerhaalRoute
   '/privacy': typeof PrivacyRoute
+  '/socials': typeof SocialsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/menu' | '/ons-verhaal' | '/privacy'
+  fullPaths:
+    | '/'
+    | '/catering'
+    | '/contact'
+    | '/menu'
+    | '/ons-verhaal'
+    | '/privacy'
+    | '/socials'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/menu' | '/ons-verhaal' | '/privacy'
-  id: '__root__' | '/' | '/menu' | '/ons-verhaal' | '/privacy'
+  to:
+    | '/'
+    | '/catering'
+    | '/contact'
+    | '/menu'
+    | '/ons-verhaal'
+    | '/privacy'
+    | '/socials'
+  id:
+    | '__root__'
+    | '/'
+    | '/catering'
+    | '/contact'
+    | '/menu'
+    | '/ons-verhaal'
+    | '/privacy'
+    | '/socials'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CateringRoute: typeof CateringRoute
+  ContactRoute: typeof ContactRoute
   MenuRoute: typeof MenuRoute
   OnsVerhaalRoute: typeof OnsVerhaalRoute
   PrivacyRoute: typeof PrivacyRoute
+  SocialsRoute: typeof SocialsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/socials': {
+      id: '/socials'
+      path: '/socials'
+      fullPath: '/socials'
+      preLoaderRoute: typeof SocialsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/privacy': {
       id: '/privacy'
       path: '/privacy'
@@ -92,6 +151,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MenuRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/catering': {
+      id: '/catering'
+      path: '/catering'
+      fullPath: '/catering'
+      preLoaderRoute: typeof CateringRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -104,9 +177,12 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CateringRoute: CateringRoute,
+  ContactRoute: ContactRoute,
   MenuRoute: MenuRoute,
   OnsVerhaalRoute: OnsVerhaalRoute,
   PrivacyRoute: PrivacyRoute,
+  SocialsRoute: SocialsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

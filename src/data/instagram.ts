@@ -15,6 +15,10 @@ import matchaCookies from "@/assets/instagram/matcha-cookies.jpg";
 import cheesecakeCitroen from "@/assets/instagram/cheesecake-citroen.jpg";
 import achterDeBar from "@/assets/instagram/achter-de-bar.jpg";
 import proost from "@/assets/instagram/proost.jpg";
+import ontbijtLunch from "@/assets/instagram/ontbijt-lunch.jpg";
+import koffie from "@/assets/instagram/koffie.jpg";
+import koekje from "@/assets/instagram/koekje.jpg";
+import wijn from "@/assets/instagram/wijn.jpg";
 
 export type InstagramPost = {
   src: string;
@@ -24,9 +28,39 @@ export type InstagramPost = {
 };
 
 export const instagramHandle = "lunchroomrosi";
+
+/* Behold (behold.so): automatische Instagram-koppeling. Maak op behold.so een
+   feed van het type "API / JSON", plak hier het feed-ID en de collage laadt
+   de nieuwste posts. Leeg = vaste foto's hieronder. */
+export const beholdFeedId = "";
 export const instagramUrl = `https://www.instagram.com/${instagramHandle}/`;
 
 export const instagramPosts: InstagramPost[] = [
+  /* Aangeleverde foto's (aanlevering/), gebruikt in de collage op de homepage */
+  {
+    src: ontbijtLunch,
+    alt: "Toast met avocado en granaatappel, met een matcha latte op tafel",
+    caption: "Ontbijt en lunch, elke dag vers.",
+    permalink: instagramUrl,
+  },
+  {
+    src: koffie,
+    alt: "Een cappuccino in een witte kop, vastgehouden voor een groene muur",
+    caption: "Koffie van Costadoro.",
+    permalink: instagramUrl,
+  },
+  {
+    src: koekje,
+    alt: "Een koekje op een geschulpt schoteltje, op de terracotta bar",
+    caption: "Vers uit de oven.",
+    permalink: instagramUrl,
+  },
+  {
+    src: wijn,
+    alt: "Een glas witte wijn in het zonlicht, met de schaduw van een fles",
+    caption: "Wine nights.",
+    permalink: instagramUrl,
+  },
   {
     src: barCookies,
     alt: "Twee medewerkers achter de bar met schalen brownies, cookies en matcha cookies",
