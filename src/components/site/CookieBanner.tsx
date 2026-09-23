@@ -54,8 +54,8 @@ export function CookieBanner() {
     >
       <p className="font-serif text-xl">Een koekje erbij?</p>
       <p className="mt-2 text-sm leading-relaxed text-[color:var(--cream)]">
-        Wij gebruiken alleen cookies om je voorkeuren te onthouden en om de kaart van Google Maps te
-        tonen als jij dat goed vindt. Geen advertenties, geen gevolg over het web.{" "}
+        Wij gebruiken alleen een functionele cookie om je keuze te onthouden. Geen advertenties,
+        geen statistieken, geen gevolg over het web.{" "}
         <a
           href="/lunchroom-rosi/privacy"
           className="underline decoration-[color:var(--cream)]/60 decoration-2 underline-offset-2"

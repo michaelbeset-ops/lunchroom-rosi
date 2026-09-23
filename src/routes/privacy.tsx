@@ -36,22 +36,20 @@ function PrivacyPage() {
 
         <h2 className={h2}>Welke gegevens we krijgen</h2>
         <p className={p}>
-          Vul je het contact- of reserveringsformulier in, dan opent dat een e-mail in je eigen
-          mailprogramma. Wij slaan die gegevens niet op in een database; ze staan alleen in onze
-          mailbox, en we gebruiken ze uitsluitend om je bericht te beantwoorden. Reserveer je via
-          Instagram, dan gelden daar de voorwaarden van Instagram.
+          Op deze site vul je niets in en hoef je nergens in te loggen. Mail je ons of bel je, dan
+          gebruiken we je gegevens alleen om je te antwoorden. Reserveer je of volg je ons via
+          Instagram, dan gelden daar de voorwaarden en het privacybeleid van Instagram.
         </p>
 
         <h2 className={h2}>Cookies</h2>
         <p className={p}>
           Deze site gebruikt geen advertentie- of volgcookies en geen statistiekdiensten. We
-          onthouden twee dingen in je browser: je cookiekeuze en of je onze welkomstmelding al hebt
-          gezien. Dat zijn functionele voorkeuren; die verlaten je apparaat niet.
+          onthouden alleen je cookiekeuze in je browser. Dat is een functionele voorkeur; die
+          verlaat je apparaat niet.
         </p>
         <p className={p}>
-          Op de contactpagina staat een kaart van Google Maps. Die laden we pas nadat je cookies
-          hebt geaccepteerd of zelf op de kaart klikt, omdat Google daarbij cookies kan plaatsen.
-          Zie het{" "}
+          Links naar Instagram en Google Maps openen die diensten in een nieuw tabblad. Vanaf dat
+          moment gelden hun eigen regels; zie het{" "}
           <a
             href="https://policies.google.com/privacy"
             target="_blank"
@@ -59,6 +57,15 @@ function PrivacyPage() {
             className="underline decoration-primary decoration-2 underline-offset-2 hover:text-primary"
           >
             privacybeleid van Google
+          </a>{" "}
+          en dat van{" "}
+          <a
+            href="https://privacycenter.instagram.com/policy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline decoration-primary decoration-2 underline-offset-2 hover:text-primary"
+          >
+            Instagram
           </a>
           .
         </p>

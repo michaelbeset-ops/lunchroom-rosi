@@ -10,7 +10,6 @@ import {
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { CookieBanner } from "@/components/site/CookieBanner";
-import { WelkomPopup } from "@/components/site/WelkomPopup";
 
 function NotFoundComponent() {
   return (
@@ -126,7 +125,6 @@ function RootComponent() {
         </main>
         <Footer />
         <CookieBanner />
-        <WelkomPopup />
       </div>
     </QueryClientProvider>
   );
