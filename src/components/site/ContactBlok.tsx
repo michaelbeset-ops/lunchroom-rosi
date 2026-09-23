@@ -1,5 +1,5 @@
 import { Reveal } from "@/components/site/Reveal";
-import fay from "@/assets/fay.jpg";
+import fay from "@/assets/fay.webp";
 import { openingstijden, telefoon } from "@/data/openingstijden";
 
 /* Contactblok: adres, openingstijden, telefoon en de foto van Fay. Staat
@@ -74,6 +74,7 @@ export function ContactBlok({ kop = "h2" }: { kop?: "h1" | "h2" }) {
               src={fay}
               alt="Fay, de oprichter van Rosí, op de roestkleurige bank in de zaak"
               loading="lazy"
+              decoding="async"
               width={1000}
               height={1501}
               className="photo-soft mx-auto aspect-[4/5] w-full max-w-[420px] object-cover object-[50%_30%]"

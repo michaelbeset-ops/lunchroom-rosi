@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Instagram } from "lucide-react";
-import etenBowl from "@/assets/eten-bowl.jpg";
+import etenBowl from "@/assets/eten-bowl.webp";
 import { Reveal } from "@/components/site/Reveal";
 import { RosiRoos } from "@/components/site/RosiMark";
 import { telefoon } from "@/data/openingstijden";
