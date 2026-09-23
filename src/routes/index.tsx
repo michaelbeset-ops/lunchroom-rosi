@@ -183,14 +183,6 @@ function HomePage() {
               >
                 Bekijk op Instagram
               </a>
-              <a
-                href={special.postUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm font-semibold text-primary underline decoration-primary/50 decoration-2 underline-offset-[5px] transition-colors hover:opacity-75 hover:decoration-primary"
-              >
-                Bekijk de post
-              </a>
               <Link
                 to="/menu"
                 className="text-sm font-semibold text-primary underline decoration-primary/50 decoration-2 underline-offset-[5px] transition-colors hover:opacity-75 hover:decoration-primary"
