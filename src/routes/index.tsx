@@ -40,17 +40,18 @@ const btnQuiet =
 function HomePage() {
   return (
     <>
-      {/* Hero: de pioenrozenfoto met "Gezelligheid in Monster" volledig in
-          beeld, daaronder een groen vlak met de tekst. */}
-      <section className="relative -mt-16 flex min-h-svh flex-col">
-        <div className="relative aspect-[16/10] overflow-hidden md:aspect-auto md:min-h-[420px] md:flex-1">
+      {/* Hero: de pioenrozenfoto met "Gezelligheid in Monster"; op desktop
+          ligt het groene tekstvlak rechtsonder over de foto, op mobiel
+          staat het eronder zodat de tekst in de foto vrij blijft. */}
+      <section className="relative -mt-16 flex flex-col overflow-hidden md:min-h-svh md:justify-end">
+        <div className="relative aspect-[16/10] md:absolute md:inset-0 md:aspect-auto">
           <img
             src={heroImg}
             alt="Roze pioenrozen met de tekst Gezelligheid in Monster"
             width={2400}
             height={1351}
             fetchPriority="high"
-            className="kenburns absolute inset-0 h-full w-full object-cover object-[50%_45%]"
+            className="kenburns hero-foto absolute inset-y-0 right-0 h-full max-w-none object-cover object-[50%_100%]"
           />
           {/* Donker verloop bovenin zodat de lichte navigatie leesbaar blijft */}
           <div
@@ -59,45 +60,40 @@ function HomePage() {
           />
         </div>
 
-        <div className="relative z-10 w-full">
+        {/* Tekstvlak, vast aan de onderrand; op desktop rechtsonder */}
+        <div className="relative z-10 w-full md:ml-auto md:w-[min(560px,42vw)]">
           <RosiMedaillon
             licht
-            className="absolute -top-14 right-5 z-20 w-[104px] md:-top-16 md:right-10 md:w-[124px]"
+            className="absolute -top-14 right-5 z-20 w-[104px] md:-top-16 md:right-8 md:w-[116px]"
           />
           <div className="schulprand" aria-hidden="true" />
-          <div className="hero-reveal bg-[color:var(--olive-deep)] text-[color:var(--cream)]">
-            <div className="container-prose grid gap-x-16 gap-y-5 py-8 md:grid-cols-[7fr_5fr] md:items-end md:py-10">
-              <div>
-                <h1 className="max-w-[12em] font-script text-[clamp(1.7rem,4.5vw,2.6rem)] leading-[1.45] font-normal tracking-normal">
-                  Koffie, lunch &amp; wine nights.
-                </h1>
-                <p className="mt-3 max-w-md leading-relaxed text-[color:var(--cream)]">
-                  Vers en huisgemaakt, midden in Monster. Reserveren kan met een berichtje via
-                  Instagram, binnenlopen mag altijd.
-                </p>
-              </div>
-              <div className="md:pb-1">
-                <div className="flex flex-wrap items-center gap-x-6 gap-y-3">
-                  <a
-                    href="https://ig.me/m/lunchroomrosi"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center rounded-full bg-aperol px-7 py-3.5 text-sm font-semibold text-[color:var(--cream)] transition-colors hover:bg-[color:var(--terracotta-deep)]"
-                  >
-                    Reserveer via Instagram
-                  </a>
-                  <Link
-                    to="/menu"
-                    className="text-sm font-semibold text-[color:var(--cream)] underline decoration-[color:var(--cream)]/60 decoration-2 underline-offset-[5px] transition-colors hover:decoration-[color:var(--cream)]"
-                  >
-                    Bekijk de kaart
-                  </Link>
-                </div>
-                <p className="mt-5 text-sm tracking-wide text-[color:var(--cream)]">
-                  Molenstraat 35, Monster &middot; dinsdag t/m zondag open
-                </p>
-              </div>
+          <div className="hero-reveal bg-[color:var(--olive-deep)] px-5 pt-5 pb-6 text-[color:var(--cream)] md:px-9 md:pt-6 md:pb-7">
+            <h1 className="max-w-[12em] font-script text-[clamp(1.5rem,4.2vw,2.1rem)] leading-[1.45] font-normal tracking-normal">
+              Koffie, lunch &amp; wine nights.
+            </h1>
+            <p className="mt-2 max-w-md text-[0.95rem] leading-relaxed text-[color:var(--cream)]">
+              Vers en huisgemaakt, midden in Monster. Reserveren kan met een berichtje via
+              Instagram, binnenlopen mag altijd.
+            </p>
+            <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-3">
+              <a
+                href="https://ig.me/m/lunchroomrosi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-full bg-aperol px-6 py-3 text-sm font-semibold text-[color:var(--cream)] transition-colors hover:bg-[color:var(--terracotta-deep)]"
+              >
+                Reserveer via Instagram
+              </a>
+              <Link
+                to="/menu"
+                className="text-sm font-semibold text-[color:var(--cream)] underline decoration-[color:var(--cream)]/60 decoration-2 underline-offset-[5px] transition-colors hover:decoration-[color:var(--cream)]"
+              >
+                Bekijk de kaart
+              </Link>
             </div>
+            <p className="mt-4 border-t border-[color:var(--cream)]/20 pt-3 text-sm tracking-wide text-[color:var(--cream)]">
+              Molenstraat 35, Monster &middot; dinsdag t/m zondag open
+            </p>
           </div>
         </div>
       </section>
