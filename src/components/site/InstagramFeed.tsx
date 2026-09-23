@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Instagram } from "lucide-react";
 import { Reveal } from "@/components/site/Reveal";
-import { useCookieKeuze } from "@/components/site/CookieBanner";
 import { WaveDivider } from "@/components/site/WaveDivider";
 import { RosiMedaillon } from "@/components/site/RosiMark";
 import {
@@ -34,15 +33,13 @@ type BeholdPost = {
   sizes?: Record<string, { mediaUrl?: string } | undefined>;
 };
 
-/* Haalt de laatste posts op via Behold, maar pas nadat de bezoeker cookies
-   heeft geaccepteerd (het is een externe dienst). Zonder feed-ID, zonder
-   toestemming of bij een fout blijven de vaste foto's staan. */
+/* Haalt de laatste posts op via Behold. Zonder feed-ID of bij een fout
+   blijven de vaste foto's staan. */
 function useBeholdPosts(): InstagramPost[] | null {
-  const keuze = useCookieKeuze();
   const [posts, setPosts] = useState<InstagramPost[] | null>(null);
 
   useEffect(() => {
-    if (!beholdFeedId || keuze !== "ja") return;
+    if (!beholdFeedId) return;
     const ctrl = new AbortController();
     fetch(`https://feeds.behold.so/${beholdFeedId}`, { signal: ctrl.signal })
       .then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
@@ -67,7 +64,7 @@ function useBeholdPosts(): InstagramPost[] | null {
         /* dan blijven de vaste foto's staan */
       });
     return () => ctrl.abort();
-  }, [keuze]);
+  }, []);
 
   return posts;
 }
@@ -138,6 +135,7 @@ function FeedTegel({
         src={post.src}
         alt={post.alt}
         loading="lazy"
+        decoding="async"
         width={groot ? 1600 : 800}
         height={groot ? 1600 : 800}
         className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"

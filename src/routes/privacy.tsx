@@ -4,7 +4,7 @@ import { beholdFeedId } from "@/data/instagram";
 export const Route = createFileRoute("/privacy")({
   head: () => ({
     meta: [
-      { title: "Privacy & cookies | Rosí Monster" },
+      { title: "Privacy | Rosí Monster" },
       {
         name: "description",
         content:
@@ -28,7 +28,7 @@ function PrivacyPage() {
           goed geregeld
         </p>
         <h1 className="mt-3 font-script font-normal tracking-normal text-[1.9rem] leading-[1.5] text-primary sm:text-[2.6rem]">
-          Privacy &amp; cookies
+          Privacy
         </h1>
         <p className={p}>
           Wij zijn Lunchroom Rosí, Molenstraat 35 in Monster. Zo simpel als onze kaart is, zo simpel
@@ -44,16 +44,14 @@ function PrivacyPage() {
 
         <h2 className={h2}>Cookies</h2>
         <p className={p}>
-          Deze site gebruikt geen advertentie- of volgcookies en geen statistiekdiensten. We
-          onthouden alleen je cookiekeuze in je browser. Dat is een functionele voorkeur; die
-          verlaat je apparaat niet.
+          Deze site plaatst geen cookies en gebruikt geen advertentie-, volg- of statistiekdiensten.
+          Daarom zie je ook geen cookiemelding: er valt niets te kiezen.
         </p>
         {beholdFeedId && (
           <p className={p}>
-            Accepteer je cookies, dan laden we onze nieuwste Instagram-foto&apos;s via Behold
-            (behold.so). Je browser haalt die foto&apos;s dan op bij Behold; daarbij ziet Behold je
-            IP-adres. Weiger je cookies, dan zie je een vaste selectie foto&apos;s en wordt er niets
-            extern geladen.
+            Op de homepage en de pagina Socials laden we onze nieuwste Instagram-foto&apos;s via
+            Behold (behold.so). Je browser haalt die foto&apos;s op bij Behold; daarbij ziet Behold
+            je IP-adres. Verder wordt er niets opgeslagen.
           </p>
         )}
         <p className={p}>

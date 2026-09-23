@@ -87,7 +87,7 @@ export function Footer() {
               Socials
             </Link>
             <Link to="/privacy" className="hover:text-[color:var(--cream)]">
-              Privacy &amp; cookies
+              Privacy
             </Link>
             <a
               href="https://sitefront.nl"

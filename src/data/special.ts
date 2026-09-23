@@ -1,7 +1,7 @@
 // De maandspecial op de homepage (blok "Uitgelicht"). Elke maand komt er
 // een nieuwe tekst, foto en videolink: pas alleen dit bestand aan.
 
-import foto from "@/assets/special-pear-matcha.jpg";
+import foto from "@/assets/special-pear-matcha.webp";
 
 export const special = {
   maand: "september special",

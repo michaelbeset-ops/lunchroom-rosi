@@ -39,3 +39,6 @@ in plaats van echte gegevens:
 15. **Catering** — de pagina bestaat (`src/routes/catering.tsx`) met een
     korte uitnodiging om contact op te nemen. Echte tekst, prijzen en foto's
     nog aanleveren.
+16. **Cookiemelding** — verwijderd: de site plaatst geen cookies. Komt er
+    ooit Google Analytics of een Instagram-widget met cookies, dan moet
+    er weer een melding bij.

@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Instagram } from "lucide-react";
-import fay from "@/assets/fay.jpg";
+import fay from "@/assets/fay.webp";
 import { Reveal } from "@/components/site/Reveal";
 import { RosiRoos } from "@/components/site/RosiMark";
 

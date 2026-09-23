@@ -1,15 +1,16 @@
+import { useEffect } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
   Link,
   createRootRouteWithContext,
   useRouter,
+  useLocation,
   HeadContent,
 } from "@tanstack/react-router";
 
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
-import { CookieBanner } from "@/components/site/CookieBanner";
 
 function NotFoundComponent() {
   return (
@@ -118,6 +119,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootComponent() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    if (!window.location.hash) window.scrollTo(0, 0);
+  }, [pathname]);
   const { queryClient } = Route.useRouteContext();
   return (
     <QueryClientProvider client={queryClient}>
@@ -128,7 +133,6 @@ function RootComponent() {
           <Outlet />
         </main>
         <Footer />
-        <CookieBanner />
       </div>
     </QueryClientProvider>
   );

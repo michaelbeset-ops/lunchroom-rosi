@@ -6,19 +6,19 @@
 // en schrijft dit bestand opnieuw. Zonder netwerk naar Instagram blijft de
 // lijst hieronder gewoon staan.
 
-import terrasCookies from "@/assets/instagram/terras-cookies.jpg";
-import barCookies from "@/assets/instagram/bar-cookies.jpg";
-import cocktailsTafel from "@/assets/instagram/cocktails-tafel.jpg";
-import limonadeBosbes from "@/assets/instagram/limonade-bosbes.jpg";
-import drankjeBank from "@/assets/instagram/drankje-bank.jpg";
-import matchaCookies from "@/assets/instagram/matcha-cookies.jpg";
-import cheesecakeCitroen from "@/assets/instagram/cheesecake-citroen.jpg";
-import achterDeBar from "@/assets/instagram/achter-de-bar.jpg";
-import proost from "@/assets/instagram/proost.jpg";
-import ontbijtLunch from "@/assets/instagram/ontbijt-lunch.jpg";
-import koffie from "@/assets/instagram/koffie.jpg";
-import koekje from "@/assets/instagram/koekje.jpg";
-import wijn from "@/assets/instagram/wijn.jpg";
+import terrasCookies from "@/assets/instagram/terras-cookies.webp";
+import barCookies from "@/assets/instagram/bar-cookies.webp";
+import cocktailsTafel from "@/assets/instagram/cocktails-tafel.webp";
+import limonadeBosbes from "@/assets/instagram/limonade-bosbes.webp";
+import drankjeBank from "@/assets/instagram/drankje-bank.webp";
+import matchaCookies from "@/assets/instagram/matcha-cookies.webp";
+import cheesecakeCitroen from "@/assets/instagram/cheesecake-citroen.webp";
+import achterDeBar from "@/assets/instagram/achter-de-bar.webp";
+import proost from "@/assets/instagram/proost.webp";
+import ontbijtLunch from "@/assets/instagram/ontbijt-lunch.webp";
+import koffie from "@/assets/instagram/koffie.webp";
+import koekje from "@/assets/instagram/koekje.webp";
+import wijn from "@/assets/instagram/wijn.webp";
 
 export type InstagramPost = {
   src: string;

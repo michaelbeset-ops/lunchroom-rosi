@@ -15,5 +15,5 @@ declare module "@tanstack/react-router" {
 ReactDOM.createRoot(document.getElementById("app")!).render(
   <StrictMode>
     <RouterProvider router={router} />
-  </StrictMode>
+  </StrictMode>,
 );
