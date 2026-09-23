@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { beholdFeedId } from "@/data/instagram";
 
 /* AVG: functionele voorkeuren mogen altijd; de Google Maps-embed op de
    contactpagina laadt pas na toestemming. De keuze wordt onthouden. */
@@ -54,8 +55,9 @@ export function CookieBanner() {
     >
       <p className="font-serif text-xl">Een koekje erbij?</p>
       <p className="mt-2 text-sm leading-relaxed text-[color:var(--cream)]">
-        Wij gebruiken alleen een functionele cookie om je keuze te onthouden. Geen advertenties,
-        geen statistieken, geen gevolg over het web.{" "}
+        {beholdFeedId
+          ? "Wij onthouden je keuze en laden, als je dat goed vindt, onze nieuwste Instagram-foto's via Behold. Geen advertenties, geen statistieken."
+          : "Wij gebruiken alleen een functionele cookie om je keuze te onthouden. Geen advertenties, geen statistieken, geen gevolg over het web."}{" "}
         <a
           href="/lunchroom-rosi/privacy"
           className="underline decoration-[color:var(--cream)]/60 decoration-2 underline-offset-2"

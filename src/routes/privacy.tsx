@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { beholdFeedId } from "@/data/instagram";
 
 export const Route = createFileRoute("/privacy")({
   head: () => ({
@@ -47,6 +48,14 @@ function PrivacyPage() {
           onthouden alleen je cookiekeuze in je browser. Dat is een functionele voorkeur; die
           verlaat je apparaat niet.
         </p>
+        {beholdFeedId && (
+          <p className={p}>
+            Accepteer je cookies, dan laden we onze nieuwste Instagram-foto&apos;s via Behold
+            (behold.so). Je browser haalt die foto&apos;s dan op bij Behold; daarbij ziet Behold je
+            IP-adres. Weiger je cookies, dan zie je een vaste selectie foto&apos;s en wordt er niets
+            extern geladen.
+          </p>
+        )}
         <p className={p}>
           Links naar Instagram en Google Maps openen die diensten in een nieuw tabblad. Vanaf dat
           moment gelden hun eigen regels; zie het{" "}

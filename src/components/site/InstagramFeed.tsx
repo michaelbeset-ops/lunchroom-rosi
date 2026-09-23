@@ -1,22 +1,80 @@
+import { useEffect, useState } from "react";
 import { Instagram } from "lucide-react";
 import { Reveal } from "@/components/site/Reveal";
+import { useCookieKeuze } from "@/components/site/CookieBanner";
 import { WaveDivider } from "@/components/site/WaveDivider";
 import { RosiMedaillon } from "@/components/site/RosiMark";
-import { instagramHandle, instagramPosts, instagramUrl } from "@/data/instagram";
+import {
+  beholdFeedId,
+  instagramHandle,
+  instagramPosts,
+  instagramUrl,
+  type InstagramPost,
+} from "@/data/instagram";
 
 /* Mozaïek: één grote foto als anker, kleinere tegels eromheen en de
    volg-knop als eigen tegel in het grid. De indexen verwijzen naar
    src/data/instagram.ts; kies foto's die elders op de homepage nog
    niet staan. */
-const tegels = [
+const vasteTegels = [
   instagramPosts[0], // groot: ontbijt en lunch
   instagramPosts[1], // koffie
   instagramPosts[2], // koekje
   instagramPosts[3], // wijn
 ].filter(Boolean);
 
+/* Wat Behold teruggeeft (alleen de velden die we gebruiken) */
+type BeholdPost = {
+  id: string;
+  permalink: string;
+  mediaType?: string;
+  mediaUrl?: string;
+  thumbnailUrl?: string;
+  caption?: string;
+  sizes?: Record<string, { mediaUrl?: string } | undefined>;
+};
+
+/* Haalt de laatste posts op via Behold, maar pas nadat de bezoeker cookies
+   heeft geaccepteerd (het is een externe dienst). Zonder feed-ID, zonder
+   toestemming of bij een fout blijven de vaste foto's staan. */
+function useBeholdPosts(): InstagramPost[] | null {
+  const keuze = useCookieKeuze();
+  const [posts, setPosts] = useState<InstagramPost[] | null>(null);
+
+  useEffect(() => {
+    if (!beholdFeedId || keuze !== "ja") return;
+    const ctrl = new AbortController();
+    fetch(`https://feeds.behold.so/${beholdFeedId}`, { signal: ctrl.signal })
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error(String(r.status)))))
+      .then((data: { posts?: BeholdPost[] } | BeholdPost[]) => {
+        const lijst = Array.isArray(data) ? data : (data.posts ?? []);
+        const nieuw = lijst
+          .map((p) => ({
+            src:
+              p.sizes?.medium?.mediaUrl ??
+              (p.mediaType === "VIDEO" ? p.thumbnailUrl : p.mediaUrl) ??
+              p.thumbnailUrl ??
+              "",
+            alt: p.caption ? p.caption.slice(0, 120) : "Instagram-foto van Rosí",
+            caption: p.caption ? p.caption.split("\n")[0].slice(0, 120) : "",
+            permalink: p.permalink || instagramUrl,
+          }))
+          .filter((p) => p.src)
+          .slice(0, 4);
+        if (nieuw.length >= 4) setPosts(nieuw);
+      })
+      .catch(() => {
+        /* dan blijven de vaste foto's staan */
+      });
+    return () => ctrl.abort();
+  }, [keuze]);
+
+  return posts;
+}
+
 export function InstagramFeed() {
-  const [groot, ...klein] = tegels;
+  const live = useBeholdPosts();
+  const [groot, ...klein] = live ?? vasteTegels;
 
   return (
     <section className="bg-background">

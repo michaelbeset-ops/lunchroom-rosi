@@ -28,6 +28,11 @@ export type InstagramPost = {
 };
 
 export const instagramHandle = "lunchroomrosi";
+
+/* Behold (behold.so): automatische Instagram-koppeling. Maak op behold.so een
+   feed van het type "API / JSON", plak hier het feed-ID en de collage laadt
+   de nieuwste posts. Leeg = vaste foto's hieronder. */
+export const beholdFeedId = "";
 export const instagramUrl = `https://www.instagram.com/${instagramHandle}/`;
 
 export const instagramPosts: InstagramPost[] = [

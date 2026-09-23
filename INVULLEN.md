@@ -33,8 +33,10 @@ in plaats van echte gegevens:
 13. **Lettertype** — titels in Homemade Apple (gratis tegenhanger van Adobe
     Handwriting Ernie), de rest in Montserrat. Met een Adobe Fonts-account
     kan Ernie er zo in.
-14. **Instagram-collage** — nu vaste foto's; een automatische koppeling
-    kan via een (betaalde) dienst als Behold of Elfsight.
+14. **Instagram-koppeling via Behold** — klaar in de code. Nog te doen:
+    account maken op behold.so, Instagram koppelen, een feed van het type
+    "API / JSON" aanmaken en het feed-ID plakken in `src/data/instagram.ts`
+    (`beholdFeedId`). Zolang dat leeg is, staan de vaste foto's.
 15. **Catering** — de pagina bestaat (`src/routes/catering.tsx`) met een
     korte uitnodiging om contact op te nemen. Echte tekst, prijzen en foto's
     nog aanleveren.
