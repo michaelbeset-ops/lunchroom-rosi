@@ -22,9 +22,12 @@ export function Header() {
      de achtergrondkleur, anders in het merkgroen. */
   const opHome = pathname === "/" || pathname === import.meta.env.BASE_URL;
   const opFoto = opHome && !scrolled && !open;
+  /* Op de herofoto en op de groene gescrolde balk: lichte tekst; anders groen */
   const linkKleur = opFoto
     ? "text-[color:var(--cream)] hover:opacity-80 [text-shadow:0_1px_12px_rgb(85_47_36/0.45)]"
-    : "text-primary hover:opacity-75";
+    : scrolled && !open
+      ? "text-[color:var(--cream)] hover:opacity-80"
+      : "text-primary hover:opacity-75";
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -43,9 +46,11 @@ export function Header() {
   return (
     <header
       className={`fixed top-0 z-50 w-full transition-colors duration-300 ${
-        scrolled || open
-          ? "border-b border-border/60 bg-background/95 backdrop-blur"
-          : "bg-transparent"
+        open
+          ? "bg-background"
+          : scrolled
+            ? "bg-[color:var(--olive-deep)]/95 backdrop-blur"
+            : "bg-transparent"
       }`}
     >
       <div className="relative flex items-center justify-between px-5 py-4 md:px-10">
