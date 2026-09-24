@@ -4,6 +4,7 @@ import { useRef } from "react";
    Monster" in handschrift (aanlevering/Homepage foto 1). */
 import heroImg from "@/assets/hero-gezelligheid.webp";
 import pioenrozen from "@/assets/pioenrozen.webp";
+import heroTekst from "@/assets/hero-tekst.png";
 import etenBowl from "@/assets/eten-bowl.webp";
 import etenBroodje from "@/assets/eten-broodje.webp";
 import drankjeBank from "@/assets/instagram/drankje-bank.webp";
@@ -111,15 +112,15 @@ function Hero() {
           aria-hidden="true"
           className="absolute inset-0 bg-[color:var(--shadow)]/25 md:hidden"
         />
-        {/* Mobiel: de tekst als echte tekst over de foto */}
-        <p
+        {/* Mobiel: dezelfde letters als op desktop, uitgesneden uit de herofoto */}
+        <img
+          src={heroTekst}
+          alt=""
           aria-hidden="true"
-          className="hero-tekst absolute inset-x-5 top-[22%] text-center font-script text-[2.6rem] leading-[1.3] text-[color:var(--cream)] md:hidden"
-        >
-          Gezelligheid
-          <br />
-          in Monster
-        </p>
+          width={1159}
+          height={457}
+          className="hero-tekst absolute top-[24%] left-1/2 w-[82%] max-w-[420px] -translate-x-1/2 md:hidden"
+        />
       </div>
       <HeroBlok />
     </section>
