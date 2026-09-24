@@ -175,29 +175,32 @@ function HomePage() {
           </Link>
         </Reveal>
 
-        {/* Collage uit de briefing: twee gerechten naast elkaar, de rechter iets lager */}
-        <Reveal
-          delay={120}
-          className="mx-auto grid w-full max-w-[560px] grid-cols-2 gap-4 self-center"
-        >
-          <img
-            src={etenBowl}
-            alt="Een salade in een schaaltje, er wordt een kroket bij gepakt, met een glas wijn"
-            loading="lazy"
-            decoding="async"
-            width={900}
-            height={1350}
-            className="photo-soft aspect-[4/5] w-full object-cover"
-          />
-          <img
-            src={etenBroodje}
-            alt="Een belegd broodje dat wordt aangesneden, met een matcha latte ernaast"
-            loading="lazy"
-            decoding="async"
-            width={900}
-            height={1350}
-            className="photo-soft mt-10 aspect-[4/5] w-full object-cover md:mt-14"
-          />
+        {/* Collage uit de briefing: twee gerechten die elkaar overlappen. Elke
+            foto in een afgerond kader met overflow-hidden en de foto zelf net
+            iets groter, zodat er nooit een streepje achtergrond doorheen komt. */}
+        <Reveal delay={120} className="relative mx-auto w-full max-w-[520px] self-center">
+          <div className="photo-soft relative aspect-[4/5] w-[62%] overflow-hidden bg-card">
+            <img
+              src={etenBowl}
+              alt="Een salade in een schaaltje, er wordt een kroket bij gepakt, met een glas wijn"
+              loading="lazy"
+              decoding="async"
+              width={900}
+              height={1350}
+              className="h-full w-full scale-[1.02] object-cover"
+            />
+          </div>
+          <div className="photo-soft relative -mt-[45%] ml-auto aspect-[4/5] w-[62%] overflow-hidden bg-card">
+            <img
+              src={etenBroodje}
+              alt="Een belegd broodje dat wordt aangesneden, met een matcha latte ernaast"
+              loading="lazy"
+              decoding="async"
+              width={900}
+              height={1350}
+              className="h-full w-full scale-[1.02] object-cover"
+            />
+          </div>
         </Reveal>
       </section>
 
