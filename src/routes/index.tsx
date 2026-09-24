@@ -176,10 +176,10 @@ function HomePage() {
         </Reveal>
 
         {/* Collage uit de briefing: twee gerechten die elkaar overlappen. Elke
-            foto in een afgerond kader met overflow-hidden en de foto zelf net
-            iets groter, zodat er nooit een streepje achtergrond doorheen komt. */}
+            foto in een afgerond kader met een donkere achtergrond, zodat een
+            eventueel haarlijntje langs de rand nooit licht oplicht. */}
         <Reveal delay={120} className="relative mx-auto w-full max-w-[520px] self-center">
-          <div className="photo-soft relative aspect-[4/5] w-[62%] overflow-hidden bg-card">
+          <div className="photo-soft relative aspect-[4/5] w-[62%] overflow-hidden bg-[color:var(--shadow)]">
             <img
               src={etenBowl}
               alt="Een salade in een schaaltje, er wordt een kroket bij gepakt, met een glas wijn"
@@ -187,10 +187,10 @@ function HomePage() {
               decoding="async"
               width={900}
               height={1350}
-              className="h-full w-full scale-[1.02] object-cover"
+              className="block h-full w-full object-cover"
             />
           </div>
-          <div className="photo-soft relative -mt-[45%] ml-auto aspect-[4/5] w-[62%] overflow-hidden bg-card">
+          <div className="photo-soft relative -mt-[45%] ml-auto aspect-[4/5] w-[62%] overflow-hidden bg-[color:var(--shadow)]">
             <img
               src={etenBroodje}
               alt="Een belegd broodje dat wordt aangesneden, met een matcha latte ernaast"
@@ -198,7 +198,7 @@ function HomePage() {
               decoding="async"
               width={900}
               height={1350}
-              className="h-full w-full scale-[1.02] object-cover"
+              className="block h-full w-full object-cover"
             />
           </div>
         </Reveal>
