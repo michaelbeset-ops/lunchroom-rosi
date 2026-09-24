@@ -97,7 +97,7 @@ function Hero() {
         {/* Eén <picture>: desktop de aangeleverde foto met tekst, mobiel de
             losse pioenrozen. Zo laadt de browser maar één van de twee. */}
         <picture>
-          <source media="(min-width: 768px)" srcSet={heroImg} width={800} height={450} />
+          <source media="(min-width: 768px)" srcSet={heroImg} width={2560} height={1440} />
           <img
             src={pioenrozen}
             alt="Roze pioenrozen met de tekst Gezelligheid in Monster"
