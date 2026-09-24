@@ -339,21 +339,10 @@
     }
   }
 
-  /* Herofoto: op desktop iets breder dan het scherm en rechts uitgelijnd,
-     zodat de tekst in de foto links van het groene vlak valt. Op brede,
-     lage schermen wordt de foto al verticaal bijgesneden en past hij zo. */
+  /* Herofoto: de tekst staat linksboven in de foto, dus gewoon bijsnijden
+     vanuit het midden; het groene vlak rechtsonder komt er niet overheen. */
   .hero-foto {
     width: 100%;
-  }
-  @media (min-width: 768px) {
-    .hero-foto {
-      width: 124%;
-    }
-  }
-  @media (min-width: 768px) and (min-aspect-ratio: 2/1) {
-    .hero-foto {
-      width: 100%;
-    }
   }
 
   .hero-tekst {

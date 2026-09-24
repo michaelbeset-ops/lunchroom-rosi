@@ -97,14 +97,14 @@ function Hero() {
         {/* Eén <picture>: desktop de aangeleverde foto met tekst, mobiel de
             losse pioenrozen. Zo laadt de browser maar één van de twee. */}
         <picture>
-          <source media="(min-width: 768px)" srcSet={heroImg} width={2000} height={1126} />
+          <source media="(min-width: 768px)" srcSet={heroImg} width={2000} height={1125} />
           <img
             src={pioenrozen}
             alt="Roze pioenrozen met de tekst Gezelligheid in Monster"
             width={1100}
             height={1648}
             fetchPriority="high"
-            className="kenburns hero-foto absolute inset-y-0 right-0 h-full max-w-none object-cover object-[50%_35%] md:object-[50%_100%]"
+            className="kenburns hero-foto absolute inset-0 h-full w-full object-cover object-[50%_35%] md:object-[50%_40%]"
           />
         </picture>
         <div
