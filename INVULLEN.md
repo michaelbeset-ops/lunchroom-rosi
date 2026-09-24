@@ -36,9 +36,8 @@ in plaats van echte gegevens:
     account maken op behold.so, Instagram koppelen, een feed van het type
     "API / JSON" aanmaken en het feed-ID plakken in `src/data/instagram.ts`
     (`beholdFeedId`). Zolang dat leeg is, staan de vaste foto's.
-15. **Catering** — de pagina bestaat (`src/routes/catering.tsx`) met een
-    korte uitnodiging om contact op te nemen. Echte tekst, prijzen en foto's
-    nog aanleveren.
+15. **Catering** — tekst, aanbod en prijzen overgenomen van de flyer
+    (`src/data/catering.ts`). Wijzigt de flyer, dan dat bestand aanpassen.
 16. **Cookiemelding** — verwijderd: de site plaatst geen cookies. Komt er
     ooit Google Analytics of een Instagram-widget met cookies, dan moet
     er weer een melding bij.
