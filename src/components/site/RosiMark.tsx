@@ -38,7 +38,7 @@ export function RosiWoordmerk({ className = "" }: { className?: string }) {
   );
 }
 
-/* Rond logo, zoals aangeleverd: alleen de roos in het ovaal. Groen met
+/* Rond logo: de roos in het ovaal met het woordmerk eronder. Groen met
    lichte tekening (Instagram-tegel), of licht met groene tekening (hero). */
 export function RosiMedaillon({
   className = "",
@@ -52,8 +52,12 @@ export function RosiMedaillon({
   return (
     <svg viewBox="0 0 160 160" className={className} aria-hidden="true">
       <circle cx="80" cy="80" r="79" fill={vlak} />
-      <svg x="45" y="31" width="70" height="98" viewBox="0 0 123.89 173.26" fill={inkt}>
+      <circle cx="80" cy="80" r="72" fill="none" stroke={inkt} strokeOpacity="0.45" />
+      <svg x="59" y="24" width="42" height="62" viewBox="0 0 123.89 173.26" fill={inkt}>
         <RoosPaden />
+      </svg>
+      <svg x="46" y="98" width="68" height="28" viewBox="0 0 128.91 50.91" fill={inkt}>
+        <WoordPaden />
       </svg>
     </svg>
   );

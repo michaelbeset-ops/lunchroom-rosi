@@ -12,7 +12,7 @@ export const special = {
   videoUrl: "https://www.instagram.com/lunchroomrosi/reel/DdgVUX3tbis/",
   /* De Instagram-post met de foto van de special */
   postUrl: "https://www.instagram.com/lunchroomrosi/p/DdWVz7ZNgBf/",
-  /* De Instagram-post van de special */
+  /* Origineel van de designer (aanlevering/Instagram-03.png) */
   foto,
   fotoAlt: "September special: een pear matcha latte naast een peer",
 };
