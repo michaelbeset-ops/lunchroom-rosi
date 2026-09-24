@@ -241,8 +241,8 @@ function HomePage() {
               alt={special.fotoAlt}
               loading="lazy"
               decoding="async"
-              width={650}
-              height={870}
+              width={900}
+              height={1125}
               className="photo-soft mx-auto w-full max-w-[440px]"
             />
           </Reveal>
