@@ -62,7 +62,7 @@ function CateringPage() {
           alt="Een salade in een schaaltje, er wordt een kroket bij gepakt, met een glas wijn"
           width={1200}
           height={1800}
-          className="photo-soft photo-arch mx-auto aspect-[4/5] w-full max-w-[440px] object-cover"
+          className="photo-soft mx-auto aspect-[4/5] w-full max-w-[440px] object-cover"
         />
       </Reveal>
     </section>

@@ -46,7 +46,8 @@ export function ContactBlok({ kop = "h2" }: { kop?: "h1" | "h2" }) {
                 className="underline decoration-[color:var(--cream)]/50 decoration-2 underline-offset-[3px] hover:decoration-[color:var(--cream)]"
               >
                 info@lunchroomrosi.nl
-              </a>{" "}
+              </a>
+              <br />
               of stuur een DM.
             </p>
             <div className="mt-7 flex flex-wrap items-center gap-x-6 gap-y-3">

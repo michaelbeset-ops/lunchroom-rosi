@@ -176,25 +176,28 @@ function HomePage() {
           </Link>
         </Reveal>
 
-        {/* Collage uit de briefing: twee gerechten die elkaar overlappen */}
-        <Reveal delay={120} className="relative mx-auto w-full max-w-[520px] self-center">
+        {/* Collage uit de briefing: twee gerechten naast elkaar, de rechter iets lager */}
+        <Reveal
+          delay={120}
+          className="mx-auto grid w-full max-w-[560px] grid-cols-2 gap-4 self-center"
+        >
           <img
             src={etenBowl}
             alt="Een salade in een schaaltje, er wordt een kroket bij gepakt, met een glas wijn"
             loading="lazy"
             decoding="async"
-            width={1200}
-            height={1800}
-            className="photo-soft relative aspect-[4/5] w-[62%] object-cover"
+            width={900}
+            height={1350}
+            className="photo-soft aspect-[4/5] w-full object-cover"
           />
           <img
             src={etenBroodje}
             alt="Een belegd broodje dat wordt aangesneden, met een matcha latte ernaast"
             loading="lazy"
             decoding="async"
-            width={1200}
-            height={1800}
-            className="photo-soft relative -mt-[45%] ml-auto aspect-[4/5] w-[62%] object-cover"
+            width={900}
+            height={1350}
+            className="photo-soft mt-10 aspect-[4/5] w-full object-cover md:mt-14"
           />
         </Reveal>
       </section>
@@ -236,9 +239,9 @@ function HomePage() {
               alt={special.fotoAlt}
               loading="lazy"
               decoding="async"
-              width={695}
-              height={838}
-              className="photo-soft mx-auto w-full max-w-[440px] object-cover"
+              width={650}
+              height={870}
+              className="photo-soft mx-auto w-full max-w-[440px]"
             />
           </Reveal>
         </div>
