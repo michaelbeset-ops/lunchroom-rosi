@@ -104,14 +104,13 @@ function Hero() {
             width={1100}
             height={1648}
             fetchPriority="high"
-            className="kenburns hero-foto absolute inset-0 h-full w-full object-cover object-[50%_35%] md:object-[50%_40%]"
+            className="hero-foto absolute inset-0 h-full w-full object-cover object-[50%_35%] md:object-[50%_40%]"
           />
         </picture>
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-[color:var(--shadow)]/25 md:hidden"
         />
-        {navVerloop}
         {/* Mobiel: de tekst als echte tekst over de foto */}
         <p
           aria-hidden="true"
