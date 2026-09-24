@@ -140,9 +140,6 @@ function FeedTegel({
         height={groot ? 1600 : 800}
         className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
       />
-      <span className="pointer-events-none absolute inset-0 flex items-end bg-[color:var(--olive-deep)]/0 p-4 opacity-0 transition-all duration-300 group-hover:bg-[color:var(--olive-deep)]/70 group-hover:opacity-100 group-focus-visible:bg-[color:var(--olive-deep)]/70 group-focus-visible:opacity-100">
-        <span className="text-sm leading-snug text-[color:var(--cream)]">{post.caption}</span>
-      </span>
     </a>
   );
 }
