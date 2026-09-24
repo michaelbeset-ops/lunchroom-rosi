@@ -39,7 +39,7 @@ function OnsVerhaalPage() {
           width={1000}
           height={1501}
           fetchPriority="high"
-          className="photo-soft photo-arch mx-auto aspect-[4/5] w-full max-w-[440px] object-cover object-[50%_30%]"
+          className="photo-soft mx-auto aspect-[4/5] w-full max-w-[440px] object-cover object-[50%_30%]"
         />
       </Reveal>
 

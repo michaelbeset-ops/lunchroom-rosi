@@ -81,7 +81,7 @@ export function InstagramFeed() {
             uit de zaak
           </p>
           <h2 className="mt-3 font-script font-normal tracking-normal text-[1.9rem] leading-[1.5] text-primary sm:text-[2.6rem]">
-            Elke dag iets vers op de plaat.
+            Elke dag iets vers op je bord.
           </h2>
           <WaveDivider className="mx-auto mt-7 max-w-[190px]" />
         </div>

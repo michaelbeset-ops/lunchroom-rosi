@@ -35,6 +35,10 @@ export const instagramHandle = "lunchroomrosi";
 export const beholdFeedId = "";
 export const instagramUrl = `https://www.instagram.com/${instagramHandle}/`;
 
+/* TikTok: handle nog te bevestigen door Rosí */
+export const tiktokHandle = "lunchroomrosi";
+export const tiktokUrl = `https://www.tiktok.com/@${tiktokHandle}`;
+
 export const instagramPosts: InstagramPost[] = [
   /* Aangeleverde foto's (aanlevering/), gebruikt in de collage op de homepage */
   {

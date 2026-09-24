@@ -97,21 +97,20 @@ function Hero() {
         {/* Eén <picture>: desktop de aangeleverde foto met tekst, mobiel de
             losse pioenrozen. Zo laadt de browser maar één van de twee. */}
         <picture>
-          <source media="(min-width: 768px)" srcSet={heroImg} width={2000} height={1126} />
+          <source media="(min-width: 768px)" srcSet={heroImg} width={2000} height={1125} />
           <img
             src={pioenrozen}
             alt="Roze pioenrozen met de tekst Gezelligheid in Monster"
             width={1100}
             height={1648}
             fetchPriority="high"
-            className="kenburns hero-foto absolute inset-y-0 right-0 h-full max-w-none object-cover object-[50%_35%] md:object-[50%_100%]"
+            className="hero-foto absolute inset-0 h-full w-full object-cover object-[50%_35%] md:object-[50%_40%]"
           />
         </picture>
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-[color:var(--shadow)]/25 md:hidden"
         />
-        {navVerloop}
         {/* Mobiel: de tekst als echte tekst over de foto */}
         <p
           aria-hidden="true"
@@ -176,25 +175,28 @@ function HomePage() {
           </Link>
         </Reveal>
 
-        {/* Collage uit de briefing: twee gerechten die elkaar overlappen */}
-        <Reveal delay={120} className="relative mx-auto w-full max-w-[520px] self-center">
+        {/* Collage uit de briefing: twee gerechten naast elkaar, de rechter iets lager */}
+        <Reveal
+          delay={120}
+          className="mx-auto grid w-full max-w-[560px] grid-cols-2 gap-4 self-center"
+        >
           <img
             src={etenBowl}
             alt="Een salade in een schaaltje, er wordt een kroket bij gepakt, met een glas wijn"
             loading="lazy"
             decoding="async"
-            width={1200}
-            height={1800}
-            className="photo-soft relative aspect-[4/5] w-[62%] object-cover"
+            width={900}
+            height={1350}
+            className="photo-soft aspect-[4/5] w-full object-cover"
           />
           <img
             src={etenBroodje}
             alt="Een belegd broodje dat wordt aangesneden, met een matcha latte ernaast"
             loading="lazy"
             decoding="async"
-            width={1200}
-            height={1800}
-            className="photo-soft relative -mt-[45%] ml-auto aspect-[4/5] w-[62%] object-cover"
+            width={900}
+            height={1350}
+            className="photo-soft mt-10 aspect-[4/5] w-full object-cover md:mt-14"
           />
         </Reveal>
       </section>
@@ -236,9 +238,9 @@ function HomePage() {
               alt={special.fotoAlt}
               loading="lazy"
               decoding="async"
-              width={695}
-              height={838}
-              className="photo-soft mx-auto w-full max-w-[440px] object-cover"
+              width={650}
+              height={870}
+              className="photo-soft mx-auto w-full max-w-[440px]"
             />
           </Reveal>
         </div>
