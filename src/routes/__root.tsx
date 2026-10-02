@@ -81,6 +81,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Rosí in het hart van Monster. Verse koffie, huisgemaakte lunch en taart, en een warm welkom.",
       },
       { name: "theme-color", content: "#777758" },
+      /* Voorlopig niet vindbaar in Google; weghalen bij livegang op lunchroomrosi.nl */
+      { name: "robots", content: "noindex, nofollow" },
       { property: "og:title", content: "Rosí | Monster" },
       {
         property: "og:description",
