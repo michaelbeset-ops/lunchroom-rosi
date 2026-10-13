@@ -12,7 +12,7 @@ export const special = {
   videoUrl: "https://www.instagram.com/p/DeBgfWwjXWV/",
   /* De Instagram-post van de special */
   postUrl: "https://www.instagram.com/p/DeBgfWwjXWV/",
-  /* Afbeelding van de designer (aanlevering/) */
+  /* Origineel van de designer (aanlevering/Oktober special) */
   foto,
   fotoAlt: "October special: iced pumpkin spice latte met cold foam, heel oktober bij Rosí",
 };
