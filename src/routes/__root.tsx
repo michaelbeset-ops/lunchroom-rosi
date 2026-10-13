@@ -96,6 +96,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "Rosí" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [
+      { rel: "icon", href: "/lunchroom-rosi/favicon.ico?v=3", sizes: "any" },
+      { rel: "icon", href: "/lunchroom-rosi/favicon-32.png?v=3", type: "image/png", sizes: "32x32" },
+      { rel: "apple-touch-icon", href: "/lunchroom-rosi/apple-touch-icon.png?v=3" },
+    ],
     scripts: [
       {
         type: "application/ld+json",
