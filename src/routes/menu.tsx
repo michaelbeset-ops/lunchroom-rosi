@@ -58,7 +58,7 @@ function MenuPage() {
 
       {/* Categorie-knoppen: filter, je ziet alleen de gekozen categorie */}
       <nav aria-label="Menucategorieën" className="container-prose">
-        <ul className="flex flex-wrap justify-center gap-2 text-sm">
+        <ul className="flex flex-wrap justify-center gap-1.5 text-[0.8rem] md:gap-2 lg:flex-nowrap">
           {menu.map((c) => {
             const isActief = c.id === cat.id;
             return (
@@ -69,8 +69,8 @@ function MenuPage() {
                   aria-pressed={isActief}
                   className={
                     isActief
-                      ? "inline-flex items-center rounded-full border border-primary bg-primary px-4 py-2 font-semibold text-primary-foreground"
-                      : "inline-flex items-center rounded-full border border-border bg-card px-4 py-2 text-foreground transition-colors hover:border-primary hover:text-primary"
+                      ? "inline-flex items-center whitespace-nowrap rounded-full border border-primary bg-primary px-3 py-1.5 font-semibold text-primary-foreground"
+                      : "inline-flex items-center whitespace-nowrap rounded-full border border-border bg-card px-3 py-1.5 text-foreground transition-colors hover:border-primary hover:text-primary"
                   }
                 >
                   {c.title}
