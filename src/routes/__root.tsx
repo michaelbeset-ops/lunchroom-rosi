@@ -74,16 +74,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
-      { title: "Rosí | Verse koffie & lunch in Monster" },
+      { title: "Lunchroom Rosí | Koffie, lunch & wine nights in Monster" },
       {
         name: "description",
         content:
-          "Rosí in het hart van Monster. Verse koffie, huisgemaakte lunch en taart, en een warm welkom.",
+          "Gezelligheid in Monster: verse koffie, huisgemaakte lunch, koekjes en gebak uit eigen oven en wine nights. Molenstraat 35, dinsdag t/m zondag open.",
       },
       { name: "theme-color", content: "#777758" },
       /* Voorlopig niet vindbaar in Google; weghalen bij livegang op lunchroomrosi.nl */
       { name: "robots", content: "noindex, nofollow" },
-      { property: "og:title", content: "Rosí | Monster" },
+      { property: "og:title", content: "Lunchroom Rosí | Koffie, lunch & wine nights in Monster" },
       {
         property: "og:description",
         content: "Een knus hoekje in Monster met verse koffie, lunch en huisgemaakt gebak.",
@@ -93,12 +93,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       { property: "og:locale", content: "nl_NL" },
-      { property: "og:site_name", content: "Rosí" },
+      { property: "og:site_name", content: "Lunchroom Rosí" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       { rel: "icon", href: "/lunchroom-rosi/favicon.ico?v=3", sizes: "any" },
-      { rel: "icon", href: "/lunchroom-rosi/favicon-32.png?v=3", type: "image/png", sizes: "32x32" },
+      {
+        rel: "icon",
+        href: "/lunchroom-rosi/favicon-32.png?v=3",
+        type: "image/png",
+        sizes: "32x32",
+      },
       { rel: "apple-touch-icon", href: "/lunchroom-rosi/apple-touch-icon.png?v=3" },
     ],
     scripts: [
