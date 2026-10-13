@@ -25,7 +25,7 @@ export const Route = createFileRoute("/ons-verhaal")({
 const alineas = [
   "Het was altijd al een droom om mijn eigen lunchroom te beginnen. Maar ja, een eigen lunchroom starten klinkt best ambitieus.",
   "Tot ik het er op een dag met mijn vriend en familie over had en zij zeiden “Waarom niet?”",
-  "En zo zijn we ervoor gegaan! Met veel enthousiasme hebben we een pand gevonden en helemaal omgetoverd tot de lunchroom die we vandaag de dag kennen: Lunchroom Rosí.",
+  "En zo zijn we ervoor gegaan! Met veel enthousiasme hebben we een pand gevonden en helemaal omgetoverd tot de lunchroom die we vandaag de dag kennen, Lunchroom Rosí.",
   "Een gezellige plek waar je kunt genieten van lekker eten, een goed glas wijn en fijne momenten samen.",
 ];
 
