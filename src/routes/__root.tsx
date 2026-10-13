@@ -78,7 +78,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Gezelligheid in Monster: verse koffie, huisgemaakte lunch, koekjes en gebak uit eigen oven en wine nights. Molenstraat 35, dinsdag t/m zondag open.",
+          "Gezelligheid in Monster, verse koffie, huisgemaakte lunch, koekjes en gebak uit eigen oven en wine nights. Molenstraat 35, dinsdag t/m zondag open.",
       },
       { name: "theme-color", content: "#777758" },
       /* Voorlopig niet vindbaar in Google; weghalen bij livegang op lunchroomrosi.nl */

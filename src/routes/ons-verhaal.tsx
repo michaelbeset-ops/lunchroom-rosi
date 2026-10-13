@@ -11,7 +11,7 @@ export const Route = createFileRoute("/ons-verhaal")({
       {
         name: "description",
         content:
-          "Hoe Lunchroom Rosí in Monster begon: van een droom van Fay tot een gezellige plek voor lekker eten, een goed glas wijn en fijne momenten samen.",
+          "Hoe Lunchroom Rosí in Monster begon, van een droom van Fay tot een gezellige plek voor lekker eten, een goed glas wijn en fijne momenten samen.",
       },
       { property: "og:title", content: "Ons verhaal | Rosí" },
       { property: "og:url", content: "/ons-verhaal" },
@@ -24,7 +24,7 @@ export const Route = createFileRoute("/ons-verhaal")({
 /* Het verhaal van Fay, letterlijk zoals aangeleverd in de briefing */
 const alineas = [
   "Het was altijd al een droom om mijn eigen lunchroom te beginnen. Maar ja, een eigen lunchroom starten klinkt best ambitieus.",
-  "Tot ik het er op een dag met mijn vriend en familie over had en zij zeiden: “Waarom niet?”",
+  "Tot ik het er op een dag met mijn vriend en familie over had en zij zeiden “Waarom niet?”",
   "En zo zijn we ervoor gegaan! Met veel enthousiasme hebben we een pand gevonden en helemaal omgetoverd tot de lunchroom die we vandaag de dag kennen: Lunchroom Rosí.",
   "Een gezellige plek waar je kunt genieten van lekker eten, een goed glas wijn en fijne momenten samen.",
 ];

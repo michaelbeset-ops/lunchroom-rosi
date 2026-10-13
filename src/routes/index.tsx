@@ -23,13 +23,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Gezelligheid in Monster: verse koffie, huisgemaakte lunch, koekjes en gebak uit eigen oven en wine nights. Molenstraat 35, dinsdag t/m zondag open.",
+          "Gezelligheid in Monster, verse koffie, huisgemaakte lunch, koekjes en gebak uit eigen oven en wine nights. Molenstraat 35, dinsdag t/m zondag open.",
       },
       { property: "og:title", content: "Lunchroom Rosí | Koffie, lunch & wine nights in Monster" },
       {
         property: "og:description",
         content:
-          "Gezelligheid in Monster: verse koffie, huisgemaakte lunch, gebak uit eigen oven en wine nights.",
+          "Gezelligheid in Monster, verse koffie, huisgemaakte lunch, gebak uit eigen oven en wine nights.",
       },
       { property: "og:url", content: "/" },
     ],
@@ -150,11 +150,11 @@ function HomePage() {
           </h2>
           <div className="mt-7 max-w-md space-y-4 text-base leading-relaxed text-foreground">
             <p>
-              Rosí begon als de droom van Fay: toen dit pand vrijkwam, kwam alles samen en opende ze
+              Rosí begon als de droom van Fay, toen dit pand vrijkwam, kwam alles samen en opende ze
               op Koningsdag de deuren. Inmiddels staat hier een team van allemaal vrouwen.
             </p>
             <p>
-              Olijfgroene muren, een warme bar en verse bloemen op tafel: een plek om even te
+              Olijfgroene muren, een warme bar en verse bloemen op tafel, een plek om even te
               blijven hangen.
             </p>
           </div>
@@ -269,7 +269,7 @@ const reviews = [
   },
   {
     tekst:
-      "Prachtige zaak met een heel fijne sfeer, aan elk detail is aandacht besteed. We bestelden een lunch om te delen: supersmakelijk en mooi opgemaakt.",
+      "Prachtige zaak met een heel fijne sfeer, aan elk detail is aandacht besteed. We bestelden een lunch om te delen, supersmakelijk en mooi opgemaakt.",
     naam: "Marjon & Kees",
   },
   {
@@ -294,7 +294,7 @@ const reviews = [
   },
   {
     tekst:
-      "Gisteren langs geweest: het eten was heerlijk, de koffie en matcha top (ook om mee te nemen) en het personeel vriendelijk. En 's middags zit je buiten in het zonnetje.",
+      "Gisteren langs geweest, het eten was heerlijk, de koffie en matcha top (ook om mee te nemen) en het personeel vriendelijk. En 's middags zit je buiten in het zonnetje.",
     naam: "",
   },
   {
