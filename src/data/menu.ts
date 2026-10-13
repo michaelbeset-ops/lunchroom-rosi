@@ -21,8 +21,8 @@ export type MenuCategory = {
 export const menu: MenuCategory[] = [
   {
     id: "koffie",
-    title: "Koffie & thee",
-    subtitle: "Hot · Coffee and hot drinks",
+    title: "Coffee and hot drinks",
+    subtitle: "Hot",
     items: [
       { name: "Espresso", description: "", price: "enkel 3,25 / dubbel 4,10" },
       { name: "Koffie", description: "", price: "3,25" },
@@ -78,8 +78,8 @@ export const menu: MenuCategory[] = [
   },
   {
     id: "fris",
-    title: "Fris & sappen",
-    subtitle: "Cold · Drinks and juices",
+    title: "Drinks and juices",
+    subtitle: "Cold",
     items: [
       {
         name: "Frisdranken",
@@ -135,8 +135,8 @@ export const menu: MenuCategory[] = [
   },
   {
     id: "ontbijt",
-    title: "Ontbijt",
-    subtitle: "Goodmorning · Breakfast",
+    title: "Breakfast",
+    subtitle: "Goodmorning",
     items: [],
     groups: [
       {
@@ -183,8 +183,8 @@ export const menu: MenuCategory[] = [
   },
   {
     id: "lunch-classics",
-    title: "Lunch classics",
-    subtitle: "All-time favourites",
+    title: "All-time favourites",
+    subtitle: "Lunch classics",
     items: [
       {
         name: "Carpaccio club",
@@ -223,8 +223,8 @@ export const menu: MenuCategory[] = [
   },
   {
     id: "lunch-signatures",
-    title: "Lunch signatures",
-    subtitle: "Our favourites",
+    title: "Our favourites",
+    subtitle: "Lunch signatures",
     items: [
       {
         name: "Hot brie & fig",
@@ -266,8 +266,8 @@ export const menu: MenuCategory[] = [
   },
   {
     id: "borrel",
-    title: "Wijn, cocktails & bier",
-    subtitle: "Alcoholic drinks · Just one more",
+    title: "Alcoholic drinks",
+    subtitle: "Just one more",
     items: [],
     groups: [
       {
@@ -295,7 +295,7 @@ export const menu: MenuCategory[] = [
         ],
       },
       {
-        title: "Bier",
+        title: "Beers",
         items: [
           { name: "Hertog Jan pils (tap)", description: "", price: "3,90" },
           { name: "Leffe blond (tap)", description: "", price: "5,50" },
@@ -309,8 +309,8 @@ export const menu: MenuCategory[] = [
   },
   {
     id: "bites",
-    title: "Bites",
-    subtitle: "Made for sharing",
+    title: "Made for sharing",
+    subtitle: "Bites",
     items: [
       {
         name: "Truffle fries",
@@ -373,8 +373,8 @@ export const menu: MenuCategory[] = [
   },
   {
     id: "little-rosi",
-    title: "Little Rosí",
-    subtitle: "For the little ones",
+    title: "For the little ones",
+    subtitle: "Little Rosí",
     items: [
       {
         name: "Mini pancakes",
