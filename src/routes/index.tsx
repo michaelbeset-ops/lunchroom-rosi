@@ -51,11 +51,11 @@ function HeroBlok() {
     <div className="relative z-10 ml-auto w-[84%] md:w-[min(560px,42vw)]">
       <RosiMedaillon
         licht
-        className="absolute -top-11 right-4 z-20 w-[84px] md:-top-16 md:right-8 md:w-[116px]"
+        className="absolute -top-[72px] right-4 z-20 w-[84px] md:-top-16 md:right-8 md:w-[116px]"
       />
       <div className="schulprand" aria-hidden="true" />
-      <div className="hero-reveal rounded-tl-2xl bg-[color:var(--olive-deep)] px-4 pt-4 pb-4 text-[color:var(--cream)] md:rounded-none md:px-9 md:pt-6 md:pb-7">
-        <h1 className="max-w-[12em] font-script text-[clamp(1.15rem,4.2vw,2.1rem)] leading-[1.45] font-normal tracking-normal">
+      <div className="hero-reveal bg-[color:var(--olive-deep)] px-4 pt-4 pb-4 text-[color:var(--cream)] md:px-9 md:pt-6 md:pb-7">
+        <h1 className="font-script text-[clamp(1rem,3.6vw,2.1rem)] leading-[1.45] font-normal tracking-normal whitespace-nowrap md:whitespace-normal md:max-w-[12em]">
           Koffie, lunch &amp; wine nights.
         </h1>
         <p className="mt-1.5 max-w-md text-[0.85rem] leading-snug text-[color:var(--cream)] md:mt-2 md:text-[0.95rem] md:leading-relaxed">
