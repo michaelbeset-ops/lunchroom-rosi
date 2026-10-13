@@ -36,10 +36,10 @@ function OnsVerhaalPage() {
         <img
           src={fay}
           alt="Fay, de oprichter van Rosí, op de roestkleurige bank in de zaak"
-          width={1000}
-          height={1501}
+          width={900}
+          height={1081}
           fetchPriority="high"
-          className="photo-soft mx-auto aspect-[4/5] w-full max-w-[440px] object-cover object-[50%_30%]"
+          className="photo-soft mx-auto aspect-[4/5] w-full max-w-[440px] object-cover object-[50%_40%]"
         />
       </Reveal>
 
