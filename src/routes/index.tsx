@@ -19,15 +19,17 @@ import { special } from "@/data/special";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Rosí | Verse koffie & lunch in Monster" },
+      { title: "Lunchroom Rosí | Koffie, lunch & wine nights in Monster" },
       {
         name: "description",
-        content: "Lunchroom in het hart van Monster. Verse koffie, huisgemaakte lunch en taart.",
+        content:
+          "Gezelligheid in Monster: verse koffie, huisgemaakte lunch, koekjes en gebak uit eigen oven en wine nights. Molenstraat 35, dinsdag t/m zondag open.",
       },
-      { property: "og:title", content: "Rosí | Monster" },
+      { property: "og:title", content: "Lunchroom Rosí | Koffie, lunch & wine nights in Monster" },
       {
         property: "og:description",
-        content: "Verse koffie, lunch en huisgemaakt gebak in Monster.",
+        content:
+          "Gezelligheid in Monster: verse koffie, huisgemaakte lunch, gebak uit eigen oven en wine nights.",
       },
       { property: "og:url", content: "/" },
     ],
