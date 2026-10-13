@@ -1,4 +1,4 @@
-// De menukaart, overgenomen van "Lunchroom Rosí - menukaart binnenkant,
+// De menukaart, in dezelfde volgorde als de kaart zelf, overgenomen van "Lunchroom Rosí - menukaart binnenkant,
 // editie 1" (aanlevering/). Prijzen in euro's.
 
 export type MenuItem = {
@@ -19,6 +19,120 @@ export type MenuCategory = {
 };
 
 export const menu: MenuCategory[] = [
+  {
+    id: "koffie",
+    title: "Koffie & thee",
+    subtitle: "Hot · Coffee and hot drinks",
+    items: [
+      { name: "Espresso", description: "", price: "enkel 3,25 / dubbel 4,10" },
+      { name: "Koffie", description: "", price: "3,25" },
+      { name: "Cappuccino", description: "", price: "3,90" },
+      { name: "Latte macchiato", description: "", price: "4,50" },
+      { name: "Cortado", description: "", price: "4,80" },
+      { name: "Flat white", description: "", price: "4,80" },
+      { name: "Koffie verkeerd", description: "", price: "4,00" },
+      { name: "Americano", description: "", price: "3,25" },
+      { name: "Warme choco", description: "Met echte chocolade en slagroom", price: "5,20" },
+      {
+        name: "Chai latte",
+        description: "Zacht, romig en kruidig met een warme, cozy smaak. Dirty: + 0,60",
+        price: "4,90",
+      },
+      {
+        name: "Pumpkin spice latte",
+        description: "Zoet, kruidig en heerlijk warm voor een echte herfstvibe",
+        price: "5,50",
+      },
+      {
+        name: "Toasted marshmallow latte",
+        description: "Romig en zoet met een geroosterde marshmallow bovenop",
+        price: "5,50",
+      },
+      {
+        name: "Apple pie latte",
+        description: "Warm, zoet en vertrouwd met een heerlijk homemade gevoel",
+        price: "5,50",
+      },
+      {
+        name: "Standaard thee",
+        description:
+          "Wij hebben diverse theesoorten in ons assortiment; vraag naar onze theesmaken",
+        price: "3,50",
+      },
+      {
+        name: "Matcha latte",
+        description:
+          "Wij werken met Ceremonial Grade matcha, want als matcha-liefhebbers weten wij wat het verschil maakt",
+        price: "6,00",
+      },
+      {
+        name: "Verse thee",
+        description: "Verse gember, verse munt, verse sinaasappel-kaneel of verse winterthee peer",
+        price: "4,20",
+      },
+    ],
+    notes: [
+      "Maak je koffie helemaal naar jouw smaak: voeg een MONIN-siroop naar keuze toe voor 0,50 extra. Liever plantaardige melk? Kies dan voor haver-, kokos- of amandelmelk voor 0,50 extra.",
+      "Een stukje gebak bij je koffie, of toch liever een koekje? Dat kan! Vraag een medewerkster naar ons assortiment.",
+    ],
+  },
+  {
+    id: "fris",
+    title: "Fris & sappen",
+    subtitle: "Cold · Drinks and juices",
+    items: [
+      {
+        name: "Frisdranken",
+        description: "Vraag een medewerkster naar ons assortiment",
+        price: "vanaf 3,50",
+      },
+      {
+        name: "Kids limo",
+        description: "Little sips, big smiles! Voor de kleintjes fris en fruitig",
+        price: "glas 2,00 / 1L 6,00",
+      },
+      {
+        name: "Smoothie golden glow",
+        description:
+          "Golden hour, maar dan in een glas. Mango, ananas en sinaasappel voor de perfecte tropical mix",
+        price: "6,00",
+      },
+      {
+        name: "Smoothie berry bliss",
+        description:
+          "Berry good, berry bliss. Aardbei, banaan en appel voor een fruitige, creamy mix",
+        price: "6,00",
+      },
+      {
+        name: "Jus d'orange",
+        description:
+          "No fancy stuff, just the good stuff. Versgeperste sinaasappels, straight into your glass",
+        price: "4,25",
+      },
+      {
+        name: "Smoothie green boost",
+        description:
+          "Greens never tasted this good. Spinazie, banaan en yoghurt voor een frisse, creamy mix",
+        price: "6,00",
+      },
+      {
+        name: "Iced coffee",
+        description: "Caramel zeezout, pistache, toasted marshmallow, tiramisu of Biscoff",
+        price: "5,70",
+      },
+      {
+        name: "Homemade lemonades",
+        description: "Passievrucht, perzik, groene appel, lavendel of rozenbloesem",
+        price: "5,50",
+      },
+      {
+        name: "Iced matcha",
+        description: "Vanille, witte chocolade, mango, aardbei of peer",
+        price: "6,00",
+      },
+    ],
+    notes: ["IJskoffie & matcha met MONIN-siroop + 0,50. Liever plantaardige melk? + 0,50."],
+  },
   {
     id: "ontbijt",
     title: "Ontbijt",
@@ -119,15 +233,21 @@ export const menu: MenuCategory[] = [
         price: "14,00",
       },
       {
+        name: "Smokey chicken",
+        description:
+          "Smokey, saucy & full of flavour. Coleslaw, pulled chicken, BBQ-saus, bosui en broad beans. Geserveerd op schiacciata",
+        price: "15,50",
+      },
+      {
         name: "Burrata & mortadella",
         description:
           "Italian goodness. Pesto, mortadella, burrata, tomaatjes, pistachenootjes, rucola en balsamico. Geserveerd op schiacciata",
         price: "15,00",
       },
       {
-        name: "Smokey chicken",
+        name: "Pinsa burrata & serrano",
         description:
-          "Smokey, saucy & full of flavour. Coleslaw, pulled chicken, BBQ-saus, bosui en broad beans. Geserveerd op schiacciata",
+          "Crispy, creamy & Italian. Pesto, burrata, serranoham, rucola, tomaatjes en balsamico. Geserveerd op pinsa",
         price: "15,50",
       },
       {
@@ -135,12 +255,6 @@ export const menu: MenuCategory[] = [
         description:
           "Fresh, creamy & crispy. Roomkaas, gerookte zalm, dille, rode ui en kappertjes. Geserveerd op pinsa",
         price: "16,50",
-      },
-      {
-        name: "Pinsa burrata & serrano",
-        description:
-          "Crispy, creamy & Italian. Pesto, burrata, serranoham, rucola, tomaatjes en balsamico. Geserveerd op pinsa",
-        price: "15,50",
       },
       {
         name: "Caesar salad",
@@ -151,30 +265,53 @@ export const menu: MenuCategory[] = [
     ],
   },
   {
+    id: "borrel",
+    title: "Wijn, cocktails & bier",
+    subtitle: "Alcoholic drinks · Just one more",
+    items: [],
+    groups: [
+      {
+        title: "Wijn",
+        items: [
+          { name: "Preciso Grillo", description: "Witte wijn", price: "glas 5,75" },
+          { name: "Preciso Pinot Grigio", description: "Rosé wijn", price: "glas 5,75" },
+          { name: "Preciso Nero d'Avola", description: "Rode wijn", price: "glas 5,75" },
+          {
+            name: "Impío Brut",
+            description: "Iets te vieren? Cheers to that! Bubbels",
+            price: "glas 6,75 / fles 32,50",
+          },
+        ],
+      },
+      {
+        title: "Cocktails",
+        items: [
+          { name: "Amaretto sour", description: "", price: "13,00" },
+          { name: "Espresso martini", description: "", price: "14,00" },
+          { name: "Aperol spritz", description: "", price: "9,00" },
+          { name: "Rode sangria met Licor 43", description: "", price: "glas 8,00 / 1L 32,00" },
+          { name: "Apple pie Licor 43", description: "", price: "13,00" },
+          { name: "Gin cinnamon & orange", description: "", price: "13,50" },
+        ],
+      },
+      {
+        title: "Bier",
+        items: [
+          { name: "Hertog Jan pils (tap)", description: "", price: "3,90" },
+          { name: "Leffe blond (tap)", description: "", price: "5,50" },
+          { name: "Lowlander wit", description: "", price: "6,50" },
+          { name: "Tripel Karmeliet", description: "", price: "6,50" },
+          { name: "Corona", description: "", price: "5,00" },
+        ],
+      },
+    ],
+    notes: ["Alle biertjes ook verkrijgbaar 0.0."],
+  },
+  {
     id: "bites",
     title: "Bites",
     subtitle: "Made for sharing",
     items: [
-      {
-        name: "Bread & dips",
-        description: "Perfect to start with. Warm flatbread met aioli en olijventapenade",
-        price: "7,50",
-      },
-      {
-        name: "Olives",
-        description: "Salty & perfect with a drink. Ansjovisolijven",
-        price: "4,00",
-      },
-      {
-        name: "Bitterballen",
-        description: "A Dutch favourite. Krokante bitterballen met mosterd",
-        price: "6 st. 8,90 / 12 st. 15,90",
-      },
-      {
-        name: "Kaastengels",
-        description: "Crispy, cheesy & always good. Kaastengels met chilisaus",
-        price: "8 st. 10,50",
-      },
       {
         name: "Truffle fries",
         description:
@@ -188,14 +325,24 @@ export const menu: MenuCategory[] = [
         price: "6 st. 13,00",
       },
       {
-        name: "Chicken tenders",
-        description: "Crispy with a little kick. Krokante chicken tenders met spicy sriracha mayo",
-        price: "6 st. 13,00",
+        name: "Olives",
+        description: "Salty & perfect with a drink. Ansjovisolijven",
+        price: "4,00",
       },
       {
-        name: "Crispy gyoza",
-        description: "Crispy, spicy & savoury. Krokante gyoza's met sriracha en sojasaus",
-        price: "6 st. 11,50",
+        name: "Kaastengels",
+        description: "Crispy, cheesy & always good. Kaastengels met chilisaus",
+        price: "8 st. 10,50",
+      },
+      {
+        name: "Bread & dips",
+        description: "Perfect to start with. Warm flatbread met aioli en olijventapenade",
+        price: "7,50",
+      },
+      {
+        name: "Bitterballen",
+        description: "A Dutch favourite. Krokante bitterballen met mosterd",
+        price: "6 st. 8,90 / 12 st. 15,90",
       },
       {
         name: "Baked camembert",
@@ -208,6 +355,16 @@ export const menu: MenuCategory[] = [
         description:
           "Made for sharing. Nacho's met gesmolten cheddar, pulled chicken, salsa, rode ui, jalapeño, paprika, tomaat, guacamole en crème fraîche",
         price: "14,50",
+      },
+      {
+        name: "Chicken tenders",
+        description: "Crispy with a little kick. Krokante chicken tenders met spicy sriracha mayo",
+        price: "6 st. 13,00",
+      },
+      {
+        name: "Crispy gyoza",
+        description: "Crispy, spicy & savoury. Krokante gyoza's met sriracha en sojasaus",
+        price: "6 st. 11,50",
       },
     ],
     notes: [
@@ -263,162 +420,5 @@ export const menu: MenuCategory[] = [
         price: "5,00",
       },
     ],
-  },
-  {
-    id: "koffie",
-    title: "Koffie & thee",
-    subtitle: "Hot · Coffee and hot drinks",
-    items: [
-      { name: "Espresso", description: "", price: "enkel 3,25 / dubbel 4,10" },
-      { name: "Koffie", description: "", price: "3,25" },
-      { name: "Americano", description: "", price: "3,25" },
-      { name: "Cappuccino", description: "", price: "3,90" },
-      { name: "Koffie verkeerd", description: "", price: "4,00" },
-      { name: "Latte macchiato", description: "", price: "4,50" },
-      { name: "Cortado", description: "", price: "4,80" },
-      { name: "Flat white", description: "", price: "4,80" },
-      { name: "Warme choco", description: "Met echte chocolade en slagroom", price: "5,20" },
-      {
-        name: "Matcha latte",
-        description:
-          "Wij werken met Ceremonial Grade matcha, want als matcha-liefhebbers weten wij wat het verschil maakt",
-        price: "6,00",
-      },
-      {
-        name: "Chai latte",
-        description: "Zacht, romig en kruidig met een warme, cozy smaak. Dirty: + 0,60",
-        price: "4,90",
-      },
-      {
-        name: "Pumpkin spice latte",
-        description: "Zoet, kruidig en heerlijk warm voor een echte herfstvibe",
-        price: "5,50",
-      },
-      {
-        name: "Apple pie latte",
-        description: "Warm, zoet en vertrouwd met een heerlijk homemade gevoel",
-        price: "5,50",
-      },
-      {
-        name: "Toasted marshmallow latte",
-        description: "Romig en zoet met een geroosterde marshmallow bovenop",
-        price: "5,50",
-      },
-      {
-        name: "Standaard thee",
-        description:
-          "Wij hebben diverse theesoorten in ons assortiment; vraag naar onze theesmaken",
-        price: "3,50",
-      },
-      {
-        name: "Verse thee",
-        description: "Verse gember, verse munt, verse sinaasappel-kaneel of verse winterthee peer",
-        price: "4,20",
-      },
-    ],
-    notes: [
-      "Maak je koffie helemaal naar jouw smaak: voeg een MONIN-siroop naar keuze toe voor 0,50 extra. Liever plantaardige melk? Kies dan voor haver-, kokos- of amandelmelk voor 0,50 extra.",
-      "Een stukje gebak bij je koffie, of toch liever een koekje? Dat kan! Vraag een medewerkster naar ons assortiment.",
-    ],
-  },
-  {
-    id: "fris",
-    title: "Fris & sappen",
-    subtitle: "Cold · Drinks and juices",
-    items: [
-      {
-        name: "Frisdranken",
-        description: "Vraag een medewerkster naar ons assortiment",
-        price: "vanaf 3,50",
-      },
-      {
-        name: "Kids limo",
-        description: "Little sips, big smiles! Voor de kleintjes fris en fruitig",
-        price: "glas 2,00 / 1L 6,00",
-      },
-      {
-        name: "Jus d'orange",
-        description:
-          "No fancy stuff, just the good stuff. Versgeperste sinaasappels, straight into your glass",
-        price: "4,25",
-      },
-      {
-        name: "Smoothie golden glow",
-        description:
-          "Golden hour, maar dan in een glas. Mango, ananas en sinaasappel voor de perfecte tropical mix",
-        price: "6,00",
-      },
-      {
-        name: "Smoothie berry bliss",
-        description:
-          "Berry good, berry bliss. Aardbei, banaan en appel voor een fruitige, creamy mix",
-        price: "6,00",
-      },
-      {
-        name: "Smoothie green boost",
-        description:
-          "Greens never tasted this good. Spinazie, banaan en yoghurt voor een frisse, creamy mix",
-        price: "6,00",
-      },
-      {
-        name: "Iced coffee",
-        description: "Caramel zeezout, pistache, toasted marshmallow, tiramisu of Biscoff",
-        price: "5,70",
-      },
-      {
-        name: "Iced matcha",
-        description: "Vanille, witte chocolade, mango, aardbei of peer",
-        price: "6,00",
-      },
-      {
-        name: "Homemade lemonades",
-        description: "Passievrucht, perzik, groene appel, lavendel of rozenbloesem",
-        price: "5,50",
-      },
-    ],
-    notes: ["IJskoffie & matcha met MONIN-siroop + 0,50. Liever plantaardige melk? + 0,50."],
-  },
-  {
-    id: "borrel",
-    title: "Wijn, cocktails & bier",
-    subtitle: "Alcoholic drinks · Just one more",
-    items: [],
-    groups: [
-      {
-        title: "Wijn",
-        items: [
-          { name: "Preciso Grillo", description: "Witte wijn", price: "glas 5,75" },
-          { name: "Preciso Pinot Grigio", description: "Rosé wijn", price: "glas 5,75" },
-          { name: "Preciso Nero d'Avola", description: "Rode wijn", price: "glas 5,75" },
-          {
-            name: "Impío Brut",
-            description: "Iets te vieren? Cheers to that! Bubbels",
-            price: "glas 6,75 / fles 32,50",
-          },
-        ],
-      },
-      {
-        title: "Cocktails",
-        items: [
-          { name: "Amaretto sour", description: "", price: "13,00" },
-          { name: "Espresso martini", description: "", price: "14,00" },
-          { name: "Aperol spritz", description: "", price: "9,00" },
-          { name: "Rode sangria met Licor 43", description: "", price: "glas 8,00 / 1L 32,00" },
-          { name: "Apple pie Licor 43", description: "", price: "13,00" },
-          { name: "Gin cinnamon & orange", description: "", price: "13,50" },
-        ],
-      },
-      {
-        title: "Bier",
-        items: [
-          { name: "Hertog Jan pils (tap)", description: "", price: "3,90" },
-          { name: "Leffe blond (tap)", description: "", price: "5,50" },
-          { name: "Lowlander wit", description: "", price: "6,50" },
-          { name: "Tripel Karmeliet", description: "", price: "6,50" },
-          { name: "Corona", description: "", price: "5,00" },
-        ],
-      },
-    ],
-    notes: ["Alle biertjes ook verkrijgbaar 0.0."],
   },
 ];

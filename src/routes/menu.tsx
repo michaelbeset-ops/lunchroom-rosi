@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { menu } from "@/data/menu";
 import { Reveal } from "@/components/site/Reveal";
 import { WaveDivider } from "@/components/site/WaveDivider";
+import { RosiRoos } from "@/components/site/RosiMark";
 
 export const Route = createFileRoute("/menu")({
   head: () => ({
@@ -125,10 +126,14 @@ function MenuPage() {
           ))}
           {cat.notes && (
             <Reveal>
-              <div className="mx-auto max-w-2xl space-y-2 text-center text-sm italic text-muted-foreground">
-                {cat.notes.map((n) => (
-                  <p key={n}>{n}</p>
-                ))}
+              {/* Opmerkingen bij de categorie, als opvallend kader in de huisstijl */}
+              <div className="mx-auto max-w-2xl rounded-[22px] bg-[color:var(--olive-deep)] px-7 py-6 text-center text-[color:var(--cream)]">
+                <RosiRoos className="mx-auto mb-3 h-8 w-auto" />
+                <div className="space-y-3 text-[0.95rem] leading-relaxed">
+                  {cat.notes.map((n) => (
+                    <p key={n}>{n}</p>
+                  ))}
+                </div>
               </div>
             </Reveal>
           )}
