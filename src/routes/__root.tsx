@@ -81,15 +81,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Gezelligheid in Monster, verse koffie, huisgemaakte lunch, koekjes en gebak uit eigen oven en wine nights. Molenstraat 35, dinsdag t/m zondag open.",
       },
       { name: "theme-color", content: "#777758" },
-      /* Voorlopig niet vindbaar in Google; weghalen bij livegang op lunchroomrosi.nl */
-      { name: "robots", content: "noindex, nofollow" },
       { property: "og:title", content: "Lunchroom Rosí | Koffie, lunch & wine nights in Monster" },
       {
         property: "og:description",
         content: "Een knus hoekje in Monster met verse koffie, lunch en huisgemaakt gebak.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: "https://michaelbeset-ops.github.io/lunchroom-rosi/og.jpg" },
+      { property: "og:image", content: "https://lunchroomrosi.nl/og.jpg" },
       { property: "og:image:width", content: "1200" },
       { property: "og:image:height", content: "630" },
       { property: "og:locale", content: "nl_NL" },
@@ -97,14 +95,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
-      { rel: "icon", href: "/lunchroom-rosi/favicon.ico?v=3", sizes: "any" },
+      { rel: "icon", href: "/favicon.ico?v=3", sizes: "any" },
       {
         rel: "icon",
-        href: "/lunchroom-rosi/favicon-32.png?v=3",
+        href: "/favicon-32.png?v=3",
         type: "image/png",
         sizes: "32x32",
       },
-      { rel: "apple-touch-icon", href: "/lunchroom-rosi/apple-touch-icon.png?v=3" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png?v=3" },
     ],
     scripts: [
       {
@@ -113,8 +111,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "CafeOrCoffeeShop",
           name: "Lunchroom Rosí",
-          url: "https://michaelbeset-ops.github.io/lunchroom-rosi/",
-          image: "https://michaelbeset-ops.github.io/lunchroom-rosi/og.jpg",
+          url: "https://lunchroomrosi.nl/",
+          image: "https://lunchroomrosi.nl/og.jpg",
           telephone: telefoon.link.replace("tel:", ""),
           email: "info@lunchroomrosi.nl",
           address: {

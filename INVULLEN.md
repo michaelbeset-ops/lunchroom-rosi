@@ -41,6 +41,5 @@ in plaats van echte gegevens:
 16. **Cookiemelding** — verwijderd: de site plaatst geen cookies. Komt er
     ooit Google Analytics of een Instagram-widget met cookies, dan moet
     er weer een melding bij.
-17. **Vindbaarheid** — de site staat op noindex (robots-meta in index.html en
-    __root.tsx, plus robots.txt). Bij livegang op lunchroomrosi.nl die drie
-    regels weghalen, anders komt de site nooit in Google.
+17. **Vindbaarheid** — noindex is weggehaald bij de livegang op lunchroomrosi.nl;
+    de site mag nu door Google geïndexeerd worden (robots.txt verwijst naar de sitemap).

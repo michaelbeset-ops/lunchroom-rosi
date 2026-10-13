@@ -5,7 +5,7 @@ import { defineConfig } from "vite";
 import tsConfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
-  base: "/lunchroom-rosi/",
+  base: "/",
   plugins: [
     TanStackRouterVite({ autoCodeSplitting: true }),
     react(),
