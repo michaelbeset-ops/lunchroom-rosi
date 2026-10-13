@@ -153,10 +153,7 @@ function HomePage() {
               Rosí begon als de droom van Fay, toen dit pand vrijkwam, kwam alles samen en opende ze
               op Koningsdag de deuren. Inmiddels staat hier een team van allemaal vrouwen.
             </p>
-            <p>
-              Olijfgroene muren, een warme bar en verse bloemen op tafel, een plek om even te
-              blijven hangen.
-            </p>
+            <p>Bij Lunchroom Rosí draait het om gezelligheid, samenkomen en genieten.</p>
           </div>
           <ul className="mt-7 max-w-md space-y-3 text-[0.95rem] text-foreground">
             {[
