@@ -4,7 +4,7 @@
 import type { MenuCategory } from "@/data/menu";
 
 export const cateringIntro = [
-  "Van een gezellige verjaardag tot een borrel met collega's: met onze catering maken we van ieder moment iets lekkers en gezelligs.",
+  "Van een gezellige verjaardag tot een borrel met collega's, met onze catering maken we van ieder moment iets lekkers en gezelligs.",
 ];
 
 export const cateringDenkAan = [
@@ -16,7 +16,7 @@ export const cateringDenkAan = [
 ];
 
 export const cateringAfsluiter =
-  "Of je nu iets kleins wilt om te delen of een tafel vol lekkers voor een grotere groep: vertel ons wat je in gedachten hebt, dan kijken we samen naar de mogelijkheden.";
+  "Of je nu iets kleins wilt om te delen of een tafel vol lekkers voor een grotere groep, vertel ons wat je in gedachten hebt, dan kijken we samen naar de mogelijkheden.";
 
 export const catering: MenuCategory[] = [
   {

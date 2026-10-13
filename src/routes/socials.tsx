@@ -29,7 +29,7 @@ function SocialsPage() {
           Volg ons online
         </h1>
         <p className="mx-auto mt-5 max-w-xl text-muted-foreground">
-          De maandspecial, de data van de wine nights en wat er vandaag uit de oven komt: dat zetten
+          De maandspecial, de data van de wine nights en wat er vandaag uit de oven komt, dat zetten
           we op Instagram. Reserveren gaat daar ook, met een berichtje.
         </p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">

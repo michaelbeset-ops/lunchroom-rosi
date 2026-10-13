@@ -32,7 +32,7 @@ function PrivacyPage() {
         </h1>
         <p className={p}>
           Wij zijn Lunchroom Rosí, Molenstraat 35 in Monster. Zo simpel als onze kaart is, zo simpel
-          houden we ook je privacy: we verzamelen zo min mogelijk en verkopen nooit iets door.
+          houden we ook je privacy, we verzamelen zo min mogelijk en verkopen nooit iets door.
         </p>
 
         <h2 className={h2}>Welke gegevens we krijgen</h2>
@@ -45,7 +45,7 @@ function PrivacyPage() {
         <h2 className={h2}>Cookies</h2>
         <p className={p}>
           Deze site plaatst geen cookies en gebruikt geen advertentie-, volg- of statistiekdiensten.
-          Daarom zie je ook geen cookiemelding: er valt niets te kiezen.
+          Daarom zie je ook geen cookiemelding, er valt niets te kiezen.
         </p>
         {beholdFeedId && (
           <p className={p}>

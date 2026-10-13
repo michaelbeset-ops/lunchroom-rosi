@@ -18,7 +18,7 @@ export const Route = createFileRoute("/catering")({
       {
         name: "description",
         content:
-          "Catering by Rosí: broodjes, soepen, drankjes, sweets box en borrelbox, vers klaargemaakt en bezorgd in Monster en het Westland. Bestellen via WhatsApp of e-mail.",
+          "Catering by Rosí, broodjes, soepen, drankjes, sweets box en borrelbox, vers klaargemaakt en bezorgd in Monster en het Westland. Bestellen via WhatsApp of e-mail.",
       },
       { property: "og:title", content: "Catering | Rosí" },
       { property: "og:url", content: "/catering" },

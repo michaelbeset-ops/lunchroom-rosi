@@ -35,7 +35,7 @@ export const menu: MenuCategory[] = [
       { name: "Warme choco", description: "Met echte chocolade en slagroom", price: "5,20" },
       {
         name: "Chai latte",
-        description: "Zacht, romig en kruidig met een warme, cozy smaak. Dirty: + 0,60",
+        description: "Zacht, romig en kruidig met een warme, cozy smaak. Dirty + 0,60",
         price: "4,90",
       },
       {
@@ -72,7 +72,7 @@ export const menu: MenuCategory[] = [
       },
     ],
     notes: [
-      "Maak je koffie helemaal naar jouw smaak: voeg een MONIN-siroop naar keuze toe voor 0,50 extra. Liever plantaardige melk? Kies dan voor haver-, kokos- of amandelmelk voor 0,50 extra.",
+      "Maak je koffie helemaal naar jouw smaak, voeg een MONIN-siroop naar keuze toe voor 0,50 extra. Liever plantaardige melk? Kies dan voor haver-, kokos- of amandelmelk voor 0,50 extra.",
       "Een stukje gebak bij je koffie, of toch liever een koekje? Dat kan! Vraag een medewerkster naar ons assortiment.",
     ],
   },
@@ -174,7 +174,7 @@ export const menu: MenuCategory[] = [
           {
             name: "Breakfast platter",
             description:
-              "A little bit of everything (tot 12.00u): mini yoghurt bowl met granola en fruit, mini Rosí eggs en a little avocado toast",
+              "A little bit of everything (tot 12.00u), mini yoghurt bowl met granola en fruit, mini Rosí eggs en a little avocado toast",
             price: "18,50 p.p., vanaf 2 personen",
           },
         ],
@@ -368,7 +368,7 @@ export const menu: MenuCategory[] = [
       },
     ],
     notes: [
-      "Voor de borrelaar die wel van iets anders houdt: onze favorieten hebben een Aziatisch randje en zijn allesbehalve saai.",
+      "Voor de borrelaar die wel van iets anders houdt, onze favorieten hebben een Aziatisch randje en zijn allesbehalve saai.",
     ],
   },
   {
