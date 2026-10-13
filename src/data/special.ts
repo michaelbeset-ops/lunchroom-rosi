@@ -1,18 +1,18 @@
 // De maandspecial op de homepage (blok "Uitgelicht"). Elke maand komt er
 // een nieuwe tekst, foto en videolink: pas alleen dit bestand aan.
 
-import foto from "@/assets/special-pear-matcha.webp";
+import foto from "@/assets/special-pumpkin-spice.webp";
 
 export const special = {
-  maand: "september special",
-  titel: "Pear Matcha",
-  ondertitel: "\u2014 now at ROS\u00cd. September tastes like pear & matcha.",
+  maand: "oktober special",
+  titel: "Pumpkin Spice Latte",
+  ondertitel: "\u2014 now at ROS\u00cd. Autumn is officially pumpkin season. \ud83c\udf83",
   tekst:
-    "De zachte, sappige zoetheid van peer ontmoet de diepe, aardse frisheid van ceremonial grade matcha. Een verrassende combinatie die precies past bij september.",
-  videoUrl: "https://www.instagram.com/lunchroomrosi/reel/DdgVUX3tbis/",
-  /* De Instagram-post met de foto van de special */
-  postUrl: "https://www.instagram.com/lunchroomrosi/p/DdWVz7ZNgBf/",
-  /* Origineel van de designer (aanlevering/Instagram-03.png) */
+    "Een romige pumpkin spice latte, afgetopt met een fluffy cold foam en een vleugje cinnamon. Cozy, kruidig en precies de herfst in een cup. \ud83c\udf42",
+  videoUrl: "https://www.instagram.com/p/DeBgfWwjXWV/",
+  /* De Instagram-post van de special */
+  postUrl: "https://www.instagram.com/p/DeBgfWwjXWV/",
+  /* Afbeelding van de designer (aanlevering/) */
   foto,
-  fotoAlt: "September special: een pear matcha latte naast een peer",
+  fotoAlt: "October special: iced pumpkin spice latte met cold foam, heel oktober bij Rosí",
 };

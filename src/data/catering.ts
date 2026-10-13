@@ -4,10 +4,19 @@
 import type { MenuCategory } from "@/data/menu";
 
 export const cateringIntro = [
-  "Voor wie ons nog niet kent: wij zijn Rosí, een van de nieuwste horecazaken in Monster. Een gezellige plek voor ontbijt, lunch, homemade sweets, lekkere drankjes en bites.",
-  "Natuurlijk snappen we heel goed dat het tijdens een drukke werkdag niet altijd lukt om gezellig bij ons langs te komen. Daarom draaien we het gewoon om: kunnen jullie niet naar Rosí komen? Dan brengen wij Rosí naar jullie!",
-  "Bestel jouw favoriete broodjes, huisgemaakte taartjes, verse soepjes en borrelbites eenvoudig bij ons. Perfect voor een gezamenlijke lunch op kantoor, een vergadering, verjaardag, teammoment of gezellige vrijdagmiddagborrel. Jullie hoeven alleen maar te kiezen waar je zin in hebt. Wij zorgen ervoor dat alles vers wordt klaargemaakt, mooi wordt verzorgd en bij jullie wordt bezorgd.",
+  "Van een gezellige verjaardag tot een borrel met collega's: met onze catering maken we van ieder moment iets lekkers en gezelligs.",
 ];
+
+export const cateringDenkAan = [
+  "Bedrijfsborrel",
+  "Verjaardagsfeestje",
+  "Groepslunch",
+  "Borrelavond",
+  "Jubileum",
+];
+
+export const cateringAfsluiter =
+  "Of je nu iets kleins wilt om te delen of een tafel vol lekkers voor een grotere groep: vertel ons wat je in gedachten hebt, dan kijken we samen naar de mogelijkheden.";
 
 export const catering: MenuCategory[] = [
   {

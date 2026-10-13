@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { menu } from "@/data/menu";
 import { Reveal } from "@/components/site/Reveal";
 import { WaveDivider } from "@/components/site/WaveDivider";
@@ -10,7 +11,7 @@ export const Route = createFileRoute("/menu")({
       {
         name: "description",
         content:
-          "Vers belegde broodjes, soepen, salades, huisgemaakte taart en goede koffie. Bekijk de hele menukaart van Rosí in Monster.",
+          "Ontbijt, lunch classics en signatures, bites, Little Rosí, koffie, fris en cocktails. Bekijk de hele menukaart van Rosí in Monster.",
       },
       { property: "og:title", content: "Menukaart | Rosí" },
       { property: "og:description", content: "De volledige menukaart van Rosí in Monster." },
@@ -21,60 +22,95 @@ export const Route = createFileRoute("/menu")({
   component: MenuPage,
 });
 
+/* Welke categorie staat open? Uit de URL-hash, anders de eerste. */
+function useActieveCategorie() {
+  const [id, setId] = useState(menu[0].id);
+  useEffect(() => {
+    const h = window.location.hash.replace("#", "");
+    if (menu.some((c) => c.id === h)) setId(h);
+  }, []);
+  const kies = (nieuw: string) => {
+    setId(nieuw);
+    window.history.replaceState(null, "", `#${nieuw}`);
+  };
+  return [id, kies] as const;
+}
+
 function MenuPage() {
+  const [actief, kies] = useActieveCategorie();
+  const cat = menu.find((c) => c.id === actief) ?? menu[0];
+  const groepen = cat.groups ?? [{ title: "", items: cat.items }];
+
   return (
     <>
-      <section className="container-prose pt-12 pb-10 md:pt-20 text-center">
+      <section className="container-prose pt-12 pb-10 text-center md:pt-20">
         <p className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">onze kaart</p>
-        <h1 className="mt-3 font-script font-normal tracking-normal text-[1.9rem] leading-[1.5] text-primary sm:text-[2.6rem]">
+        <h1 className="mt-3 font-script text-[1.9rem] leading-[1.5] font-normal tracking-normal text-primary sm:text-[2.6rem]">
           Vers, eerlijk en huisgemaakt.
         </h1>
         <p className="mx-auto mt-5 max-w-xl text-muted-foreground">
-          De kaart wisselt mee met de seizoenen. Vraag gerust naar de specials, die staan op het
-          bord boven de bar.
+          Kies een onderdeel van de kaart. De kaart wisselt mee met de seizoenen; vraag gerust naar
+          de specials.
         </p>
-        <WaveDivider className="mt-8 mx-auto max-w-[200px]" />
+        <WaveDivider className="mx-auto mt-8 max-w-[200px]" />
       </section>
 
-      {/* Categorie nav */}
+      {/* Categorie-knoppen: filter, je ziet alleen de gekozen categorie */}
       <nav aria-label="Menucategorieën" className="container-prose">
         <ul className="flex flex-wrap justify-center gap-2 text-sm">
-          {menu.map((c) => (
-            <li key={c.id}>
-              <a
-                href={`#${c.id}`}
-                className="inline-flex items-center rounded-full border border-border bg-card px-4 py-2 text-foreground hover:border-primary hover:text-primary transition-colors"
-              >
-                {c.title}
-              </a>
-            </li>
-          ))}
+          {menu.map((c) => {
+            const isActief = c.id === cat.id;
+            return (
+              <li key={c.id}>
+                <button
+                  type="button"
+                  onClick={() => kies(c.id)}
+                  aria-pressed={isActief}
+                  className={
+                    isActief
+                      ? "inline-flex items-center rounded-full border border-primary bg-primary px-4 py-2 font-semibold text-primary-foreground"
+                      : "inline-flex items-center rounded-full border border-border bg-card px-4 py-2 text-foreground transition-colors hover:border-primary hover:text-primary"
+                  }
+                >
+                  {c.title}
+                </button>
+              </li>
+            );
+          })}
         </ul>
       </nav>
 
-      <section className="container-prose mt-16 grid gap-16 pb-20 md:grid-cols-2 md:gap-x-16">
-        {menu.map((cat, i) => (
-          <Reveal key={cat.id} delay={i * 60}>
-            <article id={cat.id} className="scroll-mt-28">
-              <header className="mb-6">
-                <h2 className="font-script font-normal tracking-normal text-2xl leading-[1.5] text-primary">
-                  {cat.title}
-                </h2>
-                {cat.subtitle && (
-                  <p className="mt-1 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                    {cat.subtitle}
-                  </p>
-                )}
-                <div className="mt-3 h-px w-full bg-primary/30" />
-              </header>
-              <ul className="space-y-5">
-                {cat.items.map((item) => (
+      <section key={cat.id} className="container-prose mt-14 pb-20">
+        <Reveal>
+          <header className="mb-8 text-center">
+            <h2 className="font-script text-[1.9rem] leading-[1.5] font-normal tracking-normal text-primary">
+              {cat.title}
+            </h2>
+            {cat.subtitle && (
+              <p className="mt-1 text-xs uppercase tracking-[0.22em] text-muted-foreground">
+                {cat.subtitle}
+              </p>
+            )}
+            <div className="mx-auto mt-4 h-px w-full max-w-xs bg-primary/30" />
+          </header>
+        </Reveal>
+
+        <div className="mx-auto max-w-5xl space-y-12">
+          {groepen.map((groep) => (
+            <Reveal key={groep.title || cat.id}>
+              {groep.title && (
+                <h3 className="mb-5 font-script text-xl leading-[1.5] font-normal tracking-normal text-primary">
+                  {groep.title}
+                </h3>
+              )}
+              <ul className="grid gap-x-16 gap-y-6 md:grid-cols-2">
+                {groep.items.map((item) => (
                   <li key={item.name}>
                     <div className="flex items-baseline">
-                      <h3 className="font-serif text-lg text-foreground">{item.name}</h3>
+                      <h4 className="text-lg font-semibold text-foreground">{item.name}</h4>
                       <span className="menu-dots" aria-hidden="true" />
-                      <span className="font-serif tabular-nums text-foreground">
-                        € {item.price}
+                      <span className="whitespace-nowrap text-sm tabular-nums text-foreground md:text-base">
+                        {/^\d/.test(item.price) ? `€ ${item.price}` : item.price}
                       </span>
                     </div>
                     {item.description && (
@@ -85,9 +121,18 @@ function MenuPage() {
                   </li>
                 ))}
               </ul>
-            </article>
-          </Reveal>
-        ))}
+            </Reveal>
+          ))}
+          {cat.notes && (
+            <Reveal>
+              <div className="mx-auto max-w-2xl space-y-2 text-center text-sm italic text-muted-foreground">
+                {cat.notes.map((n) => (
+                  <p key={n}>{n}</p>
+                ))}
+              </div>
+            </Reveal>
+          )}
+        </div>
       </section>
 
       <section className="container-prose pb-20">

@@ -3,7 +3,13 @@ import etenBowl from "@/assets/eten-bowl.webp";
 import { Reveal } from "@/components/site/Reveal";
 import { RosiRoos } from "@/components/site/RosiMark";
 import { telefoon } from "@/data/openingstijden";
-import { catering, cateringInfo, cateringIntro } from "@/data/catering";
+import {
+  catering,
+  cateringAfsluiter,
+  cateringDenkAan,
+  cateringInfo,
+  cateringIntro,
+} from "@/data/catering";
 
 export const Route = createFileRoute("/catering")({
   head: () => ({
@@ -42,12 +48,31 @@ function CateringPage() {
             catering
           </p>
           <h1 className="mt-3 font-script text-[clamp(1.6rem,4.5vw,2.4rem)] font-normal leading-[1.5] tracking-normal text-primary">
-            Kunnen jullie niet naar Rosí komen? Dan brengen wij Rosí naar jullie.
+            Catering by Rosí
           </h1>
           <div className="mt-8 max-w-lg space-y-4 leading-relaxed text-foreground">
             {cateringIntro.map((tekst) => (
               <p key={tekst}>{tekst}</p>
             ))}
+            <p className="font-semibold">Denk aan&hellip;</p>
+            <ul className="space-y-2">
+              {cateringDenkAan.map((punt) => (
+                <li key={punt} className="flex items-center gap-3">
+                  <RosiRoos className="h-5 w-auto flex-none text-[color:var(--terracotta)]" />
+                  {punt}
+                </li>
+              ))}
+            </ul>
+            <p>{cateringAfsluiter}</p>
+            <p>
+              Vragen? DM of bel naar{" "}
+              <a
+                href={telefoon.link}
+                className="font-semibold whitespace-nowrap underline decoration-primary/50 underline-offset-[3px]"
+              >
+                {telefoon.weergave}
+              </a>
+            </p>
           </div>
           <div className="mt-10 flex flex-wrap items-center gap-3">
             <a href={whatsapp} target="_blank" rel="noopener noreferrer" className={knopPrimair}>

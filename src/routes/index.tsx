@@ -158,7 +158,7 @@ function HomePage() {
           </div>
           <ul className="mt-7 max-w-md space-y-3 text-[0.95rem] text-foreground">
             {[
-              "Cookies, brownies en taarten uit onze eigen oven",
+              "Koekjes en gebak uit onze eigen oven",
               "Van de eerste koffie tot de laatste wine night",
               "Dinsdag t/m zondag open, reserveren via Instagram",
             ].map((punt) => (
