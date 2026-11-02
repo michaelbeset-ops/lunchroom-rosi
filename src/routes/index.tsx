@@ -31,10 +31,10 @@ export const Route = createFileRoute("/")({
         content:
           "Gezelligheid in Monster, verse koffie, huisgemaakte lunch, gebak uit eigen oven en wine nights.",
       },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: "https://lunchroomrosi.nl/" },
     ],
     links: [
-      { rel: "canonical", href: "/" },
+      { rel: "canonical", href: "https://lunchroomrosi.nl/" },
       /* Herofoto's alvast ophalen, per schermformaat */
       { rel: "preload", as: "image", href: heroImg, media: "(min-width: 768px)" },
       { rel: "preload", as: "image", href: pioenrozen, media: "(max-width: 767px)" },

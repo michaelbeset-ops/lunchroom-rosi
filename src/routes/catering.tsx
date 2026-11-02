@@ -21,9 +21,9 @@ export const Route = createFileRoute("/catering")({
           "Catering by Rosí, broodjes, soepen, drankjes, sweets box en borrelbox, vers klaargemaakt en bezorgd in Monster en het Westland. Bestellen via WhatsApp of e-mail.",
       },
       { property: "og:title", content: "Catering | Rosí" },
-      { property: "og:url", content: "/catering" },
+      { property: "og:url", content: "https://lunchroomrosi.nl/catering/" },
     ],
-    links: [{ rel: "canonical", href: "/catering" }],
+    links: [{ rel: "canonical", href: "https://lunchroomrosi.nl/catering/" }],
   }),
   component: CateringPage,
 });

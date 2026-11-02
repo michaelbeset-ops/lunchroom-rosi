@@ -14,9 +14,9 @@ export const Route = createFileRoute("/ons-verhaal")({
           "Hoe Lunchroom Rosí in Monster begon, van een droom van Fay tot een gezellige plek voor lekker eten, een goed glas wijn en fijne momenten samen.",
       },
       { property: "og:title", content: "Ons verhaal | Rosí" },
-      { property: "og:url", content: "/ons-verhaal" },
+      { property: "og:url", content: "https://lunchroomrosi.nl/ons-verhaal/" },
     ],
-    links: [{ rel: "canonical", href: "/ons-verhaal" }],
+    links: [{ rel: "canonical", href: "https://lunchroomrosi.nl/ons-verhaal/" }],
   }),
   component: OnsVerhaalPage,
 });

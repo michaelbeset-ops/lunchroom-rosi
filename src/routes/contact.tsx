@@ -11,9 +11,9 @@ export const Route = createFileRoute("/contact")({
           "Lunchroom Rosí, Molenstraat 35 in Monster. Openingstijden, telefoonnummer en reserveren via Instagram.",
       },
       { property: "og:title", content: "Contact | Rosí" },
-      { property: "og:url", content: "/contact" },
+      { property: "og:url", content: "https://lunchroomrosi.nl/contact/" },
     ],
-    links: [{ rel: "canonical", href: "/contact" }],
+    links: [{ rel: "canonical", href: "https://lunchroomrosi.nl/contact/" }],
   }),
   component: ContactPage,
 });

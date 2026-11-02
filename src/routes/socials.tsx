@@ -13,9 +13,9 @@ export const Route = createFileRoute("/socials")({
           "Volg Lunchroom Rosí op Instagram voor de maandspecial, wine nights en wat er vandaag uit de oven komt.",
       },
       { property: "og:title", content: "Socials | Rosí" },
-      { property: "og:url", content: "/socials" },
+      { property: "og:url", content: "https://lunchroomrosi.nl/socials/" },
     ],
-    links: [{ rel: "canonical", href: "/socials" }],
+    links: [{ rel: "canonical", href: "https://lunchroomrosi.nl/socials/" }],
   }),
   component: SocialsPage,
 });
