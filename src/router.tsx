@@ -8,6 +8,8 @@ export const getRouter = () => {
   const router = createRouter({
     routeTree,
     basepath: "/",
+    /* GitHub Pages serveert mappen met slash; zo blijft er één URL per pagina */
+    trailingSlash: "always",
     context: { queryClient },
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,

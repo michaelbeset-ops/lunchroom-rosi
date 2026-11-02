@@ -71,22 +71,22 @@ export function Footer() {
         <div className="container-prose flex flex-col items-center justify-between gap-2 py-5 text-xs text-[color:var(--cream)] sm:flex-row">
           <p>&copy; {year} Ros&iacute; &middot; Monster</p>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <Link to="/menu" className="hover:text-[color:var(--cream)]">
+            <Link to="/menu/" className="hover:text-[color:var(--cream)]">
               Menu
             </Link>
-            <Link to="/ons-verhaal" className="hover:text-[color:var(--cream)]">
+            <Link to="/ons-verhaal/" className="hover:text-[color:var(--cream)]">
               Ons verhaal
             </Link>
-            <Link to="/catering" className="hover:text-[color:var(--cream)]">
+            <Link to="/catering/" className="hover:text-[color:var(--cream)]">
               Catering
             </Link>
-            <Link to="/contact" className="hover:text-[color:var(--cream)]">
+            <Link to="/contact/" className="hover:text-[color:var(--cream)]">
               Contact
             </Link>
-            <Link to="/socials" className="hover:text-[color:var(--cream)]">
+            <Link to="/socials/" className="hover:text-[color:var(--cream)]">
               Socials
             </Link>
-            <Link to="/privacy" className="hover:text-[color:var(--cream)]">
+            <Link to="/privacy/" className="hover:text-[color:var(--cream)]">
               Privacy
             </Link>
             <a
