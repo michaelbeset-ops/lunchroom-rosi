@@ -3,21 +3,16 @@ import { Instagram } from "lucide-react";
 import fay from "@/assets/fay.webp";
 import { Reveal } from "@/components/site/Reveal";
 import { RosiRoos } from "@/components/site/RosiMark";
+import { paginaHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/ons-verhaal")({
-  head: () => ({
-    meta: [
-      { title: "Ons verhaal | Rosí Monster" },
-      {
-        name: "description",
-        content:
-          "Hoe Lunchroom Rosí in Monster begon, van een droom van Fay tot een gezellige plek voor lekker eten, een goed glas wijn en fijne momenten samen.",
-      },
-      { property: "og:title", content: "Ons verhaal | Rosí" },
-      { property: "og:url", content: "/ons-verhaal" },
-    ],
-    links: [{ rel: "canonical", href: "/ons-verhaal" }],
-  }),
+  head: () =>
+    paginaHead({
+      title: "Ons verhaal | Lunchroom Rosí Monster",
+      description:
+        "Hoe Lunchroom Rosí in Monster begon, van een droom van Fay tot een gezellige plek voor lekker eten, een goed glas wijn en fijne momenten samen.",
+      pad: "/ons-verhaal/",
+    }),
   component: OnsVerhaalPage,
 });
 
@@ -66,7 +61,7 @@ function OnsVerhaalPage() {
             Volg ons op Instagram
           </a>
           <Link
-            to="/menu"
+            to="/menu/"
             className="inline-flex items-center rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-[color:var(--terracotta-deep)]"
           >
             Bekijk de menukaart

@@ -1,22 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { paginaHead } from "@/lib/seo";
 import { Instagram } from "lucide-react";
 import { InstagramFeed } from "@/components/site/InstagramFeed";
 import { instagramHandle, instagramUrl, tiktokHandle, tiktokUrl } from "@/data/instagram";
 
 export const Route = createFileRoute("/socials")({
-  head: () => ({
-    meta: [
-      { title: "Socials | Rosí Monster" },
-      {
-        name: "description",
-        content:
-          "Volg Lunchroom Rosí op Instagram voor de maandspecial, wine nights en wat er vandaag uit de oven komt.",
-      },
-      { property: "og:title", content: "Socials | Rosí" },
-      { property: "og:url", content: "/socials" },
-    ],
-    links: [{ rel: "canonical", href: "/socials" }],
-  }),
+  head: () =>
+    paginaHead({
+      title: "Socials | Lunchroom Rosí Monster",
+      description:
+        "Volg Lunchroom Rosí in Monster op Instagram voor de maandspecial, wine nights en wat er vandaag uit de oven komt.",
+      pad: "/socials/",
+    }),
   component: SocialsPage,
 });
 

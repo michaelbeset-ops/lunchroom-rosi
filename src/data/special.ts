@@ -6,7 +6,7 @@ import foto from "@/assets/special-pumpkin-spice.webp";
 export const special = {
   maand: "oktober special",
   titel: "Pumpkin Spice Latte",
-  ondertitel: "\u2014 now at ROS\u00cd. Autumn is officially pumpkin season. \ud83c\udf83",
+  ondertitel: "Now at ROS\u00cd. Autumn is officially pumpkin season. \ud83c\udf83",
   tekst:
     "Een romige pumpkin spice latte, afgetopt met een fluffy cold foam en een vleugje cinnamon. Cozy, kruidig en precies de herfst in een cup. \ud83c\udf42",
   videoUrl: "https://www.instagram.com/p/DeBgfWwjXWV/",

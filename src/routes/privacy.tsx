@@ -1,19 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { beholdFeedId } from "@/data/instagram";
+import { paginaHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/privacy")({
-  head: () => ({
-    meta: [
-      { title: "Privacy | Rosí Monster" },
-      {
-        name: "description",
-        content:
-          "Hoe Lunchroom Rosí in Monster omgaat met je gegevens en welke cookies de site gebruikt.",
-      },
-      { name: "robots", content: "noindex" },
-    ],
-    links: [{ rel: "canonical", href: "/privacy" }],
-  }),
+  head: () =>
+    paginaHead({
+      title: "Privacy | Lunchroom Rosí Monster",
+      description:
+        "Hoe Lunchroom Rosí in Monster omgaat met je gegevens en welke cookies de site gebruikt.",
+      pad: "/privacy/",
+      noindex: true,
+    }),
   component: PrivacyPage,
 });
 

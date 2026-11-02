@@ -74,17 +74,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
-      { title: "Lunchroom Rosí | Koffie, lunch & wine nights in Monster" },
+      { title: "Lunchroom en restaurant in Monster | Lunchroom Rosí" },
       {
         name: "description",
         content:
-          "Gezelligheid in Monster, verse koffie, huisgemaakte lunch, koekjes en gebak uit eigen oven en wine nights. Molenstraat 35, dinsdag t/m zondag open.",
+          "Lunchen in Monster bij Rosí, lunchroom en restaurant aan de Molenstraat 35. Verse koffie, huisgemaakte lunch, gebak uit eigen oven en wine nights.",
       },
       { name: "theme-color", content: "#777758" },
-      { property: "og:title", content: "Lunchroom Rosí | Koffie, lunch & wine nights in Monster" },
+      { property: "og:title", content: "Lunchroom en restaurant in Monster | Lunchroom Rosí" },
       {
         property: "og:description",
-        content: "Een knus hoekje in Monster met verse koffie, lunch en huisgemaakt gebak.",
+        content:
+          "Lunchroom en restaurant in Monster, verse koffie, huisgemaakte lunch, gebak uit eigen oven en wine nights.",
       },
       { property: "og:type", content: "website" },
       { property: "og:image", content: "https://lunchroomrosi.nl/og.jpg" },
@@ -110,7 +111,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "CafeOrCoffeeShop",
+          "@id": "https://lunchroomrosi.nl/#bedrijf",
           name: "Lunchroom Rosí",
+          description:
+            "Lunchroom Rosí is een lunchroom en restaurant aan de Molenstraat 35 in Monster (Westland) voor koffie, huisgemaakte lunch, gebak uit eigen oven, wine nights en catering.",
           url: "https://lunchroomrosi.nl/",
           image: "https://lunchroomrosi.nl/og.jpg",
           telephone: telefoon.link.replace("tel:", ""),
@@ -122,6 +126,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             addressCountry: "NL",
           },
           sameAs: ["https://www.instagram.com/lunchroomrosi/"],
+          hasMenu: "https://lunchroomrosi.nl/menu/",
+          acceptsReservations: "https://ig.me/m/lunchroomrosi",
           /* Openingstijden voor Google (zelfde bron als de site) */
           openingHoursSpecification: [
             {
@@ -145,6 +151,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           ],
           servesCuisine: ["Lunch", "Koffie", "Gebak"],
           priceRange: "€€",
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Lunchroom Rosí",
+          url: "https://lunchroomrosi.nl/",
+          inLanguage: "nl-NL",
+          publisher: { "@id": "https://lunchroomrosi.nl/#bedrijf" },
         }),
       },
     ],

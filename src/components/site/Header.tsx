@@ -7,11 +7,11 @@ import { telefoon } from "@/data/openingstijden";
 /* De pagina's uit de briefing: Homepage, Menu, About, Catering, Contact, Socials */
 const paginaLinks = [
   { to: "/", label: "Home" },
-  { to: "/menu", label: "Menu" },
-  { to: "/ons-verhaal", label: "Ons verhaal" },
-  { to: "/catering", label: "Catering" },
-  { to: "/contact", label: "Contact" },
-  { to: "/socials", label: "Socials" },
+  { to: "/menu/", label: "Menu" },
+  { to: "/ons-verhaal/", label: "Ons verhaal" },
+  { to: "/catering/", label: "Catering" },
+  { to: "/contact/", label: "Contact" },
+  { to: "/socials/", label: "Socials" },
 ] as const;
 
 export function Header() {

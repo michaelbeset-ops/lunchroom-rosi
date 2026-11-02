@@ -4,6 +4,9 @@ import { RouterProvider } from "@tanstack/react-router";
 import { getRouter } from "./router";
 import "./styles.css";
 
+/* Voorgerenderde head-tags (scripts/prerender.mjs) weghalen; de app zet ze opnieuw */
+document.querySelectorAll("[data-prerender]").forEach((el) => el.remove());
+
 const router = getRouter();
 
 declare module "@tanstack/react-router" {

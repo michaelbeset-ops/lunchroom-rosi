@@ -1,0 +1,88 @@
+{
+  "slug": "lunchroom-rosi",
+  "site": "https://lunchroomrosi.nl",
+  "base": "",
+  "githubPagesUrl": "https://michaelbeset-ops.github.io/lunchroom-rosi/",
+  "mode": "klant",
+  "language": "nl-NL",
+  "branche": "horeca",
+  "strategy": ["lokaal", "ai"],
+  "brandTerms": [
+    "rosi",
+    "rosí",
+    "lunchroom rosi",
+    "lunchroom rosí",
+    "rosi monster",
+    "lunchroomrosi"
+  ],
+  "business": {
+    "schemaType": "CafeOrCoffeeShop",
+    "name": "Lunchroom Rosí",
+    "legalName": "",
+    "description": "Lunchroom Rosí is een lunchroom en restaurant aan de Molenstraat 35 in Monster (Westland) voor koffie, huisgemaakte lunch, gebak uit eigen oven, wine nights en catering.",
+    "kvk": "",
+    "vatID": "",
+    "foundingYear": "",
+    "founder": "Fay",
+    "showAddress": true,
+    "street": "Molenstraat 35",
+    "postalCode": "",
+    "city": "Monster",
+    "region": "Zuid-Holland",
+    "country": "NL",
+    "geo": null,
+    "phone": "+31633011418",
+    "phoneDisplay": "+31 6 33011418",
+    "whatsapp": "+31633011418",
+    "email": "info@lunchroomrosi.nl",
+    "priceRange": "€€",
+    "openingHours": [
+      { "days": ["Tuesday", "Wednesday", "Thursday"], "opens": "09:00", "closes": "17:00" },
+      { "days": ["Friday", "Saturday"], "opens": "09:00", "closes": "19:00" },
+      { "days": ["Sunday"], "opens": "10:00", "closes": "16:00" }
+    ],
+    "specialHours": [],
+    "areaServed": ["Monster", "Poeldijk", "'s-Gravenzande", "Naaldwijk", "Westland"],
+    "gbpUrl": "",
+    "reviewLink": "",
+    "gbpPrimaryCategory": "Lunchroom",
+    "sameAs": ["https://www.instagram.com/lunchroomrosi/"],
+    "logo": "/icon-512.png",
+    "image": "/og.jpg",
+    "extra": {
+      "servesCuisine": ["Lunch", "Koffie", "Gebak"],
+      "acceptsReservations": "https://ig.me/m/lunchroomrosi",
+      "hasMenu": "https://lunchroomrosi.nl/menu/"
+    }
+  },
+  "services": [
+    {
+      "name": "Menukaart",
+      "path": "/menu/",
+      "summary": "Ontbijt, lunch classics en signatures, bites, Little Rosí, koffie, fris, wijn en cocktails, met prijzen.",
+      "keywords": ["lunchroom monster", "lunchen monster", "restaurant monster", "menukaart rosi"]
+    },
+    {
+      "name": "Catering",
+      "path": "/catering/",
+      "summary": "Broodjes, soepen, drankjes, sweets box en borrelbox, bezorgd in Monster en het Westland.",
+      "keywords": ["catering monster", "catering westland", "lunch bezorgen monster"]
+    }
+  ],
+  "llmsPages": [
+    {
+      "name": "Ons verhaal",
+      "path": "/ons-verhaal/",
+      "summary": "Hoe Fay Lunchroom Rosí in Monster begon."
+    },
+    {
+      "name": "Contact en openingstijden",
+      "path": "/contact/",
+      "summary": "Adres, openingstijden, route en reserveren."
+    }
+  ],
+  "ignorePaths": ["/privacy/"],
+  "gscProperty": "sc-domain:lunchroomrosi.nl",
+  "psiUrls": ["/", "/menu/", "/contact/"],
+  "aiCrawlers": { "training": "allow" }
+}

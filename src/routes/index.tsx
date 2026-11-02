@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { paginaHead } from "@/lib/seo";
 import { useRef } from "react";
 /* Herofoto uit de aanlevering: roze pioenrozen met "Gezelligheid in
    Monster" in handschrift (aanlevering/Homepage foto 1). */
@@ -17,29 +18,25 @@ import { ContactBlok } from "@/components/site/ContactBlok";
 import { special } from "@/data/special";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Lunchroom Rosí | Koffie, lunch & wine nights in Monster" },
-      {
-        name: "description",
-        content:
-          "Gezelligheid in Monster, verse koffie, huisgemaakte lunch, koekjes en gebak uit eigen oven en wine nights. Molenstraat 35, dinsdag t/m zondag open.",
-      },
-      { property: "og:title", content: "Lunchroom Rosí | Koffie, lunch & wine nights in Monster" },
-      {
-        property: "og:description",
-        content:
-          "Gezelligheid in Monster, verse koffie, huisgemaakte lunch, gebak uit eigen oven en wine nights.",
-      },
-      { property: "og:url", content: "/" },
-    ],
-    links: [
-      { rel: "canonical", href: "/" },
-      /* Herofoto's alvast ophalen, per schermformaat */
-      { rel: "preload", as: "image", href: heroImg, media: "(min-width: 768px)" },
-      { rel: "preload", as: "image", href: pioenrozen, media: "(max-width: 767px)" },
-    ],
-  }),
+  head: () => {
+    const h = paginaHead({
+      title: "Lunchroom en restaurant in Monster | Lunchroom Rosí",
+      description:
+        "Lunchen in Monster bij Rosí, lunchroom en restaurant aan de Molenstraat 35. Verse koffie, huisgemaakte lunch, gebak uit eigen oven en wine nights.",
+      pad: "/",
+      ogDescription:
+        "Lunchroom en restaurant in Monster, verse koffie, huisgemaakte lunch, gebak uit eigen oven en wine nights.",
+    });
+    return {
+      meta: h.meta,
+      links: [
+        ...h.links,
+        /* Herofoto's alvast ophalen, per schermformaat */
+        { rel: "preload", as: "image", href: heroImg, media: "(min-width: 768px)" },
+        { rel: "preload", as: "image", href: pioenrozen, media: "(max-width: 767px)" },
+      ],
+    };
+  },
   component: HomePage,
 });
 
@@ -72,7 +69,7 @@ function HeroBlok() {
             Reserveer via Instagram
           </a>
           <Link
-            to="/menu"
+            to="/menu/"
             className="text-sm font-semibold text-[color:var(--cream)] underline decoration-[color:var(--cream)]/60 decoration-2 underline-offset-[5px] transition-colors hover:decoration-[color:var(--cream)]"
           >
             Bekijk de kaart
@@ -146,7 +143,7 @@ function HomePage() {
             welkom bij Rosí
           </p>
           <h2 className="mt-3 font-script font-normal tracking-normal text-[1.9rem] leading-[1.5] text-primary sm:text-[2.6rem]">
-            Jouw plek voor koffie, lunch en meer.
+            Lunchen in Monster, jouw plek voor koffie, lunch en meer.
           </h2>
           <div className="mt-7 max-w-md space-y-4 text-base leading-relaxed text-foreground">
             <p>
@@ -168,7 +165,7 @@ function HomePage() {
             ))}
           </ul>
           <Link
-            to="/ons-verhaal"
+            to="/ons-verhaal/"
             className="mt-8 inline-flex text-sm font-semibold text-primary underline decoration-primary/50 hover:decoration-primary decoration-2 underline-offset-[5px] transition-colors hover:opacity-75"
           >
             Lees hoe het allemaal begon
@@ -227,7 +224,7 @@ function HomePage() {
                 Bekijk op Instagram
               </a>
               <Link
-                to="/menu"
+                to="/menu/"
                 className="text-sm font-semibold text-primary underline decoration-primary/50 decoration-2 underline-offset-[5px] transition-colors hover:opacity-75 hover:decoration-primary"
               >
                 Bekijk de hele kaart

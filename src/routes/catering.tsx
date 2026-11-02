@@ -3,6 +3,7 @@ import etenBowl from "@/assets/eten-bowl.webp";
 import { Reveal } from "@/components/site/Reveal";
 import { RosiRoos } from "@/components/site/RosiMark";
 import { telefoon } from "@/data/openingstijden";
+import { paginaHead } from "@/lib/seo";
 import {
   catering,
   cateringAfsluiter,
@@ -12,19 +13,13 @@ import {
 } from "@/data/catering";
 
 export const Route = createFileRoute("/catering")({
-  head: () => ({
-    meta: [
-      { title: "Catering | Rosí Monster" },
-      {
-        name: "description",
-        content:
-          "Catering by Rosí, broodjes, soepen, drankjes, sweets box en borrelbox, vers klaargemaakt en bezorgd in Monster en het Westland. Bestellen via WhatsApp of e-mail.",
-      },
-      { property: "og:title", content: "Catering | Rosí" },
-      { property: "og:url", content: "/catering" },
-    ],
-    links: [{ rel: "canonical", href: "/catering" }],
-  }),
+  head: () =>
+    paginaHead({
+      title: "Catering in Monster en het Westland | Lunchroom Rosí",
+      description:
+        "Catering by Rosí, broodjes, soepen, drankjes, sweets box en borrelbox, vers gemaakt en bezorgd in Monster en het Westland. Bestel via WhatsApp of e-mail.",
+      pad: "/catering/",
+    }),
   component: CateringPage,
 });
 
