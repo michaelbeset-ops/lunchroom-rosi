@@ -12,7 +12,7 @@ export const Route = createFileRoute("/privacy")({
       },
       { name: "robots", content: "noindex" },
     ],
-    links: [{ rel: "canonical", href: "/privacy" }],
+    links: [{ rel: "canonical", href: "https://lunchroomrosi.nl/privacy/" }],
   }),
   component: PrivacyPage,
 });

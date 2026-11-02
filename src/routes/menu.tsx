@@ -16,9 +16,9 @@ export const Route = createFileRoute("/menu")({
       },
       { property: "og:title", content: "Menukaart | Rosí" },
       { property: "og:description", content: "De volledige menukaart van Rosí in Monster." },
-      { property: "og:url", content: "/menu" },
+      { property: "og:url", content: "https://lunchroomrosi.nl/menu/" },
     ],
-    links: [{ rel: "canonical", href: "/menu" }],
+    links: [{ rel: "canonical", href: "https://lunchroomrosi.nl/menu/" }],
   }),
   component: MenuPage,
 });
